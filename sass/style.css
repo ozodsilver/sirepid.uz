@@ -15,6 +15,9 @@
   -ms-transform: scale(1.5) rotate(10deg);
   -o-transform: scale(1.5) rotate(10deg);
 }
+#navigation a a, #navigation i a {
+  font-family: "Varela Round", sans-serif;
+}
 #navigation img {
   transition: 0.2s;
   -webkit-transition: 0.2s;
