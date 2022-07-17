@@ -28,9 +28,12 @@
     />
 
     <!-- shrift -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container-fluid bg-light p-1 border-bottom" id="navigation">
@@ -86,10 +89,13 @@
     </div>
 
     <div class="container-fluid p-3 bg-light position-relative">
-      <div class="container d-flex justify-content-around " style="position: relative; z-index:23;">
+      <div
+        class="container d-flex justify-content-around"
+        style="position: relative; z-index: 23"
+      >
         <div class="dropdown">
           <button
-            class="btn btn-light  dropdown-toggle"
+            class="btn btn-light dropdown-toggle"
             type="button"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
@@ -106,7 +112,7 @@
 
         <div class="dropdown">
           <button
-            class="btn btn-light  dropdown-toggle"
+            class="btn btn-light dropdown-toggle"
             type="button"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
@@ -123,7 +129,7 @@
 
         <div class="dropdown">
           <button
-            class="btn btn-light  dropdown-toggle"
+            class="btn btn-light dropdown-toggle"
             type="button"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
@@ -140,7 +146,7 @@
 
         <div class="dropdown">
           <button
-            class="btn btn-light  dropdown-toggle"
+            class="btn btn-light dropdown-toggle"
             type="button"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
@@ -185,31 +191,86 @@
       </div>
     </div>
 
-    <div class="container-fluid home d-flex justify-content-center align-items-center position-relative" onmousemove="showCoords(event)">
-<div class=" m-auto centerText " >
-<h4 class="text-center text-light">Xush kelibsiz!</h4>
-<h1 class="display-1 text-light h1 fw-bold">UMUMIY MA'LUMOT</h1>
+    <div
+      class="container-fluid home d-flex justify-content-center align-items-center position-relative"
+      onmousemove="showCoords(event)"
+    >
+      <div class="m-auto centerText">
+        <h4 class="text-center text-light">Xush kelibsiz!</h4>
+        <h1 class="display-1 text-light h1 fw-bold">UMUMIY MA'LUMOT</h1>
 
-<button class="btn btn-danger text-light d-block m-auto w-25 knopka ">Batafsil</button>
-<div class="w-100 d-flex justify-content-center"  style="position: absolute; bottom: 0; top:190%">
-  <lord-icon
-  src="https://cdn.lordicon.com/ihygurec.json"
-  trigger="loop"
-  colors="primary:#646e78,secondary:#ebe6ef"
-  style="width:80px;height:80px">
-</lord-icon>
-</div>
-</div>
+        <button class="btn btn-danger text-light d-block m-auto w-25 knopka">
+          Batafsil
+        </button>
+        <div
+          class="w-100 d-flex justify-content-center"
+          style="position: absolute; bottom: 0; top: 160%"
+        >
+          <lord-icon
+            src="https://cdn.lordicon.com/ihygurec.json"
+            trigger="loop"
+            colors="primary:#646e78,secondary:#ebe6ef"
+            style="width: 60px; height: 60px"
+          >
+          </lord-icon>
+        </div>
+      </div>
+    </div>
+    <!-- counter qism -->
+    <div class="container-fluid counter pb-5">
+      <div class="mx-auto w-50 text-center p-5">
+      <h2 class="pt-5 ">  SIRDARYO VILOYATI MIQYOSIDA
+        JAMI EMLANGANLAR SONI</h2>
+       <h4>07.07.2022 holatiga</h4>
+      </div>
 
+      <div class="container bg-light shadow-lg rounded position-relative">
+        <div class="row text-center p-5">
+          <div class="col-3 p-3">
+<h1 id="num1" class="display-1 fw-bold text-muted">234</h1>
+<p class="text-muted">birinchi doza</p>
+          </div>
+
+          <div class="col-3 p-3">
+            <h1 id="num2" class="display-1 fw-bold text-muted">222</h1>
+            <p class="text-muted">ikkinchi doza</p>
+          </div>
+         
+
+          <div class="col-3 p-3">
+            <h1 id="num3" class="display-1 fw-bold text-muted ">444</h1>
+            <uchunchi class="text-muted">uchunchi va booster doza</p>
+          </div>
+
+
+          <div class="col-3 p-3">
+            <h1 id="num4" class="display-1 fw-bold text-muted">434</h1>
+            <p class="text-muted">jami emlanganlar</p>
+          </div>
+        </div>
+        <button class="btn btn-danger d-block w-25 m-auto shadow-lg" style="position: absolute;
+        left:37%; bottom:-5%">Batafsil</button>
+      </div>
+
+ 
+    </div>
+<!-- yangiliklar -->
+    <div class="container-fluid news">
 
     </div>
+
+
+
+      <script src="scripts.js"></script>
+
+  <!-- lordicon -->
+  <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+  <!-- counter -->
+  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+
+  <script src="/countup/countMe.min.js"></script>
+
+
+   
   </body>
-
-
-  <script src="scripts.js">
-
-  </script>
-
-<!-- lordicon -->
-<script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
 </html>
