@@ -155,7 +155,7 @@ ul li:hover .ss{
     text-align: justify;
   }
   .footer{
-    background-color: #02091a;
+    background-color: rgb(33,37,41);
       padding: 70px 0;
   }
   .footer-col{
@@ -217,11 +217,34 @@ ul li:hover .ss{
   }
 
 
+  @media (max-width:1122px){
+    #navigation{
+nav .icons{
+  display: none !important;
+} 
+    }
 
-  
+
+    .links{
+      display: none !important;
+    }
+  }
+
+
+@media (max-width:992px){
+  .footer{
+    .row{
+      padding: 10px;
+      flex-wrap: wrap !important;
+      .footer-col{
+        width: 100% !important;
+      }
+    }
+  }
+}
 
 
 
-  
+ 
 
  

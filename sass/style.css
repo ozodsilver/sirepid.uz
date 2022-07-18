@@ -131,7 +131,7 @@ li {
 }
 
 .footer {
-  background-color: #02091a;
+  background-color: rgb(33, 37, 41);
   padding: 70px 0;
 }
 
@@ -196,6 +196,23 @@ li {
 @media (max-width: 574px) {
   .footer-col {
     width: 100%;
+  }
+}
+@media (max-width: 1122px) {
+  #navigation nav .icons {
+    display: none !important;
+  }
+  .links {
+    display: none !important;
+  }
+}
+@media (max-width: 992px) {
+  .footer .row {
+    padding: 10px;
+    flex-wrap: wrap !important;
+  }
+  .footer .row .footer-col {
+    width: 100% !important;
   }
 }
 
