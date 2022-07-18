@@ -33,6 +33,18 @@
   -o-transition: 0.2s;
 }
 
+.ss {
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(175, 179, 199, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+ul li:hover .ss {
+  display: block !important;
+}
+
 .home {
   width: 100%;
   background-image: url("https://avatars.mds.yandex.net/get-ynews/2371987/295bde68c808b8f4c2df2cd30b7b4cde/orig");
