@@ -8,21 +8,24 @@
 #navigation {
   transition-duration: 0.2s;
 }
-#navigation a, #navigation i {
+#navigation a,
+#navigation i {
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
 }
-#navigation a:hover i, #navigation i:hover i {
+#navigation a:hover i,
+#navigation i:hover i {
   transform: scale(1.5) rotate(10deg);
   -webkit-transform: scale(1.5) rotate(10deg);
   -moz-transform: scale(1.5) rotate(10deg);
   -ms-transform: scale(1.5) rotate(10deg);
   -o-transform: scale(1.5) rotate(10deg);
 }
-#navigation a a, #navigation i a {
+#navigation a a,
+#navigation i a {
   font-family: "Varela Round", sans-serif;
 }
 #navigation img {
@@ -64,7 +67,8 @@ ul li:hover .ss {
   position: relative;
   z-index: 22;
 }
-.home h1, .home .knopka {
+.home h1,
+.home .knopka {
   transition: 0.7s;
   -webkit-transition: 0.7s;
   -moz-transition: 0.7s;
@@ -223,6 +227,11 @@ li {
 ::selection {
   background-color: red;
   color: white;
+}
+
+.item-content {
+  height: 600px !important;
+  overflow: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

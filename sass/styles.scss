@@ -1,50 +1,42 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#navigation{
-    transition-duration: 0.2s;
-    a,i{
-        transition: 0.3s;
-        -webkit-transition: 0.3s;
-        -moz-transition: 0.3s;
-        -ms-transition: 0.3s;
-        -o-transition: 0.3s;
-    
+#navigation {
+  transition-duration: 0.2s;
+  a,
+  i {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 
+    &:hover i {
+      transform: scale(1.5) rotate(10deg);
+      -webkit-transform: scale(1.5) rotate(10deg);
+      -moz-transform: scale(1.5) rotate(10deg);
+      -ms-transform: scale(1.5) rotate(10deg);
+      -o-transform: scale(1.5) rotate(10deg);
+    }
 
-        &:hover i{
-            transform: scale(1.5) rotate(10deg);
-            -webkit-transform: scale(1.5) rotate(10deg);
-            -moz-transform: scale(1.5) rotate(10deg);
-            -ms-transform: scale(1.5) rotate(10deg);
-            -o-transform: scale(1.5) rotate(10deg);
-}
+    a {
+      font-family: "Varela Round", sans-serif;
+    }
+  }
 
-a{
-    font-family: 'Varela Round', sans-serif;
-}
-}
-
-
-img{
+  img {
     transition: 0.2s;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
     -o-transition: 0.2s;
+  }
 }
 
-
-
-}
-
-
-
-.ss{
+.ss {
   backdrop-filter: blur(10px) saturate(180%);
   -webkit-backdrop-filter: blur(10px) saturate(180%);
   background-color: rgba(175, 179, 199, 0.05);
@@ -52,208 +44,199 @@ img{
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
-ul li:hover .ss{
+ul li:hover .ss {
   display: block !important;
-
 }
 
+.home {
+  width: 100%;
 
-.home{
+  background-image: url("https://avatars.mds.yandex.net/get-ynews/2371987/295bde68c808b8f4c2df2cd30b7b4cde/orig");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  &:before {
+    content: "";
     width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 
-    background-image: url('https://avatars.mds.yandex.net/get-ynews/2371987/295bde68c808b8f4c2df2cd30b7b4cde/orig');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  .centerText {
     position: relative;
-    &:before{
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-color: rgba(0,0,0,0.6);
-    }
+    z-index: 22;
+  }
 
-    .centerText{
-        position: relative;
-        z-index: 22;
-    }
-
-    h1, .knopka{
-        transition: 0.7s;
-        -webkit-transition: 0.7s;
-        -moz-transition: 0.7s;
-        -ms-transition: 0.7s;
-        -o-transition: 0.7s;
+  h1,
+  .knopka {
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+  }
 }
-}
-
 
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: rgb(60, 151, 190);
-    border-radius: 10px;
-  }
+  width: 10px;
+}
 
-  .counter{
-    background: url('/images/back.webp');
-    background-size: cover;
-    background-position: center;
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
 
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(60, 151, 190);
+  border-radius: 10px;
+}
 
+.counter {
+  background: url("/images/back.webp");
+  background-size: cover;
+  background-position: center;
+}
 
-  .news{
-    background: url('https://catherineasquithgallery.com/uploads/posts/2021-03/1614795901_74-p-fon-dlya-meditsinskoi-prezentatsii-83.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-   
-  
-    .longCard{
-        backdrop-filter: blur(14px) saturate(200%);
-        -webkit-backdrop-filter: blur(14px) saturate(200%);
-        background-color: rgba(23, 27, 29, 0.63);
-        border-radius: 12px;
-        border: 1px solid rgba(255, 255, 255, 0.125);
+.news {
+  background: url("https://catherineasquithgallery.com/uploads/posts/2021-03/1614795901_74-p-fon-dlya-meditsinskoi-prezentatsii-83.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  .longCard {
+    backdrop-filter: blur(14px) saturate(200%);
+    -webkit-backdrop-filter: blur(14px) saturate(200%);
+    background-color: rgba(23, 27, 29, 0.63);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     box-shadow: 0 0 3px rgb(233, 224, 224);
-    }
   }
+}
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-  .owl{
-    background:url('../images/back.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 0 !important;
-    
-  }
+.owl {
+  background: url("../images/back.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 0 !important;
+}
 
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+ul {
+  list-style: none;
+}
+li {
+  text-align: justify;
+}
+.footer {
+  background-color: rgb(33, 37, 41);
+  padding: 70px 0;
+}
+.footer-col {
+  width: 25% !important;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
 
-  
-  .row{
-    display: flex;
-    justify-content: space-around;
-  
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
   }
-  ul{
-    list-style: none;
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
   }
-  li{
-    text-align: justify;
-  }
-  .footer{
-    background-color: rgb(33,37,41);
-      padding: 70px 0;
-  }
-  .footer-col{
-     width: 25% !important;
-     padding: 0 15px;
-  }
-  .footer-col h4{
-    font-size: 18px;
-    color: #ffffff;
-    text-transform: capitalize;
-    margin-bottom: 35px;
-    font-weight: 500;
-    position: relative;
-  } 
-  .footer-col ul li:not(:last-child){
-    margin-bottom: 10px;
-  }
-  .footer-col ul li a{
-    font-size: 16px;
-    text-transform: capitalize;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 300;
-    color: #bbbbbb;
-    display: block;
-    transition: all 0.3s ease;
-  }
-  .footer-col ul li a:hover{
-    color: #ffffff;
-    padding-left: 8px;
-  }
-  .footer-col .social-links a{
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: rgba(255,255,255,0.2);
-    margin:0 10px 10px 0;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    color: #ffffff;
-    transition: all 0.5s ease;
-  }
-  .footer-col .social-links a:hover{
-    color: #24262b;
-    background-color: #ffffff;
-  }
-  
-  @media(max-width: 767px){
-    .footer-col{
-      width: 50%;
-      margin-bottom: 30px;
-  }
-  }
-  @media(max-width: 574px){
-    .footer-col{
-      width: 100%;
-  }
-  }
+}
 
-
-  @media (max-width:1122px){
-    #navigation{
-nav .icons{
-  display: none !important;
-} 
-    }
-
-
-    .links{
+@media (max-width: 1122px) {
+  #navigation {
+    nav .icons {
       display: none !important;
     }
   }
 
+  .links {
+    display: none !important;
+  }
+}
 
-@media (max-width:992px){
-  .footer{
-    .row{
+@media (max-width: 992px) {
+  .footer {
+    .row {
       padding: 10px;
       flex-wrap: wrap !important;
-      .footer-col{
+      .footer-col {
         width: 100% !important;
       }
     }
   }
 }
 
-
-@media (min-width:1220px){
-  .card .card-body .col-sm-3 a{
+@media (min-width: 1220px) {
+  .card .card-body .col-sm-3 a {
     font-size: 12px;
   }
 }
 
-
- 
-
- ::selection{
+::selection {
   background-color: red;
   color: white;
+}
+
+// vaksinatsiya
+
+.item-content {
+  height: 600px !important;
+  overflow: auto;
 }
