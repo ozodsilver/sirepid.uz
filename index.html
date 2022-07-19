@@ -13,6 +13,7 @@
 
 
   <link rel="stylesheet" href="sass/owl.carousel.min.css">
+  <link rel="stylesheet" href="sass/owl.theme.default.min.css">
 
   <!-- bootstrap ui uchun link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" z rel="stylesheet"
@@ -430,12 +431,12 @@
       <div class="owl-carousel owl-theme owl-loaded mt-5">
         <div class="owl-stage-outer">
           <div class="owl-stage">
-            <div class="owl-item"><img src="https://thumbs.dreamstime.com/z/доктора-14239093.jpg" alt="" class="w-50 img-thumbnail rounded-pill"></div>
-            <div class="owl-item"><img src="https://thumbs.dreamstime.com/z/доктора-14239093.jpg" alt=""
+            <div class="owl-item"><img src="https://miro.medium.com/max/1400/1*0-uoUMs6rqww5WkZ0aPyIw.jpeg" alt="" class="w-50 img-thumbnail rounded-pill"></div>
+            <div class="owl-item"><img src="https://yasnodar.ru/wp-content/uploads/Diagnostika-u-vracha.jpg" alt=""
                 class="w-50 img-thumbnail rounded-pill "></div>
-            <div class="owl-item"><img src="https://thumbs.dreamstime.com/z/доктора-14239093.jpg" alt=""
+            <div class="owl-item"><img src="https://avatars.mds.yandex.net/i?id=e670ac51e6f3aea4c63a0a051ff356a4-4904183-images-thumbs&n=13" alt=""
                 class="w-50 img-thumbnail rounded-pill "></div>
-            <div class="owl-item"><img src="https://thumbs.dreamstime.com/z/врачует-медицинскую-13081044.jpg" alt=""
+            <div class="owl-item"><img src="https://www.hlaw.ca/wp-content/uploads/2015/10/iStock_000069856833_Large.jpg" alt=""
                 class="w-50 img-thumbnail rounded rounded-pill"></div>
           </div>
         </div>
@@ -451,25 +452,17 @@
       <br><br>
       <hr>
       <h1 class="text-center">Videolavhalar</h1>
-      <div class="owl-carousel owl-theme owl-loaded mt-5">
-        <div class="owl-stage-outer">
-          <div class="owl-stage">
-            <div class="owl-item"><img
-                src="https://www.trbzdrav.ru/bitrix/templates/general/images-2019/staffing-with-doctors.jpg" alt=""
-                class="w-50 img-thumbnail rounded-pill"></div>
-            <div class="owl-item"><img src="https://wholeecannabis.com/wp-content/uploads/2018/08/doctor.jpg" alt=""
-                class="w-50 img-thumbnail rounded-pill"></div>
-            <div class="owl-item"><img
-                src="https://www.italiandoctors.co.uk/images/italiandoctor/slider/slide-doctor.jpg" alt=""
-                class="w-50 img-thumbnail rounded-pill"></div>
-            <div class="owl-item"><img src="https://www.mema.net/wp-content/uploads/2018/12/Hospital-Team.jpg" alt=""
-                class="w-50 img-thumbnail rounded-pill"></div>
-          </div>
-        </div>
+      <div class="owl-carousel owl-theme">
+       
+        <div class="item" ><img src="https://avatars.mds.yandex.net/i?id=297dfee915393d6cbedfb158ab7fbb4e-3396750-images-thumbs&n=13" class="w-50 img-thumbnail rounded-pill"></div>
+      
+        <div class="item" ><img src="https://thearborsassistedliving.com/wp-content/uploads/2016/12/assisted-living-in-long-island-1.jpg" alt="" class="w-50 img-thumbnail rounded-pill"></div>
+        <div class="item" ><img src="https://www.hummelgrp.com/sites/default/files/Web-Ready---shutterstock_154772753.jpg" alt="" class="w-50 img-thumbnail rounded-pill"></div>
+    </div>
 
+  
 
-        <button class="btn btn-primary  d-block m-auto mt-5">Batafsil...</button>
-      </div>
+      <button class="btn btn-primary  d-block m-auto mt-5">Batafsil...</button>
 
     </div>
 
@@ -537,7 +530,33 @@
     <!-- counter -->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 
-    <script src="/countup/countMe.min.js"></script>
+    <script src="countup/countMe.min.js"></script>
+
+
+
+
+    <script>
+      $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            loop:false,
+            margin:10,
+            nav:true,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        })
+      });
+    </script>
+    
 
 
     <script src="scripts/owl.carousel.js">
@@ -551,6 +570,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
 
 
 </body>
