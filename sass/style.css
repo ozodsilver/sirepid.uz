@@ -217,7 +217,7 @@ li {
 }
 @media (min-width: 1220px) {
   .card .card-body .col-sm-3 a {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 ::selection {
