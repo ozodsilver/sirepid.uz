@@ -215,5 +215,14 @@ li {
     width: 100% !important;
   }
 }
+@media (min-width: 1220px) {
+  .card .card-body .col-sm-3 a {
+    font-size: 14px;
+  }
+}
+::selection {
+  background-color: red;
+  color: white;
+}
 
 /*# sourceMappingURL=style.css.map */
