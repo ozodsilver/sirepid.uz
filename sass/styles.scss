@@ -223,10 +223,16 @@ li {
   }
 }
 
+
+
+
 @media (min-width: 1220px) {
   .card .card-body .col-sm-3 a {
     font-size: 12px;
   }
+
+
+
 }
 
 ::selection {
@@ -239,4 +245,13 @@ li {
 .item-content {
   height: 600px !important;
   overflow: auto;
+}
+
+
+@media (max-width:576px) {
+  .owl{
+    .owl-item img{
+      width: 100% !important;
+    }
+  }
 }

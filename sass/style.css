@@ -234,4 +234,10 @@ li {
   overflow: auto;
 }
 
+@media (max-width: 576px) {
+  .owl .owl-item img {
+    width: 100% !important;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
