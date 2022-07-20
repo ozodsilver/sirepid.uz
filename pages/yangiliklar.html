@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangiliklar</title>
+    <link rel="stylesheet" href="../sass/style.css" />
+    <!-- bootstrap ui uchun link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" z rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <!-- bundles js ulandi -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+    <!-- aos -->
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- vuuejs -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- shrift -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="container-fluid bg-light p-1 border-bottom" id="navigation">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img src="../images/Sticker.png" alt="" class="img img-fluid" /></a>
+                <div class="d-flex border-3 justify-content-between w-50 icons">
+                    <a href="" class="nav-link d-flex justify-content-center align-items-center text-primary">
+                        <i class="fa fa-phone fs-5 text-success"> </i> <span>+998 67 226 49
+                            26</span></a>
+
+                    <a href="" class="nav-link d-flex justify-content-center align-items-center text-primary">
+                        <i class="fa fa-telegram fs-5"> </i> &nbsp; <span>telegram</span></a>
+
+                    <a href="" class="nav-link d-flex justify-content-center align-items-center text-primary">
+                        <i class="fa fa-instagram fs-5" style="color: rgb(199, 17, 184)">
+                        </i>
+                        &nbsp; <span>instagram</span></a>
+
+                    <a href="" class="nav-link d-flex justify-content-center align-items-center text-primary">
+                        <i class="fa fa-facebook fs-5" style="color: rgb(9, 120, 217)">
+                        </i>&nbsp; <span>facebook</span></a>
+
+                    <a href="" class="nav-link d-flex justify-content-center align-items-center text-primary">
+                        <i class="fa fa-youtube-play fs-5 text-danger"> </i>&nbsp;
+                        <span>youtube</span></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <!-- mob menu -->
+
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-light d-md-none">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav d-lg-none">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="./umumiy.html" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Tashkilot haqida
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="umumiy.html">Umumiy ma'lumot</a></li>
+                                <li><a class="dropdown-item" href="Rahbariyat.html">Rahbariyat </a></li>
+                                <li><a class="dropdown-item" href="hodimlar.html">Xodimlar</a></li>
+                                <li><a class="dropdown-item" href="tashkiliyTuzilma.html">Tashkiliy tuzilma</a></li>
+
+                                
+
+
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Hujjatlar
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/2732584">Aholiing sanitariya-epidimialogik osoyishtalik
+                                        to'g'risidagi qonuni</a></li>
+                                <li><a class="dropdown-item" href="#">Atmosfera havosini muhofaza qilish to'g'risidagi
+                                        qonun</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/12328">Suv to'g'risidagi qonun</a></li>
+
+                                <li><a class="dropdown-item" href="http://www.sanepid.uz/document_types/9"> Vazirlar Mahkamasining qaror va farmoyishlari</a></li>
+
+                                <li><a class="dropdown-item" href="Hujjatlar.html">Tashkilot hujjatlari</a></li>
+
+
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5388842">O'RQ-685-son</a></li>
+                                <hr>
+                                <li><a class="dropdown-item fw-bolder">Prezident qaror farmon va farmoyishlari</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5851527">PQ 122-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5090241">PQ 4887-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5100677">PQ 6110-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/-5784917">PQ 35-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/3523132">PQ 3493-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5514214">PF 6282-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5459047">P1 5148-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/-5495533">PQ 5177-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5768536">PQ 43-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/-5838968">PQ 102-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5411129">PF 6221-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5841063">PF 60-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/4770761">PF 5969-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/4770761">PF 5129-son</a></li>
+
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/4914448">PF 4790-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/-5459107">PQ 6247-son</a></li>
+                                <li><a class="dropdown-item" href="https://lex.uz/docs/5100663">PQ 4891-son</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Muassasalar </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Matbuot xizmati</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">loyihalar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Interaktive xizmatlar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Vaksinatsiya.html">Vakansiya</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="covidLab.html">COVID-19 Lab</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+    <div class="container-fluid p-3 bg-light position-relative links">
+        <div class="container d-flex justify-content-around" style="position: relative; z-index: 23">
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Tashkilot haqida
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="umumiy.html">Umumiy ma'lumot</a></li>
+                    <li><a class="dropdown-item" href="Rahbariyat.html">Rahbariyat</a></li>
+                    <li><a class="dropdown-item" href="hodimlar.html">Xodimlar </a></li>
+                    <li><a class="dropdown-item" href="tashkiliyTuzilma.html">Tashkiliy tuzilma </a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                    Hujjatlar
+                </button>
+                <ul class="dropdown-menu  ">
+                    <li><a class="dropdown-item pr-3 " href="#" id="uzb1">O'zbekiston Respublikasi qonunlari <i
+                                class="fa fa-angle-right  "></i>
+                            <div class="ss d-none w-100  p-3 rounded" style="position: absolute; right:-100%; top:0">
+                                <a href="https://lex.uz/docs/2732584" class="nav-link text-light d-block text-start">Aholiing
+                                    sanitariya-epidimialogik osoyishtalik to'g'risidagi qonuni</a>
+
+                                <a href="#" class="nav-link text-light d-block  mt-3 text-start">Atmosfera
+                                    havosini muhofaza qilish to'g'risidagi qonun</a>
+
+                                <a href="https://lex.uz/docs/12328" class="nav-link text-light d-block  mt-3 text-start">Suv
+                                    to'g'risidagi qonun</a>
+
+                                    <a href="https://lex.uz/docs/5388842" class="nav-link text-light d-block  mt-3 text-start">Suv
+                                        O'RQ-685-son</a>
+
+                            </div>
+                        </a>
+
+
+                    </li>
+                    <li><a class="dropdown-item pr-3 " href="#" id="uzb1">Prezident farmon, qaror va farmoyishlari <i
+                                class="fa fa-angle-right"></i>
+                            <div class="ss d-none w-100  p-3 rounded" style="position: absolute; right:-100%; top:0">
+                               <a class="nav-link  text-light " href="https://lex.uz/docs/5851527">PQ 122-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/5090241">PQ 4887-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/5100677">PQ 6110-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/-5784917">PQ 35-son</a>
+                               <a class="nav-link text-light   mt-3 " href="https://lex.uz/docs/3523132">PQ 3493-son</a>
+                               <a class="nav-link text-light   mt-3 " href="https://lex.uz/docs/5514214">PF 6282-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/5459047">P1 5148-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/-5495533">PQ 5177-son</a>
+                               <a class="nav-link text-light   mt-3 " href="https://lex.uz/docs/5768536">PQ 43-son</a>
+                               <a class="nav-link text-light   mt-3 " href="https://lex.uz/docs/-5838968">PQ 102-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/5411129">PF 6221-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/5841063">PF 60-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/4770761">PF 5969-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/4770761">PF 5129-son</a>
+
+                               <a class="nav-link text-light   mt-3 " href="https://lex.uz/docs/4914448">PF 4790-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/-5459107">PQ 6247-son</a>
+                               <a class="nav-link text-light  mt-3  " href="https://lex.uz/docs/5100663">PQ 4891-son</a>
+
+
+                            </div>
+                        </a>
+
+
+                    </li>
+                    <li><a class="dropdown-item" href="http://www.sanepid.uz/document_types/9">Vazirlar Mahkamasining qaror va Farmoyishlari</a></li>
+                    <li><a class="dropdown-item" href="Hujjatlar.html">Tashkilot hujjatlari</a></li>
+
+
+
+                </ul>
+            </div>
+
+
+
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Matbuot xizmati
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">Yangiliklar </a></li>
+                    <li><a class="dropdown-item" href="#">Fotolavhalar</a></li>
+                    <li><a class="dropdown-item" href="#">Videolavhalar</a></li>
+                    <li><a class="dropdown-item" href="#">Matbuot xizmati bilan bog'lanish</a></li>
+                </ul>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Muassasalar
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="Hududiy.html">Hududiy bo'limlar </a></li>
+                    <li><a class="dropdown-item" href="HBRahbarlari.html">Hududiy bo'lim rahbarlari</a></li>
+                    
+                </ul>
+            </div>
+
+            <a href="" class="nav-link d-flex justify-content-center align-items-center">
+                Loyihalar</a>
+
+            <a href="" class="nav-link d-flex justify-content-center align-items-center">
+                Interaktive Xizmatlar</a>
+
+            <a href="Vaksinatsiya.html" class="nav-link d-flex justify-content-center align-items-center">
+                Vaksinatsiya</a>
+
+            <a href="covidLab.html" class="nav-link d-flex justify-content-center align-items-center">
+                COVID-19 Lab</a>
+        </div>
+    </div>
+
+    <!-- cards -->
+
+<div class="contianer-fluid p-2 bg-dark">
+
+
+    <div id="app">
+      
+  
+
+        <div class="row">
+            <div class="col-12 d-flex justify-content-around flex-wrap gap-3">
+                <div class="card" style="width: 20rem;" v-for="(item, index) in items" :key="index">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <p class="card-text">{{item.news}}</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+        
+            </div>
+        </div>
+
+
+      </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container-fluid p-0 g-0">
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                  
+                    <div class="footer-col">
+                        <h4>Address</h4>
+                        <ul>
+                            <li><a href="#">Manzil: Sirdaryo viloyati, Guliston shahar, 3-mavze, Ibn-Sino ko`chasi,
+                                    15-uy.</a></li>
+                            <li><a href="#">Mo`ljal: Viloyat ko`p tarmoqli markaziy maslahat poliklinikasi
+                                    ro`parasi.</a></li>
+                            <li><a href="#">Transport: 3-mavze.</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li> <a href="#"><i class="fa fa-phone"> +998 67 226-49-26
+                                    </i></a>
+                                <a href="#"><i class="fa fa-envelope"></i> info@sirepid.uz
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Biz ijtimoiy tarmoqlarda</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fa fa-envelope"></i></a>
+                            <a href="#"><i class="fa fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-telegram"></i></a>
+                            <a href="#"><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-12  bg-light my-4 p-2 rounded d-sm-none d-md-block">
+                        <img src="../images/Sticker.png" alt="sticker" class="img img-fluid w-25 m-auto ">
+                        </div>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            AOS.init();
+        </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+
+var app = new Vue({
+  el: '#app',
+  data: {
+  items:[],
+  },
+
+mounted() {
+  
+
+axios.get('https://jsonplaceholder.typicode.com/photos')
+.then(function (response) {
+// handle success
+response.data.forEach(res => {
+   console.log(this);
+});
+})
+.catch(function (error) {
+// handle error
+console.log(error);
+})
+.then(function () {
+// always executed
+});
+
+},
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
