@@ -89,8 +89,8 @@ body {
   background: var(--page-header-bgColor);
 }
 
-/*In case you prefer an absolutely positioned header that covers the full page height, add these styles*/
-/*body {
+/* In case you prefer an absolutely positioned header that covers the full page height, add these styles*/
+/* body {
   position: relative;
 }
 
@@ -101,7 +101,7 @@ body {
   height: 100%;
 }*/
 
-/*remove these styles*/
+/* remove these styles*/
 /*.page-header {
   position: fixed;
   top: 0;
@@ -109,7 +109,7 @@ body {
   right: 0;
   bottom: 0;
   overflow: auto;
-}*/
+} */
 
 .page-header nav {
   display: flex;
@@ -292,23 +292,18 @@ body {
   background: var(--red);
 }
 
-.page-content .grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
-}
-
-.page-content .grid > article {
-  display: flex;
-  height: 300px;
-  background: var(--page-content-blockColor);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-.page-content .grid > article:first-child,
-.page-content .grid > article:last-child {
-  grid-column: 1 / -1;
+.page-content .btn{
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #00b9eb;
+    color: white;
+    width: 20%;
+    margin-top: 20px;
 }
 
 
