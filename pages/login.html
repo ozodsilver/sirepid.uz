@@ -41,7 +41,7 @@
                         </div>
       
                         <div class="pt-1 mb-4">
-                          <button class="btn btn-dark btn-lg btn-block" type="button">Kirish</button>
+                          <button class="btn btn-dark btn-lg btn-block" type="button" onclick="unlock()">Kirish</button>
                         </div>
       
                      
@@ -55,5 +55,21 @@
           </div>
         </div>
       </section>
+
+
+      <script>
+        let pass = document.querySelector('#form2Example27');
+
+let login = document.querySelector('#form2Example17');
+
+
+function unlock(){
+    if(login.value == 'admin' && pass.value == 'admin'){
+        window.location.href = '../pages/adminPages/AdminPage.html';
+    }else{
+        alert('login yoki parol xato')
+    }
+}
+      </script>
 </body>
 </html>
