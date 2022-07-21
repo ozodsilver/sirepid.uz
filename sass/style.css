@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #navigation {
   transition-duration: 0.2s;
 }
@@ -360,3 +364,5 @@ li {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+
