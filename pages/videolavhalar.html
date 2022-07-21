@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahbariyat</title>
+    <title>Videolavhalar</title>
     <link rel="stylesheet" href="../sass/style.css" />
     <!-- bootstrap ui uchun link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" z rel="stylesheet"
@@ -25,7 +25,8 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-
+<!-- vuuejs -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <!-- shrift -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -134,11 +135,22 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Muassasalar </a>
+                            <a class="nav-link" href="">Muassasalar </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Matbuot xizmati</a>
-                        </li>
+                       
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Matbuot xizmati
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="../pages/yangiliklar.html">Yangiliklar </a></li>
+                    <li><a class="dropdown-item" href="../pages/fotolavhalar.html">Fotolavhalar</a></li>
+                    <li><a class="dropdown-item" href="../pages/videolavhalar.html">Videolavhalar</a></li>
+                    <li><a class="dropdown-item" href="../pages/matbuot.html">Matbuot xizmati bilan bog'lanish</a></li>
+                </ul>
+            </div>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">loyihalar</a>
                         </li>
@@ -146,7 +158,7 @@
                             <a class="nav-link" href="#">Interaktive xizmatlar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Vaksinatsiya.html">Vaksinatsiya</a>
+                            <a class="nav-link" href="Vaksinatsiya.html">Vakansiya</a>
                         </li>
 
                         <li class="nav-item">
@@ -252,8 +264,6 @@
                 </ul>
             </div>
 
-
-            
             <div class="dropdown">
                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -282,59 +292,43 @@
 
     <!-- cards -->
 
-    <div class="container-fluid bg-dark p-4">
-        <div class="container text-white" data-aos="zoom-in">
-            <h1 class="text-center text-white p-4" data-aos="fade-down">Rahbariyat</h1>
-            <div class="row">
-                <div class="col-12">
-                  <div id="app">
-                    <div class="card mb-3 w-100" v-for = '(item,index) in items' :key = 'index'>
-                        <div class="row g-0">
-                            <div class="col-md-4 ">
-                                <img :src="item.img" class="img-fluid rounded w-100" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-5 ">
-                                    <h3 class="card-title text-dark fw-bolder ">{{item.name}}
-                                    </h3>
-                                    <p class="card-text text-dark">{{item.title}}
-                                    </p>
-                                    <hr class="text-danger">
-
-                                    <div
-                                        class="w-100 d-flex justify-content-between flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
-                                        <div class="col-sm-3">
-                                            <h5 class="text-dark text-start">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start">{{item.telefon}}</a>
-                                        </div>
-
-                                        <div class="col-sm-3">
-                                            <h5 class="text-dark text-start">Email: </h5>
-                                            <a href="mailto:jurabek.khasanov@ssv.uz" class="nav-link text-dark text-start" >{{item.email}}z</a>
-                                        </div>
+<div class="contianer-fluid p-2 bg-dark">
 
 
+    <div id="app">
+      
+  
 
-                                        <div class="col-sm-3">
-                                            <h5 class="text-dark text-start">Qabul kunlari </h5>
-                                            <a href="" class="nav-link text-dark text-start">{{item.qabul}}</a>
-                                        </div>
- 
-                                        <div class="col-sm-3">
-                                            <h5 class="text-dark text-start">Vaqt: </h5>
-                                            <a href="" class="nav-link text-dark text-start" >{{item.vaqt}}</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-around flex-wrap gap-3">
+                <div class="card" style="width: 20rem;" v-for="(item, index) in items" :key="index">
+                    <img :src="item.url" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <p class="card-text">{{item.news}}</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
                   </div>
-                </div>
-
+        
             </div>
         </div>
-    </div>
+
+
+      </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <div class="container-fluid p-0 g-0">
@@ -388,66 +382,47 @@
         </script>
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script>
 
 var app = new Vue({
   el: '#app',
   data: {
-    items:[
-        {
-            title:"Hasanov Jo`rabek Hamroboyevich  Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi boshlig`i.",
-            name:'Hasanov Jo`rabek Hamroboyevich ',
-            email:'jurabek.khasanov@ssv.uz',
-            telefon:'(67) 226 49 26',
-           img:'../images/rahbarlar/1.png',
-           qabul:'Dushanba, Chorshanba',
-           vaqt:'10:00 dan 12:00 gacha'
-        },
+  items:[],
+  },
 
-        {
-            title:"Sultanov Jamshid Artiqbayevich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi boshlig`i o`ribosari.",
-            name:'Sultanov Jamshid Artiqbayevich ',
-            email:'jamshid.sultanov@ssv.uz',
-            telefon:'(67) 226 49 26',
-           img:'../images/rahbarlar/2.png',
-           qabul:'Seshanba,payshanba',
-           vaqt:'10:00 dan 17:00 gacha'
-        },
+async mounted() {
+  
 
+await axios.get('https://jsonplaceholder.typicode.com/photos')
+.then(function (response) {
+// handle success
+response.data.slice(1,15).forEach(res => {
+    console.log(res);
+app.$data.items.push(res)
+});
+})
+.catch(function (error) {
+// handle error
+console.log(error);
+})
+.then(function () {
+// always executed
+});
 
-
-        {
-            title:"Abduqodirov Xavast Abdukarimovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi boshlig`i o`ribosari.",
-            name:'Abduqodirov Xavast Abdukarimovich',
-            email:'xavas.abdukodirov@ssv.uz',
-            telefon:'(67) 226 49 26',
-           img:'../images/rahbarlar/3.png',
-           qabul:'juma',
-           vaqt:'10:00 dan 12:00 gacha'
-        },
-
-
-
-
-        {
-            title:"Suyunov Doniyor Toshpo`latovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Tashkiliy nazorat va axborot tahlil bo`lim boshlig`i.",
-            name:'Suyunov Doniyor Toshpo`latovich',
-            email:'doniyor.suyunov@ssv.uz',
-            telefon:' (67) 226 49 26',
-           img:'../images/rahbarlar/4.png',
-           qabul:'shanba',
-           vaqt:'10:00 dan 12:00 gacha'
-        },
-
-       
-    ]
-  }
+},
 })
 </script>
+
+
+
+
+
+
+
+
+
 
 </body>
 

@@ -31,6 +31,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
+
+
+    <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+
 </head>
 
 <body>
@@ -40,9 +48,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html"><img src="../images/Sticker.png" alt="" class="img img-fluid" /></a>
                 <div class="d-flex border-3 justify-content-between w-50 icons">
-                    <a href="" class="nav-link d-flex justify-content-center align-items-center text-primary">
-                        <i class="fa fa-phone fs-5 text-success"> </i> <span>+998 67 226 49
-                            26</span></a>
+                 
 
                     <a href="" class="nav-link d-flex justify-content-center align-items-center text-primary">
                         <i class="fa fa-telegram fs-5"> </i> &nbsp; <span>telegram</span></a>
@@ -137,15 +143,24 @@
                         <li class="nav-item">
                             <a class="nav-link" href="">Muassasalar </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Matbuot xizmati</a>
-                        </li>
+                       
+            <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    Matbuot xizmati
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="../pages/yangiliklar.html">Yangiliklar </a></li>
+                    <li><a class="dropdown-item" href="../pages/fotolavhalar.html">Fotolavhalar</a></li>
+                    <li><a class="dropdown-item" href="../pages/videolavhalar.html">Videolavhalar</a></li>
+                    <li><a class="dropdown-item" href="../pages/matbuot.html">Matbuot xizmati bilan bog'lanish</a></li>
+                </ul>
+            </div>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">loyihalar</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Interaktive xizmatlar</a>
-                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="Vaksinatsiya.html">Vakansiya</a>
                         </li>
@@ -268,8 +283,7 @@
             <a href="" class="nav-link d-flex justify-content-center align-items-center">
                 Loyihalar</a>
 
-            <a href="" class="nav-link d-flex justify-content-center align-items-center">
-                Interaktive Xizmatlar</a>
+          
 
             <a href="Vaksinatsiya.html" class="nav-link d-flex justify-content-center align-items-center">
                 Vaksinatsiya</a>
@@ -289,16 +303,26 @@
   
 
         <div class="row">
-            <div class="col-12 d-flex justify-content-around flex-wrap gap-3">
-                <div class="card" style="width: 20rem;" v-for="(item, index) in items" :key="index">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{item.title}}</h5>
-                      <p class="card-text">{{item.news}}</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="col-12 d-flex justify-content-around flex-wrap gap-3 p-5">
+                <div class="row gx-5 bg-light rounded p-3" v-for = '(item,index) in items' :key = 'index'>
+                    <div class="col-md-6 mb-4 ">
+                      <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                        <img :src="item.url" class="img-fluid w-100" />
+                        <a href="#!">
+                          <div class="mask" style="background-color: rgba(228, 220, 220, 0.15);"></div>
+                        </a>
+                      </div>
+                    </div>
+                  
+                    <div class="col-md-6 mb-4">
+                      <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">Sir-epid yangiliklari</span>
+                      <h4><strong>Facilis consequatur eligendi</strong></h4>
+                      <p class="text-muted">
+                        {{item.title}}
+                      </p>
+                      <button type="button" class="btn btn-primary">To'liq o'qish</button>
                     </div>
                   </div>
-        
             </div>
         </div>
 
@@ -381,14 +405,15 @@ var app = new Vue({
   items:[],
   },
 
-mounted() {
+async mounted() {
   
 
-axios.get('https://jsonplaceholder.typicode.com/photos')
+await axios.get('https://jsonplaceholder.typicode.com/photos')
 .then(function (response) {
 // handle success
-response.data.forEach(res => {
-   console.log(this);
+response.data.slice(1,15).forEach(res => {
+    console.log(res);
+app.$data.items.push(res)
 });
 })
 .catch(function (error) {
@@ -407,7 +432,10 @@ console.log(error);
 
 
 
-
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+></script>
 
 
 

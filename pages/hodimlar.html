@@ -133,8 +133,19 @@
                                 <li><a class="dropdown-item" href="https://lex.uz/docs/5100663">PQ 4891-son</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Muassasalar </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="./umumiy.html" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                               Muassasalar
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="../pages/umumiy.html">Umumiy ma'lumot</a></li>
+                                <li><a class="dropdown-item" href="../pages/Rahbariyat.html">Rahbariyat </a></li>
+                              
+                                
+
+
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Matbuot xizmati</a>
@@ -245,10 +256,10 @@
                     Matbuot xizmati
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="#">Yangiliklar </a></li>
-                    <li><a class="dropdown-item" href="#">Fotolavhalar</a></li>
-                    <li><a class="dropdown-item" href="#">Videolavhalar</a></li>
-                    <li><a class="dropdown-item" href="#">Matbuot xizmati bilan bog'lanish</a></li>
+                    <li><a class="dropdown-item" href="yangiliklar.html">Yangiliklar </a></li>
+                    <li><a class="dropdown-item" href="fotolavhalar.html">Fotolavhalar</a></li>
+                    <li><a class="dropdown-item" href="videolavhalar.html">Videolavhalar</a></li>
+                    <li><a class="dropdown-item" href="matbuot.html">Matbuot xizmati bilan bog'lanish</a></li>
                 </ul>
             </div>
 
@@ -278,6 +289,13 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
     <!-- cards -->
 
     <div class="container-fluid bg-dark p-4">
@@ -285,344 +303,56 @@
             <h1 class="text-center text-white p-4" data-aos="fade-down">Xodimlar</h1>
             <div class="row">
                 <div class="col-12">
-                    <div class="card mb-3 w-100">
-                        <div class="row g-0">
-                            <div class="col-md-4 ">
-                                <img src="../images//xodimlar/Baymanov.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-5 ">
-                                    <h3 class="card-title text-dark fw-bolder " data-aos="zoom-in">Baymanov Adhamjon Axmatqulovich
-                                    </h3>
-                                    <p class="card-text text-dark">Baymanov Adhamjon Axmatqulovich
 
-                                        Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Epidemiologiya bo'limi mudiri.
-                                    </p>
-                                    <hr class="text-danger">
-
-                                    <div
-                                        class="w-100 d-flex justify-content-between flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start">+998 67
-                                                226 49 26</a>
+                    <div id="app">
+                        <div class="card mb-3 w-100" v-for = '(item, index) in items' :key = 'index'>
+                      
+                            <div class="row g-0">
+                                <div class="col-md-4 ">
+                                    <img :src="item.img" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-5 ">
+                                        <h3 class="card-title text-dark fw-bolder " >{{item.name}}
+                                        </h3>
+                                        <p class="card-text text-dark">{{item.title}}
+                                        </p>
+                                        <hr class="text-danger">
+    
+                                        <div
+                                            class="w-100 d-flex justify-content-between flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
+                                            <div class="col-sm-6">
+                                                <h5 class="text-dark text-start">Telefon: </h5>
+                                                <a href="tel:+998672264926" class="nav-link text-dark text-start">{{item.telefon}}</a>
+                                            </div>
+    
+                                            <div class="col-sm-6">
+                                                <h5 class="text-dark text-start">Email: </h5>
+                                                <a href="mailto:adhamjon.baymanov@ssv.uz" class="nav-link text-dark text-start" >{{item.email}}</a>
+                                            </div>
+    
+    
+    
+                                        
                                         </div>
-
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start">Email: </h5>
-                                            <a href="mailto:adhamjon.baymanov@ssv.uz" class="nav-link text-dark text-start" >adhamjon.baymanov@ssv.uz</a>
-                                        </div>
-
-
-
-                                    
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                      </div>
+                    
                 </div>
-
-
-
-
-
-
-                <div class="col-12">
-                    <div class="card mb-3 w-100">
-                        <div class="row g-0">
-                            <div class="col-md-4 ">
-                                <img src="../images//xodimlar/Achilov.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-5 ">
-                                    <h3 class="card-title text-dark fw-bolder " data-aos="zoom-in">Achilov G'anisher Pardaboyevich
-                                    </h3>
-                                    <p class="card-text text-dark" data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom">Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Immunoprofilaktika bo'limi mudiri.
-
-                                       
-                                    </p>
-                                    <hr class="text-danger">
-
-                                    <div
-                                        class="w-100 d-flex justify-content-between flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">+998 67
-                                                226 49 26</a>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Email: </h5>
-                                            <a href="mailto:ganisher.achilov@ssv.uz" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">ganisher.achilov@ssv.uz</a>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-                <div class="col-12">
-                    <div class="card mb-3 w-100">
-                        <div class="row g-0">
-                            <div class="col-md-4 ">
-                                <img src="../images/xodimlar/O'ralov.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-5 ">
-                                    <h3 class="card-title text-dark fw-bolder " data-aos="zoom-in">Mavlon Uralov
-                                    </h3>
-                                    <p class="card-text text-dark" data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom">Mavlon Uralov
-
-                                        Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo
-                                        viloyati boshqarmasi Ma'muriy amaliyot bo'lim mudiri
-                                    </p>
-                                    <hr class="text-danger">
-
-                                    <div
-                                        class="w-100 d-flex justify-content-between flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">+998 67
-                                                226 49 26</a>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Email: </h5>
-                                            <a href="mailto:mavlon.uralov@ssv.uz" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">mavlon.uralov@ssv.uz</a>
-                                        </div>
-
-
-
-                                   
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                <div class="col-12">
-                    <div class="card mb-3 w-100">
-                        <div class="row g-0">
-                            <div class="col-md-4 ">
-                                <img src="../images/xodimlar/Muhammedova.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-5 ">
-                                    <h3 class="card-title text-dark fw-bolder " data-aos="zoom-in">Muxammedova Feruza
-                                    </h3>
-                                    <p class="card-text text-dark" data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom">Hasanov Jo`rabek Hamroboyevich
-
-                                        Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo
-                                        viloyati boshqarmasi Sanitariya-gigiyena labaratoriya mudirasi
-                                    </p>
-                                    <hr class="text-danger">
-
-                                    <div
-                                        class="w-100 d-flex justify-content-start flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">+998 67
-                                                226 49 26</a>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Email: </h5>
-                                            <a href="mailto:feruza.muxammedova@ssv.uz" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">feruza.muxammedova@ssv.uz</a>
-                                        </div>
-
-
-
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-                <div class="col-12">
-                    <div class="card mb-3 w-100">
-                        <div class="row g-0">
-                            <div class="col-md-4 ">
-                                <img src="../images/xodimlar/Shodmonov.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-5 ">
-                                    <h3 class="card-title text-dark fw-bolder " data-aos="zoom-in">Shodmonov Boxodir
-                                    </h3>
-                                    <p class="card-text text-dark" data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom">Shodmonov Boxodir
-
-                                        Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo
-                                        viloyati boshqarmasi O'ta xavfli yuqumli kasalliklar bo'limi mudiri
-                                    </p>
-                                    <hr class="text-danger">
-
-                                    <div
-                                        class="w-100 d-flex justify-content-start flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">+998 67
-                                                226 49 26</a>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Email: </h5>
-                                            <a href="mailto:feruza.muxammedova@ssv.uz" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">bokhodir.shodmonov@ssv.uz</a>
-                                        </div>
-
-
-
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <div class="col-12">
-                    <div class="card mb-3 w-100">
-                        <div class="row g-0">
-                            <div class="col-md-4 ">
-                                <img src="../images/xodimlar/Axmedov.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-5 ">
-                                    <h3 class="card-title text-dark fw-bolder " data-aos="zoom-in">Axmedov Mamadali
-                                    </h3>
-                                    <p class="card-text text-dark" data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom">Axmedov Mamadali
-
-                                        Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo
-                                        viloyati boshqarmasi DPM larni nazorat qilish bo'limi mudiri
-                                    </p>
-                                    <hr class="text-danger">
-
-                                    <div
-                                        class="w-100 d-flex justify-content-start flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">+998 67
-                                                226 49 26</a>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Email: </h5>
-                                            <a href="mailto:feruza.muxammedova@ssv.uz" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">mamadali.akhmedov@ssv.uz</a>
-                                        </div>
-
-
-
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-12">
-                    <div class="card mb-3 w-100">
-                        <div class="row g-0">
-                            <div class="col-md-4 ">
-                                <img src="../images/xodimlar/Ahmedova.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body p-5 ">
-                                    <h3 class="card-title text-dark fw-bolder " data-aos="zoom-in">Axmedova Dilfuza
-                                    </h3>
-                                    <p class="card-text text-dark" data-aos="fade-up"
-                                    data-aos-anchor-placement="center-bottom">Axmedov Mamadali
-
-                                        Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo
-                                        viloyati boshqarmasi Virusologiya labaratoriyasi mudiri
-                                    </p>
-                                    <hr class="text-danger">
-
-                                    <div
-                                        class="w-100 d-flex justify-content-start flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">+998 67
-                                                226 49 26</a>
-                                        </div>
-
-                                        <div class="col-sm-6">
-                                            <h5 class="text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">Email: </h5>
-                                            <a href="mailto:feruza.muxammedova@ssv.uz" class="nav-link text-dark text-start" data-aos="fade-up"
-                                            data-aos-anchor-placement="center-bottom">dilfuza.akhmedova@ssv.uz</a>
-                                        </div>
-
-
-
-                                      
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
 
 
             </div>
         </div>
     </div>
+
+
+
+
+
+
 
 
     <div class="container-fluid p-0 g-0">
@@ -674,6 +404,79 @@
         <script>
             AOS.init();
         </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
+<script>
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    items:[
+        {
+            title:"Baymanov Adhamjon Axmatqulovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Epidemiologiya bo'limi mudiri.",
+            name:'Baymanov Adhamjon Axmatqulovich',
+            email:'adhamjon.baymanov@ssv.uz',
+            telefon:'+998 67 226 49 26',
+           img:'../images/xodimlar/Baymanov.jpg'
+        },
+
+        {
+            title:"Achilov G'anisher Axmatqulovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Ma'muriy amaliyot bo'limi boshlig'i",
+            name:"Achilov G'anisher Axmatqulovich",
+            email:'ganisher.achilov@ssv.uz',
+            telefon:'+998 67 226 49 26',
+           img:'../images/xodimlar/Achilov.jpg'
+        },
+
+        {
+            title:"Mavlon Uralov  Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Epidemiologiya bo'limi mudiri.",
+            name:'Mavlon Uralov ',
+            email:'mavlon.uralov@ssv.uz',
+            telefon:'+998 67 226 49 26',
+           img:"../images/xodimlar/O'ralov.jpg"
+        },
+          {
+            title:"Muxammedova Feruza  Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Sanitariya-gigiyena labaratoriyasi mudiri.",
+            name:'Muxammedova Feruza ',
+            email:'feruza.muxammedova@ssv.uz',
+            telefon:'+998 67 226 49 26',
+           img:'../images/xodimlar/Muhammedova.jpg'
+        },
+
+        {
+            title:"Shodmonov Boxodir  Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi o'ta xavfli yuqumli kasalliklar bo'limi mudiri.",
+            name:'Shodmonov Boxodir ',
+            email:'bokhodir.shodmonov@ssv.uz',
+            telefon:'+998 67 226 49 26',
+           img:'../images/xodimlar/Shodmonov.jpg'
+        },
+
+
+        {
+            title:"Axmedov Mamadali  Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi DP larni nazorat qilish bo'limi mudiri.",
+            name:'Axmedov Mamadali ',
+            email:'mamadali.akhmedov@ssv.uz',
+            telefon:'+998 67 226 49 26',
+           img:'../images/xodimlar/Axmedov.jpg'
+        },
+
+
+
+
+        {
+            title:"Axmedova Dilfuza  Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Radiologiya labaratoriyasi mudiri.",
+            name:"Axmedova Dilfuza ",
+            email:'dilfuza.akhmedova@ssv.uz',
+            telefon:'-----------------',
+           img:'../images/xodimlar/Ahmedova.jpg'
+        }
+    ]
+  }
+})
+</script>
 
 </body>
 
