@@ -299,15 +299,11 @@
       
   
 
-        <div class="row">
-            <div class="col-12 d-flex justify-content-around flex-wrap gap-3">
-                <div class="card" style="width: 20rem;" v-for="(item, index) in items" :key="index">
-                    <img :src="item.url" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{item.title}}</h5>
-                      <p class="card-text">{{item.news}}</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+        <div class="row pt-4">
+            <div class="col-10 offset-0  d-flex justify-content-around flex-wrap gap-3">
+                <div class="card" style="width: 28rem;" v-for="(item, index) in 8" :key="index">
+                    <iframe  height="315" src="https://www.youtube.com/embed/G2jRMWWKY44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
                   </div>
         
             </div>
