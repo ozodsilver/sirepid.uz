@@ -292,19 +292,6 @@ body {
   background: var(--red);
 }
 
-.page-content .btn{
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    padding: 10px 20px;
-    border: none;
-    background-color: #00b9eb;
-    color: white;
-    width: 20%;
-    margin-top: 20px;
-}
 
 
 /* MQ RULES
@@ -547,6 +534,15 @@ body {
   .light-mode .search-and-user .admin-profile svg {
     fill: var(--black);
   }
+  
+
+  #adminPage{
+    display: none !important;
+  }
+
+  #adminNone{
+    display: block !important;
+  }
 }
 
 
@@ -563,3 +559,5 @@ body {
 .page-footer a {
   margin-left: 4px;
 }
+
+
