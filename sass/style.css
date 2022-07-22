@@ -365,4 +365,9 @@ li {
 
 /*# sourceMappingURL=style.css.map */
 
-
+@media (max-width:768px){
+  .carousel-item img{
+height: 25vh !important;   
+  }
+  
+}
