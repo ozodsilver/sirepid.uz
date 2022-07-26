@@ -1,143 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
-    <link rel="stylesheet" href="../../sass/admin.css">
+    <link rel="stylesheet" href="../../sass/admin.css" />
 
-<link href="https://cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
-  rel="stylesheet"
-/>
-    
-</head>
-<body id="adminPage">
-    
-      <header class="page-header">
-        <nav>
-          <a href="../../index.html" aria-label="forecastr logo" class="logo">
-           <img src="../../images/adminLogo.png" alt="" style="width: 50%; margin-left: 20%;">
-          </a>
-          <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
-            <svg width="20" height="20" aria-hidden="true">
-              <use xlink:href="#down"></use>
-            </svg>
-          </button>
-          <ul class="admin-menu">
-            <li class="menu-heading">
-              <h3>Admin</h3>
-            </li>
-            <li>
-              <a href="AdminPage.html">
-                <svg>
-                  <use xlink:href="#pages"></use>
-                </svg>
-                <span class="text-light">yangiliklar</span>
-              </a>
-            </li>
-            <li>
-              <a href="emlanganlar.html">
-                <svg>
-                  <use xlink:href="#users"></use>
-                </svg>
-                <span class="text-white">Emlanganlar</span>
-              </a>
-            </li>
-            <li>
-              <a href="fotolavhalar.html">
-                <svg>
-                  <use xlink:href="#trends"></use>
-                </svg>
-                <span class="text-white">Fotolavhalar</span>
-              </a>
-            </li>
-            <li>
-              <a href="videolavhalar.html">
-                <svg>
-                  <use xlink:href="#collection"></use>
-                </svg>
-                <span class="text-light">Videolavhalar</span>
-              </a>
-            </li>
-          
-           
-            <li>
-            
-          
-            </li>
-          </ul>
-        </nav>
-      </header>
- 
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.bubble.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="adminPage">
+    <header class="page-header">
+      <nav>
+        <a href="../../index.html" aria-label="forecastr logo" class="logo">
+          <img
+            src="../../images/adminLogo.png"
+            alt=""
+            style="width: 50%; margin-left: 20%"
+          />
+        </a>
+        <button
+          class="toggle-mob-menu"
+          aria-expanded="false"
+          aria-label="open menu"
+        >
+          <svg width="20" height="20" aria-hidden="true">
+            <use xlink:href="#down"></use>
+          </svg>
+        </button>
+        <ul class="admin-menu">
+          <li class="menu-heading">
+            <h3>Admin</h3>
+          </li>
+          <li>
+            <a href="AdminPage.html">
+              <svg>
+                <use xlink:href="#pages"></use>
+              </svg>
+              <span class="text-light">yangiliklar</span>
+            </a>
+          </li>
+          <li>
+            <a href="emlanganlar.html">
+              <svg>
+                <use xlink:href="#users"></use>
+              </svg>
+              <span class="text-white">Emlanganlar</span>
+            </a>
+          </li>
+          <li>
+            <a href="fotolavhalar.html">
+              <svg>
+                <use xlink:href="#trends"></use>
+              </svg>
+              <span class="text-white">Fotolavhalar</span>
+            </a>
+          </li>
+          <li>
+            <a href="videolavhalar.html">
+              <svg>
+                <use xlink:href="#collection"></use>
+              </svg>
+              <span class="text-light">Videolavhalar</span>
+            </a>
+          </li>
+
+          <li></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="app" class="page-content">
+      <h1 class="text-center p-4">Fotosurat qo'shish</h1>
+      <div class="container-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="form-outline">
+                <input
+                  type="text"
+                  id="formControlLg"
+                  class="form-control form-control-lg"
+                />
+                <label class="form-label" for="formControlLg"
+                  >Fotosurat sarlavhasi</label
+                >
+              </div>
+
+              <div class="form-outline">
+                <input
+                  type="file"
+                  id="formControlLg"
+                  class="form-control form-control-lg mt-3"
+                />
+              </div> 
+
+              <button type="button" class="btn btn-primary mt-3 float-end">
+                qo'shish
+              </button>
+            </div>
 
 
-      <div id="app" class="page-content">
-        <h1 class="text-center p-4">Fotosurat qo'shish</h1>
-        <div class="container-fluid">
-          <div class="container">
-            <div class="row">
-            
+            <div>
+              <div class="col-12 mt-3">
+                <h1>Fotosuratni o'chirish</h1>
+                <input
+                type="text"
+                id="formControlLg"
+                class="form-control form-control-lg mt-3"
+                placeholder="fotosurat id sini kiriting"
+              />
 
-              <div class="col-12 ">
-
-                <div class="form-outline">
-                    <input type="text" id="formControlLg" class="form-control form-control-lg" />
-                    <label class="form-label" for="formControlLg">fotosurat yuklash</label>
-                  </div>
-
-                  <div class="form-outline">
-                    <input type="file" id="formControlLg" class="form-control form-control-lg mt-3" />
-                    
-                  </div>
-
-                  <button type="button" class="btn btn-primary mt-3 float-end"> qo'shish</button>
-
-</div>
+              <button type="button" class="btn btn-primary mt-3 float-end">
+              o'chirish
+              </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
+    ></script>
 
+    <script src="../../scripts/admin.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.0"></script>
 
-  
-
-
-
-
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"
-></script>
-
-
-
-
-
-<script src="../../scripts/admin.js">
-
-</script>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue@2.7.0"></script>
-
-<script>
-  var app = new Vue({
-  el: '#app',
-  data: {
-   birinchi:''
-  }
-})
-</script>
-
-
-
-
-</body>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          birinchi: "",
+        },
+      });
+    </script>
+  </body>
 </html>
