@@ -1801,12 +1801,13 @@ a:hover .useful span {
 }
 
 .region svg path {
-   
+   transition-duration: 0.4s;
     cursor: pointer;
 }
 
 .region svg path:hover {
     fill: rgb(239, 243, 231) !important;
+   
 }
 
 .map-card {
@@ -1824,12 +1825,13 @@ a:hover .useful span {
 .map-card-title {
     border-bottom: 1px solid rgba(7, 106, 200, 0.3);
     padding-bottom: 5px;
+    transition-duration: 0.5s;
 }
 
 .map-card-title span {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgba(7, 106, 200, 1);
-
+   
     font-size: 12px;
 }
 
@@ -1865,7 +1867,7 @@ a:hover .useful span {
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
-    object-position: top;
+    object-position: right;
 }
 
 .region-lider-name {
