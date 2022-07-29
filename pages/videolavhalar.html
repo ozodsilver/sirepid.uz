@@ -296,36 +296,17 @@
 <h1 class="text-center text-light p-4">Videolavhalar</h1>
 
     <div id="app">
-      
-  
-
         <div class="row pt-4">
             <div class="col-10 offset-0  d-flex justify-content-around flex-wrap gap-3">
-                <div class="card" style="width: 28rem;" v-for="(item, index) in 8" :key="index">
-                    <iframe  height="315" src="https://www.youtube.com/embed/G2jRMWWKY44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    
-                  </div>
-        
+                <div class="card"  v-for="(item, index) in items" :key="index">
+                 <div v-html="item">
+                     {{item}}         
+                 </div>
+               </div>
             </div>
         </div>
-
-
       </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div class="container-fluid p-0 g-0">
         <footer class="footer">
@@ -391,12 +372,16 @@ var app = new Vue({
 async mounted() {
   
 
-await axios.get('https://jsonplaceholder.typicode.com/photos')
+await axios.get('https://sirses.herokuapp.com/api/Videos')
 .then(function (response) {
 // handle success
-response.data.slice(1,15).forEach(res => {
-    console.log(res);
-app.$data.items.push(res)
+console.log(response)
+response.data.forEach(res => {
+
+app.$data.items.push(res['link'])
+
+
+
 });
 })
 .catch(function (error) {
