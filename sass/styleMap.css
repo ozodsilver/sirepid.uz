@@ -774,7 +774,7 @@ input:focus {
     top: 0;
     z-index: -1;
     background-color: rgba(0, 89, 172, 0.92);
-    background-image: url(../img/line.png);
+
 }
 
 .full.active {
@@ -1765,8 +1765,6 @@ footer a {
     background-color: rgba(239, 244, 250, 1);
 }
 
-.twice {
-}
 
 .useful {
     display: flex;
