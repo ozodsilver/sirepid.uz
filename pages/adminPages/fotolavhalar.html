@@ -97,30 +97,38 @@
               <div class="form-outline">
                 <input
                   type="file"
-                  id="formControlLg"
+                  id="gg"
                   class="form-control form-control-lg mt-3"
-                />
-              </div> 
+                  v-model="file"
+                  ref="file"
 
-              <button type="button" class="btn btn-primary mt-3 float-end">
+                  v-on:change="handleFileUpload()"
+                />
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-primary mt-3 float-end"
+                v-on:click="fileAdd"
+              
+              >
                 qo'shish
               </button>
             </div>
-
 
             <div>
               <div class="col-12 mt-3">
                 <h1>Fotosuratni o'chirish</h1>
                 <input
-                type="text"
-                id="formControlLg"
-                class="form-control form-control-lg mt-3"
-                placeholder="fotosurat id sini kiriting"
-              />
+                  type="text"
+                  id="formControlLg"
+                  class="form-control form-control-lg mt-3"
+                  placeholder="fotosurat id sini kiriting"
+                />
 
-              <button type="button" class="btn btn-primary mt-3 float-end">
-              o'chirish
-              </button>
+                <button type="button" class="btn btn-primary mt-3 float-end">
+                  o'chirish
+                </button>
               </div>
             </div>
           </div>
@@ -136,14 +144,42 @@
     <script src="../../scripts/admin.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script>
       var app = new Vue({
         el: "#app",
         data: {
-          birinchi: "",
+          file: "",
+        },
+
+        methods: {
+          async fileAdd() {
+            let  input = document.getElementById('gg')
+            let formData = new FormData();
+            // formData.append("file", app.$refs.file.files[0]);
+            formData.append("file", input.files[0]);
+            await axios
+              .post(`https://sirses.herokuapp.com/api/Files`, formData, {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                  Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                },
+              })
+              .then((el) => {
+                console.log(el);
+              });
+          },
+
+
+          handleFileUpload(){
+        app.$data.file = app.$refs.file.files[0];
+        console.log(app.$refs.file.files[0])
+      },
         },
       });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>

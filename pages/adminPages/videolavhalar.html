@@ -15,6 +15,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
       rel="stylesheet"
     />
+
+
+
+
+    <style>
+     iframe{
+      width:180px !important;
+      height: 150px;
+      border-radius: 10px;
+     }
+    </style>
   </head>
 
   <body id="adminPage">
@@ -79,7 +90,8 @@
     </header>
 
     <div id="app" class="page-content">
-      <h1 class="text-center p-4">Video yuklash</h1>
+      <h1 class="text-center p-4">Video qo'shish</h1>
+
       <div class="container-fluid">
         <div class="container">
           <div class="row">
@@ -114,7 +126,11 @@
                   v-model="delLink"
                 />
 
-                <button type="button" class="btn btn-danger mt-3 float-end"  @click = 'dellLink'>
+                <button
+                  type="button"
+                  class="btn btn-danger mt-3 float-end"
+                  @click="dellLink"
+                >
                   o'chirish
                 </button>
               </div>
@@ -122,6 +138,39 @@
           </div>
         </div>
       </div>
+
+      <table class="table align-middle mb-0 mt-4 bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th class="fw-bold fs-3">Video</th>
+            <th>id</th>
+            <th>Status</th>
+
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in items" :key="item.id">
+            <td>
+              <div class="">
+                <div v-html="item.link" > {{ item.link }}</div>
+                <div class="ms-3">
+                 
+                </div>
+              </div>
+            </td>
+            <td>
+              {{item.id}}
+            </td>
+            <td>
+              <span class="badge badge-success rounded-pill d-inline"
+                >Active</span
+              >
+            </td>
+          
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <script
@@ -132,13 +181,15 @@
     <script src="../../scripts/admin.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.0"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
       var app = new Vue({
         el: "#app",
         data: {
           link: "",
           delLink: "",
+          items: [],
+          
         },
 
         methods: {
@@ -170,20 +221,40 @@
               });
           },
 
-
-
-        async dellLink(){
+          async dellLink() {
             await axios({
-    method: 'delete',
-    url: `https://sirses.herokuapp.com/api/Videos`,
-    headers:{'Authorization':`Bearer ${localStorage.getItem("jwt")}`,
-    'Content-Type': ' application/json'
-    }
-}).then(el => {
-  console.log(el);
+              method: "delete",
 
-});
-          }
+              url: `https://sirses.herokuapp.com/api/Videos?id=${app.$data.delLink}`,
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                "Content-Type": " application/json",
+              },
+            }).then((el) => {
+              if (el.status == "200") {
+                alert("Muvaffaqiyatli uchirildi");
+              }
+            });
+          },
+        },
+
+        async mounted() {
+          await axios
+            .get("https://sirses.herokuapp.com/api/Videos")
+            .then(function (response) {
+              // handle success
+              console.log(response);
+              response.data.forEach((res) => {
+                app.$data.items.push(res);
+              });
+            })
+            .catch(function (error) {
+              // handle error
+              console.log(error);
+            })
+            .then(function () {
+              // always executed
+            });
         },
       });
     </script>
