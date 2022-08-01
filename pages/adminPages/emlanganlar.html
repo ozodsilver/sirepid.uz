@@ -19,6 +19,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css"
       rel="stylesheet"
     />
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
   <body id="adminPage">
     <header class="page-header">
@@ -76,13 +81,23 @@
             </a>
           </li>
 
+          <li>
+            <a href="xodimlar.html">
+              <svg>
+                <use xlink:href="#collection"></use>
+              </svg>
+              <span class="text-light">Xodimlar</span>
+            </a>
+          </li>
+        
           <li></li>
         </ul>
       </nav>
     </header>
 
     <div id="app" class="page-content">
-      <h1 class="text-center p-4">Emlanganlar</h1>
+      <img src="../../images/Sticker.png" alt="">
+      <h1 class=" p-4 text-muted">Emlanganlar</h1>
       <div class="container-fluid">
         <div class="container">
           <div class="row">
@@ -123,8 +138,8 @@
                   />
                 </div>
 
-                <button type="submit" class="btn btn-primary mt-3 w-100 m-auto"  @click="addDoza">
-                  Postni joylash
+                <button type="submit" class="btn btn-primary mt-3 w-100 m-auto d-flex align-items-center gap-2 justify-content-center"  @click="addDoza">
+                <span class="fa fa-plus-square-o fa-2x"></span>  Postni joylash
                 </button>
               </form>
             </div>
@@ -155,11 +170,14 @@
 
 
        methods: {
+
        async addDoza(e){
         let btn = document.querySelector('.btn')
-e.preventDefault();
-btn.setAttribute('disabled', '')
-await axios.post('https://sirses.herokuapp.com/api/Vaccinations', {
+        e.preventDefault();
+
+        if(app.$data.birinchi !== '' && app.$data.ikkinchi !=='' &&  app.$data.uchinchi !=='' && app.$data.jami !=='' && app.$data.date !== ''){
+          btn.setAttribute('disabled', '')
+          await axios.post('https://sirses.herokuapp.com/api/Vaccinations', {
   vaccination1:app.$data.birinchi,
       vaccination2:app.$data.ikkinchi,
       vaccination3:app.$data.uchinchi,
@@ -187,6 +205,14 @@ await axios.post('https://sirses.herokuapp.com/api/Vaccinations', {
   app.$data.date = ''
  }
 })
+
+}else{
+  alert('bush maydon mavjud')
+}
+
+     
+
+
 
         }
        },

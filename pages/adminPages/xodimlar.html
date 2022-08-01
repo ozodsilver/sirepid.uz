@@ -80,7 +80,7 @@
               <span class="text-light">Xodimlar</span>
             </a>
           </li>
-
+        
           <li></li>
         </ul>
       </nav>
@@ -97,22 +97,9 @@
                   type="text"
                   id="formControlLg"
                   class="form-control form-control-lg"
-                  v-model="title"
                 />
                 <label class="form-label" for="formControlLg"
                   >Fotosurat sarlavhasi</label
-                >
-              </div>
-
-              <div class="form-outline mt-3">
-                <input
-                  type="text"
-                  id="formControlLg"
-                  class="form-control form-control-lg"
-                  v-model="about"
-                />
-                <label class="form-label" for="formControlLg"
-                  >Fotosurat haqida</label
                 >
               </div>
 
@@ -123,6 +110,7 @@
                   class="form-control form-control-lg mt-3"
                   v-model="file"
                   ref="file"
+
                   v-on:change="handleFileUpload()"
                 />
               </div>
@@ -131,7 +119,7 @@
                 type="button"
                 class="btn btn-primary mt-3 float-end"
                 v-on:click="fileAdd"
-                id="knopka"
+              
               >
                 qo'shish
               </button>
@@ -153,7 +141,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
     </div>
 
@@ -172,66 +160,31 @@
         el: "#app",
         data: {
           file: "",
-          title: "",
-          about: "",
         },
 
         methods: {
           async fileAdd() {
-            let knopka = document.querySelector('#knopka')
-            let input = document.getElementById("gg");
+            let  input = document.getElementById('gg')
             let formData = new FormData();
-knopka.setAttribute('disabled', '')
+            // formData.append("file", app.$refs.file.files[0]);
             formData.append("file", input.files[0]);
-            if (
-              app.$data.file !== "" &&
-              app.$data.title !== "" &&
-              app.$data.about !== ""
-            ) {
-              await axios
-                .post(`https://sirses.herokuapp.com/api/Files`, formData, {
-                  headers: {
-                    "Content-Type": "multipart/form-data",
-                    Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                  },
-                })
-                .then((el) => {
-                  let id = el.data;
-                  let url = `https://sirses.herokuapp.com/api/Files/${id}`;
-                  axios
-                    .post(
-                      `https://sirses.herokuapp.com/api/Photos`,
-                      {
-                        title: app.$data.title,
-                        description: app.$data.about,
-                        image: url,
-                      },
-                      {
-                        headers: {
-                          "Content-Type": "application/json",
-                          Authorization: `Bearer ${localStorage.getItem(
-                            "jwt"
-                          )}`,
-                        },
-                      }
-                    )
-                    .then((res) => {
-                      console.log(res);
-                   knopka.removeAttribute('disabled')
-                    });
-
-                   
-                });
-            } else {
-              alert("bo'sh maydon mavjud to'ldirishingiz majburiy");
-            }
-
+            await axios
+              .post(`https://sirses.herokuapp.com/api/Files`, formData, {
+                headers: {
+                  "Content-Type": "multipart/form-data",
+                  Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                },
+              })
+              .then((el) => {
+                console.log(el);
+              });
           },
 
-          handleFileUpload() {
-            app.$data.file = app.$refs.file.files[0];
-            console.log(app.$refs.file.files[0]);
-          },
+
+          handleFileUpload(){
+        app.$data.file = app.$refs.file.files[0];
+        console.log(app.$refs.file.files[0])
+      },
         },
       });
     </script>

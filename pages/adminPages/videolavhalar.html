@@ -17,6 +17,9 @@
     />
 
 
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 
     <style>
@@ -84,13 +87,23 @@
             </a>
           </li>
 
+          <li>
+            <a href="xodimlar.html">
+              <svg>
+                <use xlink:href="#collection"></use>
+              </svg>
+              <span class="text-light">Xodimlar</span>
+            </a>
+          </li>
+        
           <li></li>
         </ul>
       </nav>
     </header>
 
     <div id="app" class="page-content">
-      <h1 class="text-center p-4">Video qo'shish</h1>
+      <img src="../../images/Sticker.png" alt="logo" class="mb-5">
+      <h1 class=" p-4">  Video qo'shish</h1>
 
       <div class="container-fluid">
         <div class="container">
@@ -103,21 +116,22 @@
                   class="form-control form-control-lg"
                   v-model="link"
                 />
-                <label class="form-label" for="formControlLg">video</label>
+                <label class="form-label" for="formControlLg">iframeni  to'liqligicha kiriting</label>
               </div>
 
               <button
                 type="button"
-                class="btn btn-primary mt-3 float-end"
+                class="btn btn-primary mt-3 float-end d-flex justify-content-around align-items-center gap-2"
                 @click="addLink"
               >
+              <span class="fa fa-plus-circle fa-2x  text-light"></span>
                 qo'shish
               </button>
             </div>
 
             <div>
               <div class="col-12">
-                <h1 class="text-center">Videoni o'chirish</h1>
+                <h1 class="">Videoni o'chirish</h1>
                 <input
                   type="text"
                   id="formControlLg"
@@ -128,9 +142,10 @@
 
                 <button
                   type="button"
-                  class="btn btn-danger mt-3 float-end"
+                  class="btn btn-danger mt-3 float-end  d-flex justify-content-around align-items-center gap-2"
                   @click="dellLink"
                 >
+                <span class="fa fa-trash-o fa-2x  text-light"></span>
                   o'chirish
                 </button>
               </div>
@@ -143,8 +158,8 @@
         <thead class="bg-light">
           <tr>
             <th class="fw-bold fs-3">Video</th>
-            <th>id</th>
-            <th>Status</th>
+            <th  class="fw-bold fs-3">id</th>
+            <th  class="fw-bold fs-3">Status</th>
 
            
           </tr>
@@ -195,8 +210,8 @@
         methods: {
           addLink() {
             console.log(app.$data.link);
-
-            axios
+if(app.$data.link !== ''){
+  axios
               .post(
                 "https://sirses.herokuapp.com/api/Videos",
                 {
@@ -219,10 +234,15 @@
                   );
                 }
               });
+}else{
+  alert('Malumot togri kiritilganligini tekshiring')
+}
+           
           },
 
           async dellLink() {
-            await axios({
+            if(app.$data.delLink !== ''){
+              await axios({
               method: "delete",
 
               url: `https://sirses.herokuapp.com/api/Videos?id=${app.$data.delLink}`,
@@ -235,6 +255,10 @@
                 alert("Muvaffaqiyatli uchirildi");
               }
             });
+            }else{
+              alert('iltimos id ni kiriting')
+            }
+         
           },
         },
 

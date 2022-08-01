@@ -297,27 +297,15 @@
                       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
-                      <div class="carousel-item active" data-bs-interval="10000">
-                        <img src="../images/Hududiy/gulTum.jpg" class="d-block w-100 " alt="..." style="height:65vh ;">
+                      <div class="carousel-item active" data-bs-interval="10000" v-for = 'item in items' :key = 'item.id'>
+                        <img :src="item.image" class="d-block w-100 " alt="..." style="height:80vh ;">
                         <div class="carousel-caption d-none d-md-block">
-                          <h5 class="text-light">Guliston shahar bo'limi</h5>
-                          <p class="text-light">Sanitariya epidimiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasining Guliston shahar bo'limi</p>
+                          <h5 class="text-light">{{item.title}}</h5>
+                          <p class="text-light">{{item.description}}</p>
                         </div>
                       </div>
-                      <div class="carousel-item" data-bs-interval="2000">
-                        <img src="../images//Hududiy/Mirzaobod.jpg" class="d-block w-100  " alt="..." style="height:65vh;">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5  class="text-light">Mirzaobod</h5>
-                          <p class="text-light">Sanitariya epidimiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasining Mirzaobod tuman bo'limi.</p>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <img src="../images//Hududiy/Xovos.jpg" class="d-block w-100 " alt="..." style="height:65vh ;">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5 class="text-white">Xovos tumani</h5>
-                          <p class="text-center"></p>
-                        </div>
-                      </div>
+                 
+                   
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -413,10 +401,10 @@ var app = new Vue({
 async mounted() {
   
 
-await axios.get('https://jsonplaceholder.typicode.com/photos')
+await axios.get('https://sirses.herokuapp.com/api/Photos')
 .then(function (response) {
 // handle success
-response.data.slice(1,7).forEach(res => {
+response.data.forEach(res => {
     console.log(res);
 app.$data.items.push(res)
 });
@@ -437,7 +425,7 @@ console.log(error);
 
 
 
-
+\
 
 
 </body>
