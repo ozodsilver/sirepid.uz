@@ -305,12 +305,12 @@
         <div class="row">
             <div class="col-11 offset-0 d-flex justify-content-around flex-wrap p-5">
 
-                <div class="spinner-border text-primary" role="status" id="loader">
+                <div class="spinner-border text-primary d-block m-auto" role="status" id="loader">
                     <span class="visually-hidden">Loading...</span>
                   </div>
                 <div class="row gx-5  rounded p-3 gap-3" >
-                  <div v-for = 'item in items' :key = 'item.id' class="d-flex justify-content-around gap-3 bg-white p-3 align-items-start my-2">
-                    <div class="col-md-5 mb-4 ">
+                  <div v-for = 'item in items' :key = 'item.id' class="d-flex justify-content-around gap-3 bg-white p-3 align-items-start flex-wrap  flex-md-nowrap my-2">
+                    <div class="col-md-5 mb-4 col-12 ">
                         <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5 d-flex justify-content-center" data-mdb-ripple-color="light">
                           <img :src="item.image" class="img-fluid w-75" />
                           <a href="#!">
@@ -319,7 +319,7 @@
                         </div>
                       </div>
                     
-                      <div class="col-md-7 mb-4">
+                      <div class="col-md-7 mb-4 col-12">
                         <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">yangiliklar</span>
                         <h4><strong>{{item.title}}</strong></h4>
                         <p class="text-muted">
@@ -409,7 +409,7 @@ await axios.get('https://sirses.herokuapp.com/api/News')
 .then(function (response) {
 // handle success
 response.data.forEach(res => {
-    loader.style.display = 'none'
+    loader.style.cssText = 'display:none !important'
     console.log(res);
 app.$data.items.push(res)
 });
