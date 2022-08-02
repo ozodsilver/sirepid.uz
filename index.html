@@ -750,28 +750,74 @@
     <!-- fotolavhalar -->
     <div class="container-fluid pt-5 owl">
       <div class="container" style="border-top: 1px solid rgb(184, 173, 173)">
-        <h1 class="text-center pt-2">Fotolavhalar</h1>
+        <h1 class="text-center p-3">Fotolavhalar</h1>
 
         <div id="app">
           <div class="container-fluid">
             
 
-            <div class="wrapper">
-             
-                    <div class="carousel" id="images">
-                      <div><img src=""></div>
-                      <div><img src=""></div>
-                      <div><img src=""></div>
-                      <div><img src=""></div>
-                      <div><img src=""></div>
-                      <div><img src=""></div>
-                      <div><img src=""></div>
-                      <div><img src="./images/Hududiy/Xovos.jpg"></div>
-                   
-                    </div>
+<div class="row">
+    <div class="col-6 ">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
+            <div class="carousel-inner" id="images">
+              <div class="carousel-item active">
+                <img src="./images/Hududiy/SirdaryoVilBosh.jpg" class="d-block w-100 h-50 rounded shadow" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/Hududiy/gulTum.jpg" class="d-block w-100 h-50 rounded shadow" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/Hududiy/Sardoba.jpg" class="d-block w-100 h-50 rounded shadow" alt="...">
               </div>
 
-<a href="./pages/fotolavhalar.html"  class="btn btn-primary d-block w-25 m-auto">batafsil... </a>
+              <div class="carousel-item">
+                <img src="./images/Hududiy/Shirin.jpg" class="d-block w-100 h-50 rounded shadow" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+    </div>
+
+
+    <div class="col-6">
+        <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" id="picture">
+              <div class="carousel-item active">
+                <img src="..." class="d-block w-100 h-50 rounded shadow" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100 h-50 rounded shadow" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100 h-50 rounded shadow" alt="...">
+              </div>
+
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100 h-50 rounded shadow" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+</div>
+
+
+<a href="./pages/fotolavhalar.html"  class="btn btn-primary d-block w-25 m-auto mt-5">batafsil... </a>
           </div>
 
           <!-- Carousel wrapper -->
@@ -781,36 +827,50 @@
 
         <br /><br />
         <hr />
-        <h1 class="text-center">Videolavhalar</h1>
+        <h1 class="text-center p-3">Videolavhalar</h1>
 
 
         <div class="container-fluid">
             
+<div class="row gap-3  flex-wrap justify-content-around">
+    <div class="col-5 col-md-4 offset-0" id="images2">
+   
+        <div class="frame">
 
-            <div class="wrapper">
-             
-                    <div class="carousel" id="images2">
-                     <div class="frame">
+        </div>
 
-                     </div>
-                     <div class="frame">
+    </div>
 
-                    </div>
-                    <div class="frame">
+    <div class="col-5 offset-0 col-md-4" id="images2">
+   
+        <div class="frame">
 
-                    </div>
-                    <div class="frame">
+        </div>
 
-                    </div>
-                    <div class="frame">
+    </div>
 
-                    </div>
-                    <div class="frame">
+    
+    <div class="col-5 offset-0 col-md-4" id="images2">
+   
+        <div class="frame">
 
-                    </div>
-                    </div>
-              </div>
+        </div>
 
+    </div>
+
+  
+
+
+
+    <div class="col-5    offset-0 col-md-4" id="images2">
+   
+        <div class="frame">
+
+        </div>
+
+    </div>
+</div>
+          
 
           </div>
 
@@ -1484,7 +1544,7 @@
           });
 
           picture.forEach((item, index) => {
-            item.src = res.data[index + 1].image;
+            item.src = res.data[index + 2].image;
           });
         });
 
@@ -1503,16 +1563,6 @@
       </script>
 
 
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js">
-    
-
-
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js">
-
-</script>
 
 <script>
     $(document).ready(function(){
@@ -1551,6 +1601,8 @@ settings: "unslick" // destroys slick
 
 // Slick version 1.5.8
 </script>
+
+
 
 
     </div>

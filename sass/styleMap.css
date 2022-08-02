@@ -247,8 +247,6 @@ input:focus {
     -webkit-box-orient: vertical;
 }
 
-.page-list-item a {
-}
 
 .my-btn {
     display: inline-block;
@@ -704,11 +702,8 @@ input:focus {
     text-align: center;
 }
 
-.error-text {
-}
 
-.error-link {
-}
+
 
 .error-link a {
     margin-left: 5px;
@@ -788,8 +783,6 @@ input:focus {
     margin-top: 30px;
 }
 
-.full-title {
-}
 
 .full-title span {
     color: rgba(255, 255, 255, 1);
@@ -955,8 +948,6 @@ input:focus {
     letter-spacing: 0.27px;
 }
 
-.fotos {
-}
 
 .foto-title {
     margin-top: 30px;
