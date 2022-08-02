@@ -286,36 +286,38 @@
 <h1 class="text-center text-light p-4">Fotolavhalar</h1>
     <div id="app">
       
-  
+        <div class="spinner-border text-light d-block m-auto" role="status" id="loader">
+            <span class="visually-hidden">Loading...</span>
+          </div>
 
         <div class="row">
             <div class="col-10 offset-0">
-                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active" data-bs-interval="10000" v-for = 'item in items' :key = 'item.id'>
-                        <img :src="item.image" class="d-block w-100 " alt="..." style="height:80vh ;">
-                        <div class="carousel-caption d-none d-md-block">
-                          <h5 class="text-light">{{item.title}}</h5>
-                          <p class="text-light">{{item.description}}</p>
-                        </div>
-                      </div>
-                 
+                <div id="app">
+              <!-- Carousel wrapper -->
+              <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+    
+                    <div class="carousel-item active "  >
+                        <img src="../images/Hududiy/sirGul.jpg" class="d-block w-75 m-auto h-75 d-block " alt="..." style="height:75% !important">
                    
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
+                      </div>
+
+                  <div class="carousel-item " v-for = 'item in items'  :key = 'item.id' >
+                    <img :src="item.image" class="d-block w-50 h-50 m-auto" alt="...">
+               
                   </div>
+                
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
             </div>
         </div>
 
@@ -323,19 +325,6 @@
       </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div class="container-fluid p-0 g-0">
         <footer class="footer">
@@ -400,13 +389,14 @@ var app = new Vue({
 
 async mounted() {
   
-
+let loader = document.querySelector('#loader')
 await axios.get('https://sirses.herokuapp.com/api/Photos')
 .then(function (response) {
-// handle success
+
 response.data.forEach(res => {
     console.log(res);
 app.$data.items.push(res)
+loader.style.cssText = 'display:none !important'
 });
 })
 .catch(function (error) {
@@ -424,8 +414,11 @@ console.log(error);
 
 
 
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"
+></script>
 
-\
 
 
 </body>

@@ -191,7 +191,7 @@ $(function () {
 
     let visibilityIds = ['#counters_appeal'];
     let counterClass = '.counter';
-    let defaultSpeed = 3000;
+    let defaultSpeed = 10;
 
     $(window).on('scroll', function () {
         getVisibilityStatus();

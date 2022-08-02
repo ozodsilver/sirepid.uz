@@ -87,7 +87,7 @@
     </header>
 
     <div id="app" class="page-content">
-      <h1 class="text-center p-4">Fotosurat qo'shish</h1>
+      <h1 class="text-center p-4">Xodim ma'lumotlarini qo'shish</h1>
       <div class="container-fluid">
         <div class="container">
           <div class="row">
@@ -97,46 +97,248 @@
                   type="text"
                   id="formControlLg"
                   class="form-control form-control-lg"
+                  v-model="name"
                 />
                 <label class="form-label" for="formControlLg"
-                  >Fotosurat sarlavhasi</label
+                  >Xodimning ism va familiyasi  </label
                 >
               </div>
+
+              <div class="form-outline mt-3">
+                <input
+                  type="text"
+                  id="formControlLg"
+                
+                  class="form-control form-control-lg"
+                  v-model="stuffAbout"
+                />
+                <label class="form-label" for="formControlLg"
+                  >Xodim haqida  </label
+                >
+              </div>
+
+
+              <div class="form-outline mt-3">
+                <input
+                  type="text"
+                  id="formControlLg"
+                  v-model="tel"
+                  class="form-control form-control-lg"
+                />
+                <label class="form-label" for="formControlLg"
+                  >xodim telefoni </label
+                >
+              </div>
+
+              <div class="form-outline mt-3">
+                <input
+                  type="text"
+                  id="formControlLg"
+                  v-model="email"
+                  class="form-control form-control-lg"
+                />
+                <label class="form-label" for="formControlLg"
+                  >Xodim emaili </label
+                >
+              </div>
+
+              <div class="form-outline mt-3">
+                <input
+                  type="text"
+                  id="formControlLg"
+                  class="form-control form-control-lg"
+                  v-model="workingDay"
+                />
+                <label class="form-label" for="formControlLg"
+                  >ish kunlari  </label
+                >
+              </div>
+
+
+              <div class="form-outline mt-3">
+                <input
+                  type="text"
+                  id="formControlLg"
+                  class="form-control form-control-lg"
+                  v-model="workingTime"
+                />
+                <label class="form-label" for="formControlLg"
+                  >qabul vaqti </label
+                >
+              </div>
+
+
+<h2 class="pt-4 text-muted">Xodim fotosurati</h2>
+
 
               <div class="form-outline">
                 <input
                   type="file"
                   id="gg"
                   class="form-control form-control-lg mt-3"
-                  v-model="file"
+                 
                   ref="file"
-
-                  v-on:change="handleFileUpload()"
                 />
               </div>
 
               <button
                 type="button"
-                class="btn btn-primary mt-3 float-end"
-                v-on:click="fileAdd"
-              
+                class="btn btn-primary mt-3 float-end w-50"
+            v-on:click = 'addStuff'
+              id="knopka"
               >
-                qo'shish
+qo'shish
               </button>
             </div>
 
-            <div>
-              <div class="col-12 mt-3">
-                <h1>Fotosuratni o'chirish</h1>
-                <input
-                  type="text"
-                  id="formControlLg"
-                  class="form-control form-control-lg mt-3"
-                  placeholder="fotosurat id sini kiriting"
-                />
 
-                <button type="button" class="btn btn-primary mt-3 float-end">
-                  o'chirish
+
+            <table class="table align-middle mb-0 mt-5 bg-white">
+              <thead class="bg-light">
+                <tr>
+                  <th class="fw-bold fs-3 text-muted">Fotosurat</th>
+                  <th class="fw-bold fs-3 text-muted">Xodim haqida</th>
+                  <th class="fw-bold fs-3 text-muted">id</th>
+                  <th class="fw-bold fs-3 text-muted">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for = 'item in items ' :key="item.id">
+                  <td class="w-50">
+                    <img :src="item.image" alt="" class="img img-fluid w-25" />
+                  </td>
+      
+                  <td>
+                    <p class="fw-bold fs-4"> {{item.fullName}} <br>  <p class="w-100  overflow-hidden" style="height: 100px !important; width: 100px !important;"> {{item.description}}</p></p>
+                   
+                  </td>
+      
+                  <td>{{item.id}}</td>
+                  <td>
+                    <span class="badge badge-success rounded-pill d-inline"
+                      >Active</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+
+
+
+
+
+            <div>
+              <div class="col-12 my-5">
+                <h1 class="text-muted">Xodim ma'lumotlarini tahrirlash</h1>
+
+                <div class="form-outline">
+                  <input
+                    type="text"
+                    id="formControlLg"
+                    class="form-control form-control-lg"
+                    v-model="stuffId"
+                  />
+                  <label class="form-label" for="formControlLg"
+                    >Xodim  id raqamini kiriting</label
+                  >
+                </div>
+
+                <div class="form-outline mt-3">
+                  <input
+                    type="text"
+                    id="formControlLg"
+                    class="form-control form-control-lg"
+                    v-model="name2"
+                  />
+                  <label class="form-label" for="formControlLg"
+                    >Xodim ismi va familiyasini kiriting</label
+                  >
+                </div>
+
+                <div class="form-outline mt-3">
+                  <input
+                    type="text"
+                    id="formControlLg"
+                    class="form-control form-control-lg"
+                    v-model="stuffAbout2"
+                  />
+                  <label class="form-label" for="formControlLg"
+                    >xodim haqida  </label
+                  >
+                </div>
+
+
+                <div class="form-outline mt-3">
+                  <input
+                    type="text"
+                    id="formControlLg"
+                    class="form-control form-control-lg"
+                    v-model="tel2"
+                  />
+                  <label class="form-label" for="formControlLg"
+                    >Xodim tel raqami </label
+                  >
+                </div>
+
+
+                <div class="form-outline mt-3">
+                  <input
+                    type="text"
+                    id="formControlLg"
+                    class="form-control form-control-lg"
+                    v-model="email2"
+                  />
+                  <label class="form-label" for="formControlLg"
+                    >Xodim emaili  </label
+                  >
+                </div>
+
+
+
+                <div class="form-outline mt-3">
+                  <input
+                    type="text"
+                    id="formControlLg"
+                    class="form-control form-control-lg"
+                    v-model="workingDay2"
+                  />
+                  <label class="form-label" for="formControlLg"
+                    >ish kuni </label
+                  >
+                </div>
+
+
+                <div class="form-outline mt-3">
+                  <input
+                    type="text"
+                    id="formControlLg"
+                    class="form-control form-control-lg"
+                    v-model="workingTime2"
+                  />
+                  <label class="form-label" for="formControlLg"
+                    >ish vaqti </label
+                  >
+                </div>
+
+
+                <div class="form-outline mt-3">
+                  <input
+                    type="file"
+                    id="gg2"
+                    class="form-control form-control-lg mt-3"
+                   
+                  />
+                </div>
+  
+  
+  
+  
+  
+                <button type="button" class="btn btn-danger mt-3 float-end w-50" id="knopka2" v-on:click = 'renameStuff'>
+                  Tahrirlash
                 </button>
               </div>
             </div>
@@ -159,33 +361,174 @@
       var app = new Vue({
         el: "#app",
         data: {
-          file: "",
+          name:'',
+          stuffAbout:'',
+          tel:'',
+          email:'',
+          workingDay:'',
+          workingTime:'',
+          items:[],
+
+
+
+stuffId:'',
+          name2:'',
+          stuffAbout2:'',
+          tel2:'',
+          email2:'',
+          workingDay2:'',
+          workingTime2:'',
+
         },
 
+      
+      
         methods: {
-          async fileAdd() {
-            let  input = document.getElementById('gg')
+    
+          async addStuff(){
+            let knopka = document.querySelector('#knopka');
+            knopka.setAttribute('disabled', '')
+            let fileValue = document.querySelector('#gg');
+console.log(fileValue.files);
             let formData = new FormData();
-            // formData.append("file", app.$refs.file.files[0]);
-            formData.append("file", input.files[0]);
+           
+            formData.append("file", fileValue.files[0]);
+
+if(app.$data.name !== '' && app.$data.stuffAbout !== '' &&  app.$data.tel !== '' && app.$data.email !== '' &&  app.$data.workingDay !== '' &&   app.$data.workingTime !== '' && stuffId !== ''  ){
+
+
             await axios
-              .post(`https://sirses.herokuapp.com/api/Files`, formData, {
-                headers: {
-                  "Content-Type": "multipart/form-data",
-                  Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                },
-              })
-              .then((el) => {
-                console.log(el);
-              });
-          },
+                .post(`https://sirses.herokuapp.com/api/Files`, formData, {
+                  headers: {
+                    "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                  },
+                })
+                .then((el) => {
+                  let id = el.data;
+                  let url = `https://sirses.herokuapp.com/api/Files/${id}`;
+                  axios
+                    .post(
+                      `https://sirses.herokuapp.com/api/Stuff`,
+                      {
+                        fullName: app.$data.name,
+                        description: app.$data.stuffAbout,
+                        phone: app.$data.tel,
+                        email:app.$data.email,
+                        image:url,
+                        workingDays:app.$data.workingDay,
+                        workingTime:app.$data.workingTime,
+                      },
+                      {
+                        headers: {
+                          "Content-Type": "application/json",
+                          Authorization: `Bearer ${localStorage.getItem(
+                            "jwt"
+                          )}`,
+                        },
+                      }
+                    )
+                    .then((res) => {
+                      console.log(res.status);
+                      if(res.status == 200){
+alert("xodimlar malumotlari muvaffaqiyatli qo'shildi")
+app.$data.name = ''
+app.$data.stuffAbout = ''
+app.$data.tel = ''
+app.$data.email = ''
+app.$data.workingDay = ''
+app.$data.workingTime = ''
+fileValue.files[0] = ''
+knopka.removeAttribute('disabled')
+                      }
+                    
+                    });
+                });
 
-
-          handleFileUpload(){
-        app.$data.file = app.$refs.file.files[0];
-        console.log(app.$refs.file.files[0])
-      },
+          }else{
+            alert("bo'sh maydon mavjud")
+          }
         },
+
+
+      async  renameStuff(){
+          let knopka2 = document.querySelector('#knopka2');
+            knopka2.setAttribute('disabled', '')
+            let fileValue2 = document.querySelector('#gg2');
+console.log(fileValue2.files);
+            let formData2 = new FormData();
+           
+            formData2.append("file", fileValue2.files[0]);
+
+if(app.$data.name2 !== '' && app.$data.stuffAbout2 !== '' &&  app.$data.tel2 !== '' && app.$data.email2 !== '' &&  app.$data.workingDay2 !== '' &&   app.$data.workingTime2 !== '' && app.$data.stuffId !== ''){
+
+
+            await axios
+                .post(`https://sirses.herokuapp.com/api/Files`, formData2, {
+                  headers: {
+                    "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                  },
+                })
+                .then((el) => {
+                  let id2 = el.data;
+                  let url2 = `https://sirses.herokuapp.com/api/Files/${id2}`;
+                  axios
+                    .put(
+                      `https://sirses.herokuapp.com/api/Stuff`,
+                      {
+                        id:app.$data.stuffId,
+                        fullName: app.$data.name2,
+                        description: app.$data.stuffAbout2,
+                        phone: app.$data.tel2,
+                        email:app.$data.email2,
+                        image:url2,
+                        workingDays:app.$data.workingDay2,
+                        workingTime:app.$data.workingTime2,
+                      },
+                      {
+                        headers: {
+                          "Content-Type": "application/json",
+                          Authorization: `Bearer ${localStorage.getItem(
+                            "jwt"
+                          )}`,
+                        },
+                      }
+                    )
+                    .then((res) => {
+                      console.log(res.status);
+                      if(res.status == 200){
+alert("xodimlar malumotlari muvaffaqiyatli  tahrirlandi")
+app.$data.name2 = ''
+app.$data.stuffAbout2 = ''
+app.$data.tel2 = ''
+app.$data.email2 = ''
+app.$data.workingDay2 = ''
+app.$data.workingTime2 = ''
+fileValue2.files[0] = ''
+knopka2.removeAttribute('disabled')
+                      }
+                    
+                    });
+                });
+
+          }else{
+            alert("bo'sh maydon mavjud")
+          }
+        }
+
+
+        },
+
+
+        async mounted() {
+    await axios.get('https://sirses.herokuapp.com/api/Stuff').then(res => {
+        res.data.forEach(el => {
+            console.log(el);
+            app.$data.items.push(el)
+        })
+    })
+  },
       });
     </script>
 

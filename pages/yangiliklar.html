@@ -303,25 +303,31 @@
   
 
         <div class="row">
-            <div class="col-12 d-flex justify-content-around flex-wrap gap-3 p-5">
-                <div class="row gx-5 bg-light rounded p-3" v-for = '(item,index) in items' :key = 'index'>
-                    <div class="col-md-6 mb-4 ">
-                      <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                        <img :src="item.url" class="img-fluid w-100" />
-                        <a href="#!">
-                          <div class="mask" style="background-color: rgba(228, 220, 220, 0.15);"></div>
-                        </a>
+            <div class="col-11 offset-0 d-flex justify-content-around flex-wrap p-5">
+
+                <div class="spinner-border text-primary" role="status" id="loader">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                <div class="row gx-5  rounded p-3 gap-3" >
+                  <div v-for = 'item in items' :key = 'item.id' class="d-flex justify-content-around gap-3 bg-white p-3 align-items-start my-2">
+                    <div class="col-md-5 mb-4 ">
+                        <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5 d-flex justify-content-center" data-mdb-ripple-color="light">
+                          <img :src="item.image" class="img-fluid w-75" />
+                          <a href="#!">
+                            <div class="mask" style="background-color: rgba(228, 220, 220, 0.15);"></div>
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                  
-                    <div class="col-md-6 mb-4">
-                      <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">yangiliklar</span>
-                      <h4><strong>Facilis consequatur eligendi</strong></h4>
-                      <p class="text-muted">
-                        {{item.title}}
-                      </p>
                     
-                    </div>
+                      <div class="col-md-7 mb-4">
+                        <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">yangiliklar</span>
+                        <h4><strong>{{item.title}}</strong></h4>
+                        <p class="text-muted">
+                          {{item.description}}
+                        </p>
+                      
+                      </div>
+                  </div>
                   </div>
             </div>
         </div>
@@ -395,11 +401,15 @@ var app = new Vue({
 
 async mounted() {
   
+let loader = document.querySelector('#loader');
 
-await axios.get('https://jsonplaceholder.typicode.com/photos')
+
+
+await axios.get('https://sirses.herokuapp.com/api/News')
 .then(function (response) {
 // handle success
-response.data.slice(1,15).forEach(res => {
+response.data.forEach(res => {
+    loader.style.display = 'none'
     console.log(res);
 app.$data.items.push(res)
 });
@@ -426,7 +436,10 @@ console.log(error);
 ></script>
 
 
-
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"
+></script>
 
 </body>
 

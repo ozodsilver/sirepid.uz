@@ -291,13 +291,13 @@
                     <div class="card mb-3 w-100" v-for = '(item,index) in items' :key = 'index'>
                         <div class="row g-0">
                             <div class="col-md-4 ">
-                                <img :src="item.img" class="img-fluid rounded w-100" alt="...">
+                                <img :src="item.image" class="img-fluid rounded w-100" alt="...">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body p-5 ">
                                     <h3 class="card-title text-dark fw-bolder ">{{item.name}}
                                     </h3>
-                                    <p class="card-text text-dark">{{item.title}}
+                                    <p class="card-text text-dark">{{item.description}}
                                     </p>
                                     <hr class="text-danger">
 
@@ -305,7 +305,7 @@
                                         class="w-100 d-flex justify-content-between flex-sm-wrap flex-wrap flex-lg-nowrap gap-3 ">
                                         <div class="col-sm-3">
                                             <h5 class="text-dark text-start">Telefon: </h5>
-                                            <a href="tel:+998672264926" class="nav-link text-dark text-start">{{item.telefon}}</a>
+                                            <a href="" class="nav-link text-dark text-start">{{item.phone   }}</a>
                                         </div>
 
                                         <div class="col-sm-3">
@@ -317,12 +317,12 @@
 
                                         <div class="col-sm-3">
                                             <h5 class="text-dark text-start">Qabul kunlari </h5>
-                                            <a href="" class="nav-link text-dark text-start">{{item.qabul}}</a>
+                                            <a href="" class="nav-link text-dark text-start">{{item.workingDays}}</a>
                                         </div>
  
                                         <div class="col-sm-3">
                                             <h5 class="text-dark text-start">Vaqt: </h5>
-                                            <a href="" class="nav-link text-dark text-start" >{{item.vaqt}}</a>
+                                            <a href="" class="nav-link text-dark text-start" >{{item.workingTime}}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -390,7 +390,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <script>
 
@@ -398,156 +398,169 @@ var app = new Vue({
   el: '#app',
   data: {
     items:[
-        {
-            title:"Sherutayeva Gulnora Obidovna  Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Guliston shahar bo`limi boshlig`i.",
-            name:'Sherutayeva Gulnora Obidovna ',
-            email:'gulnora.sherutayeva@ssv.uz',
-            telefon:'(67)225 41 74',
-           img:'../images/hududiyRahbarlar/sherutayeva.png',
-           qabul:'Dushanba, Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
+        // {
+        //     title:"Sherutayeva Gulnora Obidovna  Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Guliston shahar bo`limi boshlig`i.",
+        //     name:'Sherutayeva Gulnora Obidovna ',
+        //     email:'gulnora.sherutayeva@ssv.uz',
+        //     telefon:'(67)225 41 74',
+        //    img:'../images/hududiyRahbarlar/sherutayeva.png',
+        //    qabul:'Dushanba, Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
 
-        {
-            title:"Donayev Botirqul Badalovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati yangiyer shahar bo'limi boshlig`i.",
-            name:'Donayev Botirqul Badalovich ',
-            email:'botirkul.donayev@ssv.uz',
-            telefon:'(67) 350 25 58',
-           img:'../images/hududiyRahbarlar/donayev.png',
-           qabul:' Dushanba,Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
-
-
-
-        {
-            title:"Isoqulov Rustam Norbutayevich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Xovos tuman bo`limi boshlig`.",
-            name:'Isoqulov Rustam Norbutayevich',
-            email:'Rustam.isakulov@ssv.uz',
-            telefon:'--------',
-           img:'../images/hududiyRahbarlar/isoqulov.png',
-           qabul:'Chorshanba, juma',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
+        // {
+        //     title:"Donayev Botirqul Badalovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati yangiyer shahar bo'limi boshlig`i.",
+        //     name:'Donayev Botirqul Badalovich ',
+        //     email:'botirkul.donayev@ssv.uz',
+        //     telefon:'(67) 350 25 58',
+        //    img:'../images/hududiyRahbarlar/donayev.png',
+        //    qabul:' Dushanba,Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
 
 
 
-
-        {
-            title:"Xudoyqulov aNazira Utanovna Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Guliston tuman  bo`limi boshlig`i.",
-            name:'Xudoyqulova Nazira Utanovna',
-            email:'nazira.xudoyqulova@ssv.uz',
-            telefon:' (67) 796 22 72',
-           img:'../images/hududiyRahbarlar/xudoyqulova.png',
-           qabul:'Dushanba, Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
-
-
-        {
-            title:"Kushboqov Ulug`bek Mamatqulovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Sirdaryo tuman bo`limi boshlig`i.",
-            name:'Kushboqov Ulug`bek Mamatqulovich',
-            email:' ulugbek.kushbakov@ssv.uz',
-            telefon:' --------',
-           img:'../images/hududiyRahbarlar/kushboqov.png',
-           qabul:' Dushanba,Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
+        // {
+        //     title:"Isoqulov Rustam Norbutayevich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Xovos tuman bo`limi boshlig`.",
+        //     name:'Isoqulov Rustam Norbutayevich',
+        //     email:'Rustam.isakulov@ssv.uz',
+        //     telefon:'--------',
+        //    img:'../images/hududiyRahbarlar/isoqulov.png',
+        //    qabul:'Chorshanba, juma',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
 
 
 
 
-        {
-            title:"Xatamov  Rabimkul Raxmatovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi TBoyovut tuman bo`limi boshlig`i.",
-            name:'Xatamov Rabimkul Raxmatovich',
-            email:'rabimkul.khatamov@ssv.uz',
-            telefon:' --------- ',
-           img:'../images/hududiyRahbarlar/xatamov.png',
-           qabul:'Dushanba, Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
+        // {
+        //     title:"Xudoyqulov aNazira Utanovna Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Guliston tuman  bo`limi boshlig`i.",
+        //     name:'Xudoyqulova Nazira Utanovna',
+        //     email:'nazira.xudoyqulova@ssv.uz',
+        //     telefon:' (67) 796 22 72',
+        //    img:'../images/hududiyRahbarlar/xudoyqulova.png',
+        //    qabul:'Dushanba, Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
+
+
+        // {
+        //     title:"Kushboqov Ulug`bek Mamatqulovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Sirdaryo tuman bo`limi boshlig`i.",
+        //     name:'Kushboqov Ulug`bek Mamatqulovich',
+        //     email:' ulugbek.kushbakov@ssv.uz',
+        //     telefon:' --------',
+        //    img:'../images/hududiyRahbarlar/kushboqov.png',
+        //    qabul:' Dushanba,Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
 
 
 
 
-
-        {
-            title:"Polvonov Sadulla Xazratovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Sardobatumanbo`limiboshlig`i.",
-            name:'Polvonov Sadulla Xazratovich',
-            email:' sadulla.polvonov@ssv.uz',
-            telefon:' (67) 344 14 69',
-           img:'../images/hududiyRahbarlar/polvonov.png',
-           qabul:'Dushanba,Chorshanba',
-           vaqt:' 15:00 dan 17:00 gacha'
-        },
+        // {
+        //     title:"Xatamov  Rabimkul Raxmatovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi TBoyovut tuman bo`limi boshlig`i.",
+        //     name:'Xatamov Rabimkul Raxmatovich',
+        //     email:'rabimkul.khatamov@ssv.uz',
+        //     telefon:' --------- ',
+        //    img:'../images/hududiyRahbarlar/xatamov.png',
+        //    qabul:'Dushanba, Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
 
 
 
 
 
-        {
-            title:"Xalbayev Abdugafur Tadjibayevich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Sayxunobod tuman bo`limi boshlig`i.",
-            name:'Xalbayev Abdugafur Tadjibayevich',
-            email:'Abdugafur.khalbayev@ssv.uz',
-            telefon:' --------- ',
-           img:'../images/hududiyRahbarlar/xalbayev.png',
-           qabul:' Dushanba,Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
-
-
-        {
-            title:"Abduraxmanov Pirimkul Djurayevich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Oqoltin tuman bo`limi boshlig`i.",
-            name:'Abduraxmanov Pirimkul Djurayevich',
-            email:'pirimkul.abdurakhmanov@ssv.uz',
-            telefon:' --------- ',
-           img:'../images/hududiyRahbarlar/abduraxmonov.png',
-           qabul:' Dushanba,Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
+        // {
+        //     title:"Polvonov Sadulla Xazratovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Sardobatumanbo`limiboshlig`i.",
+        //     name:'Polvonov Sadulla Xazratovich',
+        //     email:' sadulla.polvonov@ssv.uz',
+        //     telefon:' (67) 344 14 69',
+        //    img:'../images/hududiyRahbarlar/polvonov.png',
+        //    qabul:'Dushanba,Chorshanba',
+        //    vaqt:' 15:00 dan 17:00 gacha'
+        // },
 
 
 
 
 
-        {
-            title:"Xolmurodov Xamdam Allamurdovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Shirin shahar bo`limi boshlig`i.",
-            name:'Xolmurodov Xamdam Allamurdovich',
-            email:'khamdam.kholmurodov@ssv.uz',
-            telefon:' --------- ',
-           img:'../images/hududiyRahbarlar/xolmurodov.png',
-           qabul:' Dushanba,Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
+        // {
+        //     title:"Xalbayev Abdugafur Tadjibayevich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Sayxunobod tuman bo`limi boshlig`i.",
+        //     name:'Xalbayev Abdugafur Tadjibayevich',
+        //     email:'Abdugafur.khalbayev@ssv.uz',
+        //     telefon:' --------- ',
+        //    img:'../images/hududiyRahbarlar/xalbayev.png',
+        //    qabul:' Dushanba,Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
+
+
+        // {
+        //     title:"Abduraxmanov Pirimkul Djurayevich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Oqoltin tuman bo`limi boshlig`i.",
+        //     name:'Abduraxmanov Pirimkul Djurayevich',
+        //     email:'pirimkul.abdurakhmanov@ssv.uz',
+        //     telefon:' --------- ',
+        //    img:'../images/hududiyRahbarlar/abduraxmonov.png',
+        //    qabul:' Dushanba,Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
 
 
 
-        {
-            title:"Nadirov Ulug`bek Yusupovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Mirzaobod tuman bo`limi boshlig`i.",
-            name:'Nadirov Ulug`bek Yusupovich',
-            email:'ulugbek.nadirov@ssv.uz',
-            telefon:' --------- ',
-           img:'../images/hududiyRahbarlar/nodirov.png',
-           qabul:' Dushanba,Chorshanba',
-           vaqt:'15:00 dan 17:00 gacha'
-        },
 
-        {
-            title:"Suyunov Doniyor Toshpo`latovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Tashkiliy nazorat va axborot tahlil bo`limboshlig`i.",
-            name:'Suyunov Doniyor Toshpo`latovich',
-            email:'doniyor.suyunov@ssv.uz',
-            telefon:'(67) 226 49    26',
-           img:'../images/hududiyRahbarlar/suyunov.png',
-           qabul:'shanba',
-           vaqt:'10:00 dan 12:00 gacha'
-        },
+
+        // {
+        //     title:"Xolmurodov Xamdam Allamurdovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Shirin shahar bo`limi boshlig`i.",
+        //     name:'Xolmurodov Xamdam Allamurdovich',
+        //     email:'khamdam.kholmurodov@ssv.uz',
+        //     telefon:' --------- ',
+        //    img:'../images/hududiyRahbarlar/xolmurodov.png',
+        //    qabul:' Dushanba,Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
+
+
+
+        // {
+        //     title:"Nadirov Ulug`bek Yusupovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Mirzaobod tuman bo`limi boshlig`i.",
+        //     name:'Nadirov Ulug`bek Yusupovich',
+        //     email:'ulugbek.nadirov@ssv.uz',
+        //     telefon:' --------- ',
+        //    img:'../images/hududiyRahbarlar/nodirov.png',
+        //    qabul:' Dushanba,Chorshanba',
+        //    vaqt:'15:00 dan 17:00 gacha'
+        // },
+
+        // {
+        //     title:"Suyunov Doniyor Toshpo`latovich Sanitariya epidemiologik osoyishtalik va jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi Tashkiliy nazorat va axborot tahlil bo`limboshlig`i.",
+        //     name:'Suyunov Doniyor Toshpo`latovich',
+        //     email:'doniyor.suyunov@ssv.uz',
+        //     telefon:'(67) 226 49    26',
+        //    img:'../images/hududiyRahbarlar/suyunov.png',
+        //    qabul:'shanba',
+        //    vaqt:'10:00 dan 12:00 gacha'
+        // },
 
 
        
     ]
-  }
+  },
+
+
+
+  async mounted() {
+    await axios.get('https://sirses.herokuapp.com/api/Stuff').then(res => {
+        res.data.forEach(el => {
+            console.log(el);
+            app.$data.items.push(el)
+        })
+    })
+  },
 })
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </body>
 

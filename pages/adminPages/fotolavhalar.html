@@ -87,7 +87,8 @@
     </header>
 
     <div id="app" class="page-content">
-      <h1 class="text-center p-4">Fotosurat qo'shish</h1>
+      <img src="../../images/Sticker.png" alt="">
+      <h1 class="text-end p-4">Fotosurat qo'shish</h1>
       <div class="container-fluid">
         <div class="container">
           <div class="row">
@@ -144,17 +145,48 @@
                   type="text"
                   id="formControlLg"
                   class="form-control form-control-lg mt-3"
-                  placeholder="fotosurat id sini kiriting"
+                  placeholder="fotosuratni o'chirish uchun fotosurat id sini kiriting"
+                  v-model = 'delId'
                 />
 
-                <button type="button" class="btn btn-primary mt-3 float-end">
+                <button type="button" class="btn btn-danger mt-3 float-end"  v-on:click = 'deleteFile'   id="wait">
                   o'chirish
                 </button>
               </div>
             </div>
           </div>
-        </div>
+        </div>  
       </div>
+
+      <table class="table align-middle mb-0 mt-4 bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th class="fw-bold fs-3 text-muted">Fotosurat</th>
+            <th class="fw-bold fs-3 text-muted">Fotosurat haqida</th>
+            <th class="fw-bold fs-3 text-muted">id</th>
+            <th class="fw-bold fs-3 text-muted">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in items" :key="item.id">
+            <td class="w-50">
+              <img :src="item.image" alt="" class="img img-fluid w-25" />
+            </td>
+
+            <td>
+              <p class="fw-bold fs-4">{{item.title}} <br>  <p class="w-100  overflow-hidden" style="height: 100px;">{{item.description}}</p></p>
+             
+            </td>
+
+            <td>{{item.id}}</td>
+            <td>
+              <span class="badge badge-success rounded-pill d-inline"
+                >Active</span
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <script
@@ -174,14 +206,16 @@
           file: "",
           title: "",
           about: "",
+          items: [],
+          delId:''
         },
 
         methods: {
           async fileAdd() {
-            let knopka = document.querySelector('#knopka')
+            let knopka = document.querySelector("#knopka");
             let input = document.getElementById("gg");
             let formData = new FormData();
-knopka.setAttribute('disabled', '')
+            knopka.setAttribute("disabled", "");
             formData.append("file", input.files[0]);
             if (
               app.$data.file !== "" &&
@@ -216,22 +250,59 @@ knopka.setAttribute('disabled', '')
                       }
                     )
                     .then((res) => {
-                      console.log(res);
-                   knopka.removeAttribute('disabled')
+                      console.log(res.status);
+                      if(res.status == 200){
+alert("rasm muvaffaqiyatli qo'shildi")
+app.$data.title = ''
+app.$data.about = ''
+                      }
+                      knopka.removeAttribute("disabled");
                     });
-
-                   
                 });
             } else {
               alert("bo'sh maydon mavjud to'ldirishingiz majburiy");
             }
+          },
 
+          async deleteFile(){
+            let wait = document.querySelector('#wait');
+            wait.setAttribute('disabled', '')
+            if(app.$data.delId !== ''){
+              await axios({
+              method: "delete",
+              url: `https://sirses.herokuapp.com/api/Photos?id=${app.$data.delId}`,
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                "Content-Type": " application/json",
+              },
+            }).then(del => {
+              wait.removeAttribute('disabled')
+              if(del.status == 200){
+                alert('muvaffaqiyatli o"chirildi')
+                app.$data.delId = ''
+              }
+            })
+            }else{
+              alert("id kiritilmadi")
+            }
+         
           },
 
           handleFileUpload() {
             app.$data.file = app.$refs.file.files[0];
             console.log(app.$refs.file.files[0]);
           },
+        },
+
+        async mounted() {
+          await axios
+            .get("https://sirses.herokuapp.com/api/Photos")
+            .then((res) => {
+              res.data.forEach((el) => {
+                app.$data.items.push(el);
+                console.log(el);
+              });
+            });
         },
       });
     </script>
