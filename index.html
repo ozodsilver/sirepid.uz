@@ -45,6 +45,18 @@
   </head>
 
   <body>
+
+
+<!-- loader -->
+
+
+
+
+
+
+
+
+
     <a id="section1"></a>
     <div class="container-fluid bg-light p-1 border-bottom" id="navigation">
       <nav class="navbar bg-light">
@@ -746,6 +758,52 @@
       </div>
     </div>
     <!-- yangiliklar -->
+
+    <div id="app-2">
+
+
+    <div class="container-fluid news">
+      <div class="container position-relative pb-4" style="z-index:44">
+        <h1 class="text-center pt-5 text-white">Yangiliklar</h1>
+  
+        <div class="row mt-5">
+
+
+          <div class="col-12 longCard p-4 mt-4" v-for = 'image in yangiliklar' :key = 'image.id'>
+            <div class="row flex-column flex-sm-row">
+              <div class="col-12  col-sm-4 d-flex align-items-center justify-content-center">
+                <img :src="image.image" alt=""
+                  class="img img-fluid w-75 rounded img-thumbnail mt-2 ">
+              </div>
+  
+              <div class="col-sm-8 col-12 mt-2 mt-sm-0">
+                <h5 class="text-light">{{image.title}}</h5>
+                <p class="text-light">{{image.description}}</p>
+              </div>
+            </div>
+          </div>
+  
+
+        </div>
+  
+        <a href="./pages/yangiliklar.html" class="btn btn-danger d-block m-auto w-25 mt-5">
+          Batafsil
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- fotolavhalar -->
     <div class="container-fluid pt-5 owl">
@@ -1494,6 +1552,41 @@
 
       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
+
+
+      <script>
+
+        var app2 = new Vue({
+          el:'#app-2',
+          data:{
+        yangiliklar:[]
+          },
+        
+        
+        
+        async  mounted() {
+               await  axios.get('https://sirses.herokuapp.com/api/News')
+            .then(res => {
+           res.data.slice(0,6).forEach(el => {
+            app2.$data.yangiliklar.push(el)
+          
+           })
+            
+            }
+          ).catch(function (error) {
+            // handle error
+            console.log(error);
+            })
+            
+            
+              },
+        })
+        
+        </script>
+        
+
+
+
       <script>
         var app = new Vue({
           el: "#app",
@@ -1532,6 +1625,10 @@
           },
         });
       </script>
+
+
+
+
 
       <script>
         let images = document.querySelectorAll("#images img");

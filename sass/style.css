@@ -394,8 +394,8 @@ height: 25vh !important;
 }
 
 #images2 iframe{
-  width: 100%;
-  height: 200px;
+  width: 200px !important;
+  height: 187px !important;
   border-radius: 5px;
 }
 
@@ -476,3 +476,8 @@ height: 25vh !important;
   }
   
 }
+
+
+
+/* loader */
+

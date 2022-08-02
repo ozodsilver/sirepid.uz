@@ -102,3 +102,9 @@ $('.stop').on('click',function(){
     owl.trigger('stop.owl.autoplay')
 })
 
+
+
+
+document.body.addEventListener('load', ()=> {
+    alert('loaded')
+})
