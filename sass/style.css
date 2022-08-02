@@ -481,20 +481,3 @@ height: 25vh !important;
 
 /* loader */
 
-@media (max-width:1600px){
-  .turtinchi{
-    display: none !important;
-  }
-}
-
-
-
-
-
-
-
-@media (max-width:800px){
-  .turtinchi{
-    display: block !important ;
-  }
-}
