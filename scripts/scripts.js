@@ -58,10 +58,10 @@ setTimeout(() => {
 
   window.onload = ()=>{
     // $(selector).countMe(delay,speed)
-    $("#num1").countMe(40,3);
-    $("#num2").countMe(30,3);
-    $("#num3").countMe(40, 3);
-    $("#num4").countMe(30,3); 
+    $("#num1").countMe(10,1);
+    $("#num2").countMe(5,1);
+    $("#num3").countMe(5, 1);
+    $("#num4").countMe(5,1); 
  }
 
 
