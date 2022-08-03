@@ -56,15 +56,6 @@ setTimeout(() => {
 
 
 
-  window.onload = ()=>{
-    // $(selector).countMe(delay,speed)
-    $("#num1").countMe(10,1);
-    $("#num2").countMe(5,1);
-    $("#num3").countMe(5, 1);
-    $("#num4").countMe(5,1); 
- }
-
-
  var _gaq = _gaq || [];
  _gaq.push(['_setAccount', 'UA-36251023-1']);
  _gaq.push(['_setDomainName', 'jqueryscript.net']);
@@ -103,8 +94,98 @@ $('.stop').on('click',function(){
 })
 
 
+setTimeout(() => {
+    const counterUp = window.counterUp.default
+
+    const callback = entries => {
+        entries.forEach( entry => {
+            const el = entry.target
+            if ( entry.isIntersecting && ! el.classList.contains( 'is-visible' ) ) {
+                counterUp( el, {
+                    duration: 1000,
+                    delay: 16,
+                } )
+                el.classList.add( 'is-visible' )
+            }
+        } )
+    }
+    
+    const IO = new IntersectionObserver( callback, { threshold: 1 } )
+    
+    const el = document.querySelector( '.counter' )
+    IO.observe( el )
+     
+}, 1000);
+
+setTimeout(() => {
+    const counterUp = window.counterUp.default
+
+    const callback = entries => {
+        entries.forEach( entry => {
+            const el = entry.target
+            if ( entry.isIntersecting && ! el.classList.contains( 'is-visible' ) ) {
+                counterUp( el, {
+                    duration: 1000,
+                    delay: 16,
+                } )
+                el.classList.add( 'is-visible' )
+            }
+        } )
+    }
+    
+    const IO = new IntersectionObserver( callback, { threshold: 1 } )
+    
+    const el = document.querySelector( '.counter2' )
+    IO.observe( el )
+     
+}, 1000);
 
 
-document.body.addEventListener('load', ()=> {
-    alert('loaded')
-})
+setTimeout(() => {
+    const counterUp = window.counterUp.default
+
+    const callback = entries => {
+        entries.forEach( entry => {
+            const el = entry.target
+            if ( entry.isIntersecting && ! el.classList.contains( 'is-visible' ) ) {
+                counterUp( el, {
+                    duration: 1000,
+                    delay: 16,
+                } )
+                el.classList.add( 'is-visible' )
+            }
+        } )
+    }
+    
+    const IO = new IntersectionObserver( callback, { threshold: 1 } )
+    
+    const el = document.querySelector( '.counter3' )
+    IO.observe( el )
+     
+}, 2000);
+
+setTimeout(() => {
+    const counterUp = window.counterUp.default
+
+    const callback = entries => {
+        entries.forEach( entry => {
+            const el = entry.target
+            if ( entry.isIntersecting && ! el.classList.contains( 'is-visible' ) ) {
+                counterUp( el, {
+                    duration: 1000,
+                    delay: 16,
+                } )
+                el.classList.add( 'is-visible' )
+            }
+        } )
+    }
+    
+    const IO = new IntersectionObserver( callback, { threshold: 1 } )
+    
+    const el = document.querySelector( '.counter4' )
+    IO.observe( el )
+     
+}, 2000);
+
+
+

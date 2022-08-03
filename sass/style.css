@@ -478,6 +478,23 @@ height: 25vh !important;
 }
 
 
+.owl-nav{
+  display: none !important;
+}
 
+
+@media (max-width:600px){
+  .car img{
+    
+      width:40px !important;
+    
+   
+  }
+
+  .owl-carousel  h6{
+    font-size: 9px !important;
+  }
+}
 /* loader */
+
 

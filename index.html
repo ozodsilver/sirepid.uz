@@ -8,10 +8,9 @@
 
     <link href="./sass/style.css" rel="stylesheet" />
 
-    
     <meta property="og:locale" content="oz" />
     <meta property="og:url" content="http://sirdaryo.uz/oz" />
-   
+
     <link href="sass/styleMap.css" rel="stylesheet" />
     <!-- bootstrap ui uchun link -->
     <link
@@ -22,7 +21,6 @@
       crossorigin="anonymous"
     />
     <!-- bundles js ulandi -->
-   
 
     <!-- icon -->
     <link
@@ -39,23 +37,26 @@
     />
 
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css"
+    />
+
+    <!-- owl carousel -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
+
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
   </head>
 
   <body>
-
-
-<!-- loader -->
-
-
-
-
-
-
-
-
+    <!-- loader -->
 
     <a id="section1"></a>
     <div class="container-fluid bg-light p-1 border-bottom" id="navigation">
@@ -146,8 +147,8 @@
                   aria-labelledby="navbarDropdownMenuLink"
                 >
                   <li>
-                    <a class="dropdown-item" href="pages/umumiy.html"
-                      >Umumiy ma'lumot</a
+                    <a class="dropdown-item" href="pages/yangiliklar.html"
+                      >Yangiliklar</a
                     >
                   </li>
                   <li>
@@ -358,9 +359,9 @@
                   <li>
                     <a
                       class="dropdown-item"
-                      href="./pages/yangiliklar.html
+                      href="./pages/umumiy.html
                         "
-                      >Yangiliklar</a
+                      >Umumiy ma'lumot</a
                     >
                   </li>
                   <li>
@@ -384,7 +385,7 @@
                 <a class="nav-link" href="#">loyihalar</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Interaktive xizmatlar</a>
+                <a class="nav-link" href="./pages/interaktive.html">Interaktive xizmatlar</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="pages/Vaksinatsiya.html"
@@ -418,10 +419,11 @@
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
-              <a class="dropdown-item" href="pages/umumiy.html"
-                >Umumiy ma'lumot</a
-              >
+              <a class="dropdown-item" href="./pages/yangiliklar.html"
+                >Yangiliklar
+              </a>
             </li>
+
             <li>
               <a class="dropdown-item" href="pages/Rahbariyat.html"
                 >Rahbariyat</a
@@ -606,12 +608,11 @@
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
-              <a class="dropdown-item" href="./pages/yangiliklar.html"
-                >Yangiliklar
-              </a>
+              <a class="dropdown-item" href="pages/umumiy.html"
+                >Umumiy ma'lumot</a
+              >
             </li>
 
-           
             <li>
               <a class="dropdown-item" href="./pages/fotolavhalar.html"
                 >Fotolavhalar</a
@@ -662,7 +663,7 @@
 
         <a
           class="nav-link d-flex justify-content-center align-items-center"
-          href
+          href = './pages/interaktive.html'
         >
           Interaktive Xizmatlar</a
         >
@@ -720,7 +721,7 @@
       </div>
     </div>
     <!-- counter qism -->
-    <div class="container-fluid counter pb-5">
+    <div class="container-fluid  pb-5">
       <div class="mx-auto w-100 text-center p-5 p-sm-0">
         <h2 class="pt-5">SIRDARYO VILOYATI MIQYOSIDA JAMI EMLANGANLAR SONI</h2>
         <h4 class="date"></h4>
@@ -730,22 +731,22 @@
       <div class="container bg-light shadow-lg rounded position-relative">
         <div class="row text-center p-5">
           <div class="col-6 col-sm-3 p-3">
-            <h1 class="display-1 fw-bold text-muted birinchi" id="num1"></h1>
+            <h1 class="display-1 fw-bold text-muted birinchi counter" id="num1"></h1>
             <p class="text-muted">birinchi doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
-            <h1 class="display-1 fw-bold text-muted ikkinchi" id="num2"></h1>
+            <h1 class="display-1 fw-bold text-muted ikkinchi counter2" id="num2"></h1>
             <p class="text-muted">ikkinchi doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
-            <h1 class="display-1 fw-bold text-muted uchinchi" id="num3"></h1>
+            <h1 class="display-1 fw-bold text-muted uchinchi counter3" id="num3"></h1>
             <p class="text-muted">uchunchi va booster doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
-            <h1 class="display-1 fw-bold text-muted jami" id="num4"></h1>
+            <h1 class="display-1 fw-bold text-muted jami counter4" id="num4"></h1>
             <p class="text-muted">jami emlanganlar</p>
           </div>
         </div>
@@ -760,50 +761,44 @@
     <!-- yangiliklar -->
 
     <div id="app-2">
+      <div class="container-fluid news">
+        <div class="container position-relative pb-4" style="z-index: 44">
+          <h1 class="text-center pt-5 text-white">Yangiliklar</h1>
 
+          <div class="row mt-5">
+            <div
+              class="col-12 longCard p-4 mt-4"
+              v-for="image in yangiliklar"
+              :key="image.id"
+            >
+              <div class="row flex-column flex-sm-row">
+                <div
+                  class="col-12 col-sm-4 d-flex align-items-center justify-content-center"
+                >
+                  <img
+                    :src="image.image"
+                    alt=""
+                    class="img img-fluid w-75 rounded img-thumbnail mt-2"
+                  />
+                </div>
 
-    <div class="container-fluid news">
-      <div class="container position-relative pb-4" style="z-index:44">
-        <h1 class="text-center pt-5 text-white">Yangiliklar</h1>
-  
-        <div class="row mt-5">
-
-
-          <div class="col-12 longCard p-4 mt-4" v-for = 'image in yangiliklar' :key = 'image.id'>
-            <div class="row flex-column flex-sm-row">
-              <div class="col-12  col-sm-4 d-flex align-items-center justify-content-center">
-                <img :src="image.image" alt=""
-                  class="img img-fluid w-75 rounded img-thumbnail mt-2 ">
-              </div>
-  
-              <div class="col-sm-8 col-12 mt-2 mt-sm-0">
-                <h5 class="text-light">{{image.title}}</h5>
-                <p class="text-light">{{image.description}}</p>
+                <div class="col-sm-8 col-12 mt-2 mt-sm-0">
+                  <h5 class="text-light">{{image.title}}</h5>
+                  <p class="text-light">{{image.description}}</p>
+                </div>
               </div>
             </div>
           </div>
-  
 
+          <a
+            href="./pages/yangiliklar.html"
+            class="btn btn-danger d-block m-auto w-25 mt-5"
+          >
+            Batafsil
+          </a>
         </div>
-  
-        <a href="./pages/yangiliklar.html" class="btn btn-danger d-block m-auto w-25 mt-5">
-          Batafsil
-        </a>
       </div>
     </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- fotolavhalar -->
     <div class="container-fluid pt-5 owl">
@@ -812,70 +807,141 @@
 
         <div id="app">
           <div class="container-fluid">
-            
+            <div class="row">
+              <div class="col-6">
+                <div
+                  id="carouselExampleControls"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner" id="images">
+                    <div class="carousel-item active">
+                      <img
+                        src="./images/Hududiy/SirdaryoVilBosh.jpg"
+                        class="d-block w-100 h-50 rounded shadow"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="./images/Hududiy/gulTum.jpg"
+                        class="d-block w-100 h-50 rounded shadow"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="./images/Hududiy/Sardoba.jpg"
+                        class="d-block w-100 h-50 rounded shadow"
+                        alt="..."
+                      />
+                    </div>
 
-<div class="row">
-    <div class="col-6 ">
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
-            <div class="carousel-inner" id="images">
-              <div class="carousel-item active">
-                <img src="./images/Hududiy/SirdaryoVilBosh.jpg" class="d-block w-100 h-50 rounded shadow" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./images/Hududiy/gulTum.jpg" class="d-block w-100 h-50 rounded shadow" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./images/Hududiy/Sardoba.jpg" class="d-block w-100 h-50 rounded shadow" alt="...">
+                    <div class="carousel-item">
+                      <img
+                        src="./images/Hududiy/Shirin.jpg"
+                        class="d-block w-100 h-50 rounded shadow"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
               </div>
 
-              <div class="carousel-item">
-                <img src="./images/Hududiy/Shirin.jpg" class="d-block w-100 h-50 rounded shadow" alt="...">
+              <div class="col-6">
+                <div
+                  id="carouselExampleControls2"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner" id="picture">
+                    <div class="carousel-item active">
+                      <img
+                        src="..."
+                        class="d-block w-100 h-50 rounded shadow"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="..."
+                        class="d-block w-100 h-50 rounded shadow"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="..."
+                        class="d-block w-100 h-50 rounded shadow"
+                        alt="..."
+                      />
+                    </div>
+
+                    <div class="carousel-item">
+                      <img
+                        src="..."
+                        class="d-block w-100 h-50 rounded shadow"
+                        alt="..."
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleControls2"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleControls2"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
 
-    </div>
-
-
-    <div class="col-6">
-        <div id="carouselExampleControls2" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" id="picture">
-              <div class="carousel-item active">
-                <img src="..." class="d-block w-100 h-50 rounded shadow" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100 h-50 rounded shadow" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100 h-50 rounded shadow" alt="...">
-              </div>
-
-              <div class="carousel-item">
-                <img src="..." class="d-block w-100 h-50 rounded shadow" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls2" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-    </div>
-</div>
-
-
-<a href="./pages/fotolavhalar.html"  class="btn btn-primary d-block w-25 m-auto mt-5">batafsil... </a>
+            <a
+              href="./pages/fotolavhalar.html"
+              class="btn btn-primary d-block w-25 m-auto mt-5"
+              >batafsil...
+            </a>
           </div>
 
           <!-- Carousel wrapper -->
@@ -887,52 +953,28 @@
         <hr />
         <h1 class="text-center p-3">Videolavhalar</h1>
 
-
         <div class="container-fluid">
-            
-<div class="row gap-lg-0 gap-3  flex-wrap justify-content-around">
-    <div class="col-5 col-md-3 offset-0" id="images2">
-   
-        <div class="frame w-100">
+          <div class="row gap-lg-0 gap-3 flex-wrap justify-content-around">
+            <div class="col-5 col-md-3 offset-0" id="images2">
+              <div class="frame w-100"></div>
+            </div>
 
-        </div>
+            <div class="col-5 offset-0 col-md-3" id="images2">
+              <div class="frame w-100"></div>
+            </div>
 
-    </div>
+            <div class="col-5 offset-0 col-md-3" id="images2">
+              <div class="frame w-100"></div>
+            </div>
 
-    <div class="col-5 offset-0 col-md-3" id="images2">
-   
-        <div class="frame w-100">
-
-        </div>
-
-    </div>
-
-    
-    <div class="col-5 offset-0 col-md-3" id="images2">
-   
-        <div class="frame w-100">
-
-        </div>
-
-    </div>
-
-  
-
-
-
-    <div class="col-5    offset-0 col-md-3 d-md-none d-block turtinchi" id="images2" >
-   
-        <div class="frame w-100">
-
-        </div>
-
-    </div>
-</div>
-          
-
+            <div
+              class="col-5 offset-0 col-md-3 d-md-none d-block turtinchi"
+              id="images2"
+            >
+              <div class="frame w-100"></div>
+            </div>
           </div>
-
-
+        </div>
 
         <a
           class="btn btn-primary w-25 d-block m-auto mt-5"
@@ -956,6 +998,102 @@
               style="height: 500px"
             ></iframe>
           </div>
+        </div>
+      </div>
+
+      <div class="container-fluid my-5">
+
+        <h2 class="text-secondary p-3">Foydali havolalar</h2>
+        <div class="owl-carousel">
+       
+          <div class="car">
+            <a href="http://huquqiyportal.uz/" class="text-decoration-none">
+              <div
+                class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+                style="height: 120px"
+              >
+                <img
+                  src="https://ssv.uz/uploads/usefuls/c39c4d0a09eb6b1c9e344fd2e468b418.svg"
+                  alt=""
+              
+                  style="width: 35px !important;"
+                />
+                <div class="p-1">
+                  <h6>Milliy Huquqiy internet portali</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+
+          <div class="car">   <a href="https://lex.uz/" class="text-decoration-none">
+            <div
+              class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+              style="height: 120px"
+            >
+              <img
+                src="https://ssv.uz/assets/public/images/default_link.png"
+                alt=""
+                
+                style="width:40px;"
+              />
+              <div class="p-1">
+                <h6>O'zbekiston respublikasi qonun hujjatlari milliy bazasi</h6>
+              </div>
+            </div>
+          </a></div>
+
+
+
+
+          <div class="car"> <a href="http://www.my.gov.uz/" class="text-decoration-none">
+            <div
+              class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+              style="height: 120px"
+            >
+              <img
+                src="https://ssv.uz/uploads/usefuls/68e87cc6f4f142c3650a773440c0e485.png"
+                alt=""
+                
+                style="width: 40px;"
+              />
+              <div class="p-1">
+                <h6>Yagona interaktiv davlat xizmatlari portali</h6>
+              </div>
+            </div>
+          </a></div>
+          <div class="car"><a href="http://press-service.uz/" class="text-decoration-none">
+            <div
+              class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+              style="height: 120px"
+            >
+              <img
+                src="https://ssv.uz/assets/public/images/default_link.png"
+                alt=""
+                
+                style="width: 40px;"
+              />
+              <div class="p-1">
+                <h6>O'zbekiston Respublikasi prezidentining matbuot xizmati web sayti</h6>
+              </div>
+            </div>
+          </a></div>
+      <div class="car">
+          <a href="http://press-service.uz/" class="text-decoration-none">
+            <div
+              class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+              style="height: 120px"
+            >
+              <img
+              src="https://ssv.uz/uploads/usefuls/f1db0a56b00ed79574d1c06d947e106f.jpg"
+              alt=""  style="width: 50px; height: 30px;">
+              <div class="p-1">
+                <h6>O'zbekiston Respublikasi Hukumat portali</h6>
+              </div>
+            </div>
+          </a>
+        </div>
         </div>
       </div>
 
@@ -1082,8 +1220,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                     class="px-3"   >Sanitariya epidimiologik osoyishtalik va jamoat
+                      <span class="px-3"
+                        >Sanitariya epidimiologik osoyishtalik va jamoat
                         salomatligi xizmati Sirdaryo viloyati boshqarma
                         boshlig'i
                       </span>
@@ -1114,8 +1252,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title px-4">
-                      <span
-                     class="px-3"   > Sultanov Jamshid Artiqbayevich Sanitariya epidemiologik
+                      <span class="px-3">
+                        Sultanov Jamshid Artiqbayevich Sanitariya epidemiologik
                         osoyishtalik va jamoat salomatligi xizmati Sirdaryo
                         viloyati boshqarmasi boshlig`i o`ribosari.</span
                       >
@@ -1146,8 +1284,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                       class="px-3" >Abduqodirov Xavast Abdukarimovich Sanitariya
+                      <span class="px-3"
+                        >Abduqodirov Xavast Abdukarimovich Sanitariya
                         epidemiologik osoyishtalik va jamoat salomatligi xizmati
                         Sirdaryo viloyati boshqarmasi boshlig`i
                         o`ribosari.</span
@@ -1177,8 +1315,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                       class="px-3" >Suyunov Doniyor Toshpo`latovich Sanitariya
+                      <span class="px-3"
+                        >Suyunov Doniyor Toshpo`latovich Sanitariya
                         epidemiologik osoyishtalik va jamoat salomatligi xizmati
                         Sirdaryo viloyati boshqarmasi Tashkiliy nazorat va
                         axborot tahlil bo`lim boshlig`i.
@@ -1210,8 +1348,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                     class="px-3"   >Baymanov Adhamjon Axmatqulovich Sanitariya
+                      <span class="px-3"
+                        >Baymanov Adhamjon Axmatqulovich Sanitariya
                         epidemiologik osoyishtalik va jamoat salomatligi xizmati
                         Sirdaryo viloyati boshqarmasi Epidemiologiya bo'limi
                         mudiri.
@@ -1237,8 +1375,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                       class="px-3" >Achilov G'anisher Axmatqulovich Sanitariya
+                      <span class="px-3"
+                        >Achilov G'anisher Axmatqulovich Sanitariya
                         epidemiologik osoyishtalik va jamoat salomatligi xizmati
                         Sirdaryo viloyati boshqarmasi Ma'muriy amaliyot bo'limi
                         boshlig'i</span
@@ -1264,8 +1402,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                        class="px-2">Mavlon Uralov Sanitariya epidemiologik osoyishtalik va
+                      <span class="px-2"
+                        >Mavlon Uralov Sanitariya epidemiologik osoyishtalik va
                         jamoat salomatligi xizmati Sirdaryo viloyati boshqarmasi
                         Epidemiologiya bo'limi mudiri.</span
                       >
@@ -1290,8 +1428,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                        class="px-2">Isoqulov Rustam Norbutayevich Sanitariya epidemiologik
+                      <span class="px-2"
+                        >Isoqulov Rustam Norbutayevich Sanitariya epidemiologik
                         osoyishtalik va jamoat salomatligi xizmati Sirdaryo
                         viloyati boshqarmasi Xovos tuman bo`limi boshlig`.</span
                       >
@@ -1322,8 +1460,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                       class="px-2" >Donayev Botirqul Badalovich Sanitariya epidemiologik
+                      <span class="px-2"
+                        >Donayev Botirqul Badalovich Sanitariya epidemiologik
                         osoyishtalik va jamoat salomatligi xizmati Sirdaryo
                         viloyati yangiyer shahar bo'limi boshlig`i.
                       </span>
@@ -1354,8 +1492,8 @@
                     style="display: none"
                   >
                     <div class="map-card-title">
-                      <span
-                       class="px-3" >Xolmurodov Xamdam Allamurdovich Sanitariya
+                      <span class="px-3"
+                        >Xolmurodov Xamdam Allamurdovich Sanitariya
                         epidemiologik osoyishtalik va jamoat salomatligi xizmati
                         Sirdaryo viloyati boshqarmasi Shirin shahar bo`limi
                         boshlig`i.</span
@@ -1479,32 +1617,37 @@
         "
       ></a>
 
+
+      
+
       <!-- lordicon -->
       <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
 
       <!-- counter -->
       <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
 
-      <script src="countup/countMe.min.js"></script>
-
+     
       <script>
-        $(document).ready(function () {
-          $(".owl-carousel").owlCarousel({
-            loop: false,
-            margin: 10,
-            nav: true,
-            responsiveClass: true,
-            responsive: {
-              0: {
-                items: 1,
-              },
-              600: {
-                items: 1,
-              },
-              1000: {
-                items: 1,
-              },
-            },
+        $(function () {
+          // Owl Carousel
+          var owl = $(".owl-carousel");
+          owl.owlCarousel({
+            items: 3,
+            margin: 20,
+            loop: true,
+            dots: false,
+            nav: false,
+            responsive:{
+  300:{
+    items:2
+  },
+  768:{
+    items:2
+  },
+  1180:{
+    items:3
+  }
+}
           });
         });
       </script>
@@ -1552,40 +1695,28 @@
 
       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-
-
       <script>
-
         var app2 = new Vue({
-          el:'#app-2',
-          data:{
-        yangiliklar:[]
+          el: "#app-2",
+          data: {
+            yangiliklar: [],
           },
-        
-        
-        
-        async  mounted() {
-               await  axios.get('https://sirses.herokuapp.com/api/News')
-            .then(res => {
-           res.data.slice(0,6).forEach(el => {
-            app2.$data.yangiliklar.push(el)
-          
-           })
-            
-            }
-          ).catch(function (error) {
-            // handle error
-            console.log(error);
-            })
-            
-            
-              },
-        })
-        
-        </script>
-        
 
-
+          async mounted() {
+            await axios
+              .get("https://sirses.herokuapp.com/api/News")
+              .then((res) => {
+                res.data.slice(0, 6).forEach((el) => {
+                  app2.$data.yangiliklar.push(el);
+                });
+              })
+              .catch(function (error) {
+                // handle error
+                console.log(error);
+              });
+          },
+        });
+      </script>
 
       <script>
         var app = new Vue({
@@ -1605,7 +1736,7 @@
                   app.$data.items.push(res);
                 });
               })
-              .catch(function (error) { 
+              .catch(function (error) {
                 // handle error
                 console.log(error);
               })
@@ -1626,13 +1757,9 @@
         });
       </script>
 
-
-
-
-
       <script>
         let images = document.querySelectorAll("#images img");
-      
+
         let picture = document.querySelectorAll("#picture img");
 
         axios.get("https://sirses.herokuapp.com/api/Photos").then((res) => {
@@ -1645,63 +1772,61 @@
           });
         });
 
-
-        let images2 = document.querySelectorAll('#images2 .frame')
+        let images2 = document.querySelectorAll("#images2 .frame");
         console.log(images2);
 
         axios.get("https://sirses.herokuapp.com/api/Videos").then((res) => {
           images2.forEach((el, index) => {
-       el.innerHTML = res.data[index].link
+            el.innerHTML = res.data[index].link;
           });
 
-         console.log(res.data);
+          console.log(res.data);
+        });
+      </script>
+
+      <script>
+        $(document).ready(function () {
+          $(".carousel").slick({
+            slidesToShow: 4,
+            dots: true,
+            infinite: true,
+
+            respondTo: "window",
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 4,
+                  infinite: true,
+                },
+              },
+              {
+                breakpoint: 700,
+                settings: {
+                  slidesToShow: 2,
+                  infinite: true,
+                },
+              },
+              {
+                breakpoint: 300,
+                infinite: true,
+                settings: "unslick", // destroys slick
+              },
+            ],
+            //   centerMode: true,
+          });
         });
 
+        // Slick version 1.5.8
       </script>
 
 
 
-<script>
-    $(document).ready(function(){
-  $('.carousel').slick({
-  slidesToShow: 4,
-  dots:true,
-  infinite:true,
- 
-  respondTo:'window',
-  responsive: [{
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
 
-breakpoint: 1024,
-settings: {
-  slidesToShow: 4,
-  infinite: true
-}
-
-}, {
-
-breakpoint: 700,
-settings: {
-  slidesToShow: 2,
-  infinite: true
-}
-
-}, {
-
-breakpoint: 300,
-infinite: true,
-settings: "unslick" // destroys slick
-
-}]
-//   centerMode: true,
-  });
-});
-
-// Slick version 1.5.8
-</script>
-
-
-
-
+   
     </div>
   </body>
 </html>
