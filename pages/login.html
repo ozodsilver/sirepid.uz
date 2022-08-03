@@ -119,6 +119,7 @@ try{
   await axios.post(`https://sirses.herokuapp.com/api/Auth?login=${pass.value}&pass=${login.value}`).then(res =>{
       
       if(res.data){
+        localStorage.removeItem('jwt');
         localStorage.setItem('jwt', res.data)
         window.location.assign('./adminPages/AdminPage.html')
       }  
