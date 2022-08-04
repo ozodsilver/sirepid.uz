@@ -189,3 +189,21 @@ setTimeout(() => {
 
 
 
+document.body.classList.add('loaded')
+
+
+  $(document).ready(function() {
+ 
+    // Fakes the loading setting a timeout
+      setTimeout(function() {
+          $('body').addClass('no-loaded');
+      }, 2500);
+   
+  });
+
+
+  let preloader = document.getElementById('preloader')
+
+window.addEventListener('load', ()=>{
+    preloader.style.cssText = 'display:none !important'
+})

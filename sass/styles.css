@@ -1,21 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #navigation {
   transition-duration: 0.2s;
 }
-#navigation a, #navigation i {
+#navigation a,
+#navigation i {
   transition: 0.3s;
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
 }
-#navigation a:hover i, #navigation i:hover i {
+#navigation a:hover i,
+#navigation i:hover i {
   transform: scale(1.5) rotate(10deg);
   -webkit-transform: scale(1.5) rotate(10deg);
   -moz-transform: scale(1.5) rotate(10deg);
   -ms-transform: scale(1.5) rotate(10deg);
   -o-transform: scale(1.5) rotate(10deg);
 }
-#navigation a a, #navigation i a {
+#navigation a a,
+#navigation i a {
   font-family: "Varela Round", sans-serif;
 }
 #navigation img {
@@ -26,16 +36,27 @@
   -o-transition: 0.2s;
 }
 
+.ss {
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  background-color: rgba(175, 179, 199, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+ul li:hover .ss {
+  display: block !important;
+}
+
 .home {
   width: 100%;
-  height: 100vh;
   background-image: url("https://avatars.mds.yandex.net/get-ynews/2371987/295bde68c808b8f4c2df2cd30b7b4cde/orig");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative;
 }
-.home::before {
+.home:before {
   content: "";
   width: 100%;
   height: 100%;
@@ -46,7 +67,8 @@
   position: relative;
   z-index: 22;
 }
-.home h1, .home .knopka {
+.home h1,
+.home .knopka {
   transition: 0.7s;
   -webkit-transition: 0.7s;
   -moz-transition: 0.7s;
@@ -66,8 +88,275 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(143, 152, 156);
+  background: rgb(60, 151, 190);
   border-radius: 10px;
+}
+
+.counter {
+  background: url("/images/back.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.news {
+  background: url("https://catherineasquithgallery.com/uploads/posts/2021-03/1614795901_74-p-fon-dlya-meditsinskoi-prezentatsii-83.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.news .longCard {
+  backdrop-filter: blur(14px) saturate(200%);
+  -webkit-backdrop-filter: blur(14px) saturate(200%);
+  background-color: rgba(23, 27, 29, 0.63);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  box-shadow: 0 0 3px rgb(233, 224, 224);
+}
+
+.owl {
+  background: url("../images/back.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 0 !important;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  text-align: justify;
+}
+
+.footer {
+  background-color: rgb(33, 37, 41);
+  padding: 70px 0;
+}
+
+.footer-col {
+  width: 25% !important;
+  padding: 0 15px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+@media (max-width: 1122px) {
+  #navigation nav .icons {
+    display: none !important;
+  }
+  .links {
+    display: none !important;
+  }
+}
+@media (max-width: 992px) {
+  .footer .row {
+    padding: 10px;
+    flex-wrap: wrap !important;
+  }
+  .footer .row .footer-col {
+    width: 100% !important;
+  }
+}
+@media (min-width: 1220px) {
+  .card .card-body .col-sm-3 a {
+    font-size: 12px;
+  }
+}
+::selection {
+  background-color: red;
+  color: white;
+}
+
+.item-content {
+  height: 600px !important;
+  overflow: auto;
+}
+
+@media (max-width: 576px) {
+  .owl .owl-item img {
+    width: 100% !important;
+  }
+}
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.containert {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.containert::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 15px 20px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+  /* Full-width containers */
+  .containert {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  /* Make sure that all arrows are pointing leftwards */
+  .containert::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+    left: 15px;
+  }
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
