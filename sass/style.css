@@ -425,8 +425,8 @@ height: 25vh !important;
 /* carousel */
 
 #images img{
-  width: 400px !important;
-  height: 300px !important;
+  width: 250px !important;
+  height: 200px !important;
   display: block !important;
   margin: auto !important;
 }
@@ -437,8 +437,8 @@ height: 25vh !important;
 
 
 #picture img{
-  width: 400px !important;
-  height: 300px !important;
+  width: 250px !important;
+  height: 200px !important;
   display: block !important;
   margin: auto !important;
 }
@@ -450,8 +450,8 @@ height: 25vh !important;
 
 @media (max-width:1024px){
   #images img{
-    width: 200px !important;
-    height: 170px !important;
+    width: 180px !important;
+    height: 150px !important;
     display: block !important;
     margin: auto !important;
   }
@@ -466,7 +466,7 @@ height: 25vh !important;
 @media (max-width:1024px){
   #picture img{
     width: 200px !important;
-    height: 170px !important;
+    height: 150px !important;
     display: block !important;
     margin: auto !important;
   }
@@ -484,17 +484,34 @@ height: 25vh !important;
 
 
 @media (max-width:600px){
-  .car img{
+  .owl .owl-item img{
     
-      width:40px !important;
+      width:90px !important;
     
    
   }
 
   .owl-carousel  h6{
-    font-size: 9px !important;
+    font-size: 12px !important;
   }
 }
+
+
+
+
+@media (max-width:2000px){
+  .owl .owl-item img{
+    
+      width:90px !important;
+    
+   
+  }
+
+  .owl-carousel  h6{
+    font-size: 16px !important;
+  }
+}
+
 /* loader */
 
 
@@ -504,23 +521,23 @@ height: 25vh !important;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background:rgba(0,0,0,0.95);
-  z-index:555555;
+  width: 100vw;
+  height: 100vh;
+  z-index:444444444;
+  background: rgb(85,88,85);
+  background: linear-gradient(0deg, rgba(85,88,85,0.9640231092436975) 0%, rgba(1,6,13,0.9724264705882353) 100%);
 }
 #loader {
   display: block;
   position: relative;
-  top:50%;
-  left:50%;
-  transform:translateY(-50%);
-  width: 250px;
-  height: 250px;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
   margin: -75px 0 0 -75px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #9370DB;
+  border-top-color: #bdbdbd;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
@@ -533,7 +550,7 @@ height: 25vh !important;
   bottom: 5px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #1e9eb4;
+  border-top-color: #d6cfd8;
   -webkit-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
@@ -546,7 +563,7 @@ height: 25vh !important;
   bottom: 15px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #298ac2;
+  border-top-color: #f1d5f1;
   -webkit-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
 }
@@ -574,7 +591,6 @@ height: 25vh !important;
       transform: rotate(360deg);
   }
 }
-
 .loaded{
   overflow:hidden;
 }

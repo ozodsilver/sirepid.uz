@@ -197,7 +197,7 @@ document.body.classList.add('loaded')
     // Fakes the loading setting a timeout
       setTimeout(function() {
           $('body').addClass('no-loaded');
-      }, 2500);
+      }, 200);
    
   });
 

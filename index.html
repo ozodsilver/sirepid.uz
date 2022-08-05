@@ -53,7 +53,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     />
-
+<!-- aos -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js">	</script>
   </head>
@@ -735,7 +737,7 @@
       </div>
     </div>
     <!-- counter qism -->
-    <div class="container-fluid  pb-5">
+    <div class="container-fluid  pb-5" >
       <div class="mx-auto w-100 text-center p-5 p-sm-0">
         <h2 class="pt-5">SIRDARYO VILOYATI MIQYOSIDA JAMI EMLANGANLAR SONI</h2>
         <h4 class="date"></h4>
@@ -745,29 +747,30 @@
       <div class="container bg-light shadow-lg rounded position-relative">
         <div class="row text-center p-5">
           <div class="col-6 col-sm-3 p-3">
-            <h1 class="display-1 fw-bold text-muted birinchi counter" id="num1"></h1>
-            <p class="text-muted">birinchi doza</p>
+            <h1 class="display-1 fw-bold text-muted birinchi counter" id="num1" data-aos="fade-up"></h1>
+            <p class="text-muted" >birinchi doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
-            <h1 class="display-1 fw-bold text-muted ikkinchi counter2" id="num2"></h1>
-            <p class="text-muted">ikkinchi doza</p>
+            <h1 class="display-1 fw-bold text-muted ikkinchi counter2" id="num2" data-aos="fade-up"></h1>
+            <p class="text-muted" >ikkinchi doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
-            <h1 class="display-1 fw-bold text-muted uchinchi counter3" id="num3"></h1>
-            <p class="text-muted">uchunchi va booster doza</p>
+            <h1 class="display-1 fw-bold text-muted uchinchi counter3" id="num3" data-aos="fade-up"></h1>
+            <p class="text-muted" >uchunchi va booster doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
-            <h1 class="display-1 fw-bold text-muted jami counter4" id="num4"></h1>
-            <p class="text-muted">jami emlanganlar</p>
+            <h1 class="display-1 fw-bold text-muted jami counter4" id="num4" data-aos="fade-up"></h1>
+            <p class="text-muted" >jami emlanganlar</p>
           </div>
         </div>
         <a
           class="btn btn-danger d-block w-25 m-auto shadow-lg"
           href="pages/Vaksinatsiya.html"
           style="position: absolute; left: 37%; bottom: -7%"
+          data-aos="zoom-in"
           >Batafsil</a
         >
       </div>
@@ -777,7 +780,7 @@
     <div id="app-2">
       <div class="container-fluid news">
         <div class="container position-relative pb-4" style="z-index: 44">
-          <h1 class="text-center pt-5 text-white">Yangiliklar</h1>
+          <h1 class="text-center pt-5 text-white" data-aos="zoom-in">Yangiliklar</h1>
 
           <div class="row mt-5">
             <div
@@ -796,7 +799,7 @@
                   />
                 </div>
 
-                <div class="col-sm-8 col-12 mt-2 mt-sm-0">
+                <div class="col-sm-8 col-12 mt-2 mt-sm-0" >
                   <h5 class="text-light">{{image.title}}</h5>
                   <p class="text-light">{{image.description}}</p>
                 </div>
@@ -807,6 +810,7 @@
           <a
             href="./pages/yangiliklar.html"
             class="btn btn-danger d-block m-auto w-25 mt-5"
+            data-aos="zoom-in"
           >
             Batafsil
           </a>
@@ -817,12 +821,13 @@
     <!-- fotolavhalar -->
     <div class="container-fluid pt-5 owl">
       <div class="container" style="border-top: 1px solid rgb(184, 173, 173)">
-        <h1 class="text-center p-3">Fotolavhalar</h1>
+        <h1 class="text-center p-3" data-aos="zoom-in">Fotolavhalar</h1>
 
         <div id="app">
-          <div class="container-fluid">
+          <div class="container-fluid" >
             <div class="row">
-              <div class="col-6">
+              <div class=" col-sm-4 col-6" data-aos="fade-up"
+              data-aos-duration="3000">
                 <div
                   id="carouselExampleControls"
                   class="carousel slide"
@@ -832,21 +837,21 @@
                     <div class="carousel-item active">
                       <img
                         src="./images/Hududiy/SirdaryoVilBosh.jpg"
-                        class="d-block w-100 h-50 rounded shadow"
+                        class="d-block w-100 h-50 rounded img img-thumbnail "
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
                         src="./images/Hududiy/gulTum.jpg"
-                        class="d-block w-100 h-50 rounded shadow"
+                        class="d-block w-100 h-50 rounded img img-thumbnail  "
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
                         src="./images/Hududiy/Sardoba.jpg"
-                        class="d-block w-100 h-50 rounded shadow"
+                        class="d-block w-100 h-50 rounded img img-thumbnail "
                         alt="..."
                       />
                     </div>
@@ -854,7 +859,7 @@
                     <div class="carousel-item">
                       <img
                         src="./images/Hududiy/Shirin.jpg"
-                        class="d-block w-100 h-50 rounded shadow"
+                        class="d-block w-100 h-50 rounded img img-thumbnail  "
                         alt="..."
                       />
                     </div>
@@ -886,7 +891,8 @@
                 </div>
               </div>
 
-              <div class="col-6">
+              <div class="col-sm-4 col-6" data-aos="fade-up"
+              data-aos-duration="3000">
                 <div
                   id="carouselExampleControls2"
                   class="carousel slide"
@@ -965,7 +971,7 @@
 
         <br /><br />
         <hr />
-        <h1 class="text-center p-3">Videolavhalar</h1>
+        <h1 class="text-center p-3" data-aos="fade-down">Videolavhalar</h1>
 
         <div class="container-fluid">
           <div class="row gap-lg-0 gap-3 flex-wrap justify-content-around">
@@ -1030,7 +1036,7 @@
                   src="https://ssv.uz/uploads/usefuls/c39c4d0a09eb6b1c9e344fd2e468b418.svg"
                   alt=""
               
-                  style="width: 35px !important;"
+              
                 />
                 <div class="p-1">
                   <h6>Milliy Huquqiy internet portali</h6>
@@ -1049,8 +1055,7 @@
               <img
                 src="https://ssv.uz/assets/public/images/default_link.png"
                 alt=""
-                
-                style="width:40px;"
+   
               />
               <div class="p-1">
                 <h6>O'zbekiston respublikasi qonun hujjatlari milliy bazasi</h6>
@@ -1070,7 +1075,7 @@
                 src="https://ssv.uz/uploads/usefuls/68e87cc6f4f142c3650a773440c0e485.png"
                 alt=""
                 
-                style="width: 40px;"
+             
               />
               <div class="p-1">
                 <h6>Yagona interaktiv davlat xizmatlari portali</h6>
@@ -1086,7 +1091,7 @@
                 src="https://ssv.uz/assets/public/images/default_link.png"
                 alt=""
                 
-                style="width: 40px;"
+          
               />
               <div class="p-1">
                 <h6>O'zbekiston Respublikasi prezidentining matbuot xizmati web sayti</h6>
@@ -1101,7 +1106,7 @@
             >
               <img
               src="https://ssv.uz/uploads/usefuls/f1db0a56b00ed79574d1c06d947e106f.jpg"
-              alt=""  style="width: 50px; height: 30px;">
+              alt=""  >
               <div class="p-1">
                 <h6>O'zbekiston Respublikasi Hukumat portali</h6>
               </div>
@@ -1653,7 +1658,7 @@
             nav: false,
             responsive:{
   300:{
-    items:2
+    items:1
   },
   768:{
     items:2
@@ -1834,12 +1839,14 @@
         // Slick version 1.5.8
       </script>
 
-
+<script>
+  AOS.init();
+</script>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     
-
+   
    
     </div>
   </body>
