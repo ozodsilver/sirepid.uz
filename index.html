@@ -1652,8 +1652,12 @@
           var owl = $(".owl-carousel");
           owl.owlCarousel({
             items: 3,
-            margin: 20,
-            loop: true,
+            margin: 0,
+          loop:false,
+          touchDrag:true,
+          mouseDrag:true,
+          autoplay:false,
+          autoplayTimeout:10000,
             dots: false,
             nav: false,
             responsive:{

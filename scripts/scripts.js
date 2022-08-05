@@ -68,30 +68,6 @@ setTimeout(() => {
  })();
 
 
- var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:4,
-    loop:true,
-    margin:10,
-    center:true,
-    touchDrag:true,
-    margin:-50,
-    autoplay:true,
-       info:true,
-       rewind:true,
-       nav:true,
-      lazyLoad:true,
-      fluidSpeed:true,
-    dots:true,
-    autoplayTimeout:3000,
-    autoplayHoverPause:true
-});
-$('.play').on('click',function(){
-    owl.trigger('play.owl.autoplay',[1000])
-})
-$('.stop').on('click',function(){
-    owl.trigger('stop.owl.autoplay')
-})
 
 
 setTimeout(() => {
@@ -197,7 +173,7 @@ document.body.classList.add('loaded')
     // Fakes the loading setting a timeout
       setTimeout(function() {
           $('body').addClass('no-loaded');
-      }, 200);
+      }, 500);
    
   });
 
