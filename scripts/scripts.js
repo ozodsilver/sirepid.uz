@@ -22,7 +22,7 @@ if(x < 575 && y > 716){
 }
 
 if(x > 800 && y > 700){
-    h1.style.cssText = 'transform:translate(-3px, -1px)'
+    h1.style.cssText = 'transform:translate(-6px, -2px)'
     
 }
 

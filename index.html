@@ -704,21 +704,70 @@
 
     <!-- home boshlandi -->
 
+
+
+    
+
     <div
-      class="container-fluid home d-flex justify-content-center align-items-center position-relative"
+      class="container-fluid home  justify-content-center align-items-center position-relative"
       onmousemove="showCoords(event)"
     >
+        <div id="app-2">
+      <div class="container-fluid news">
+        <div class="container position-relative pb-4" style="z-index: 4">
+          <h1 class="text-center pt-5 text-white" data-aos="zoom-in">Yangiliklar</h1>
+
+          <div class="row mt-5">
+            <div
+              class="col-12 longCard p-4"
+              v-for="image in yangiliklar"
+              :key="image.id"
+            >
+              <div class="row flex-column flex-sm-row">
+                <div
+                  class="col-12 col-sm-4 d-flex align-items-center justify-content-center"
+                >
+                  <img
+                    :src="image.image"
+                    alt=""
+                    class="img img-fluid w-75 rounded img-thumbnail mt-2"
+                  />
+                </div>
+
+                <div class="col-sm-8 col-12 mt-2 mt-sm-0" >
+                  <h5 class="text-light">{{image.title}}</h5>
+                  <p class="text-light">{{image.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a
+            href="./pages/yangiliklar.html"
+            class="btn btn-danger d-block m-auto w-25 mt-5"
+            data-aos="zoom-in"
+          >
+            Batafsil
+          </a>
+
+       <br> <br>
+       <hr size="6" noshade>
+        </div>
+        
+      </div>
+    </div>
+    
       <div class="m-auto centerText">
-        <h4 class="text-center text-light" style="margin-top: 200px">
+        <h4 class="text-center text-light" style="margin-top: 60px">
           Xush kelibsiz!
         </h4>
-        <h1 class="display-1 text-light text-center h1 fw-bold letter-spacing-2" style="letter-spacing: 4px;">
-        Yangiliklar
+        <h1 class="display-1 text-light text-center h1 fw-bold " >
+        UMUMIY MA'LUMOT
         </h1>
 
         <a
           class="btn btn-danger text-light mt-4 d-block m-auto w-25 knopka"
-          href="pages/yangiliklar.html"
+          href="pages/umumiy.html"
         >
           Batafsil
         </a>
@@ -738,7 +787,7 @@
     </div>
     <!-- counter qism -->
     <div class="container-fluid  pb-5" >
-      <div class="mx-auto w-100 text-center p-5 p-sm-0">
+      <div class="mx-auto w-100 text-center p-5 p-sm-0 p-md-5">
         <h2 class="pt-5">SIRDARYO VILOYATI MIQYOSIDA JAMI EMLANGANLAR SONI</h2>
         <h4 class="date"></h4>
         holatiga ko'ra
@@ -777,46 +826,7 @@
     </div>
     <!-- yangiliklar -->
 
-    <div id="app-2">
-      <div class="container-fluid news">
-        <div class="container position-relative pb-4" style="z-index: 44">
-          <h1 class="text-center pt-5 text-white" data-aos="zoom-in">Yangiliklar</h1>
-
-          <div class="row mt-5">
-            <div
-              class="col-12 longCard p-4 mt-4"
-              v-for="image in yangiliklar"
-              :key="image.id"
-            >
-              <div class="row flex-column flex-sm-row">
-                <div
-                  class="col-12 col-sm-4 d-flex align-items-center justify-content-center"
-                >
-                  <img
-                    :src="image.image"
-                    alt=""
-                    class="img img-fluid w-75 rounded img-thumbnail mt-2"
-                  />
-                </div>
-
-                <div class="col-sm-8 col-12 mt-2 mt-sm-0" >
-                  <h5 class="text-light">{{image.title}}</h5>
-                  <p class="text-light">{{image.description}}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <a
-            href="./pages/yangiliklar.html"
-            class="btn btn-danger d-block m-auto w-25 mt-5"
-            data-aos="zoom-in"
-          >
-            Batafsil
-          </a>
-        </div>
-      </div>
-    </div>
+   
 
     <!-- fotolavhalar -->
     <div class="container-fluid pt-5 owl">
