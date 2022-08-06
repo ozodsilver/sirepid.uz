@@ -62,6 +62,7 @@ ul li:hover .ss {
   height: 100%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.6);
+  left: 0;
 }
 .home .centerText {
   position: relative;
