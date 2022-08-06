@@ -1,5 +1,5 @@
 let h1 = document.querySelector('.h1');
-let knopka = document.querySelector('.knopka')
+
 let navigation = document.querySelector('#navigation img')
 
 
@@ -8,23 +8,22 @@ function showCoords(event) {
     let y = event.screenY;
    
 if(x > 730 && y < 590){
-    h1.style.cssText = 'transform:translate(-7px, 3px)'
-    knopka.style.cssText = 'transform:translate(-5px, 2px)'
+    h1.style.cssText = 'transform:translate(-4px, 1px)'
+    
 }
 
 if(x < 570 && y < 590){
-    h1.style.cssText = 'transform:translate(10px, 4px)'
-    knopka.style.cssText = 'transform:translate(7px, 2px)'
-}
+    h1.style.cssText = 'transform:translate(4px, 1px)'
+    }
 
 if(x < 575 && y > 716){
-    h1.style.cssText = 'transform:translate(10px, -10px)'
-    knopka.style.cssText = 'transform:translate(10px, -4px)'
+    h1.style.cssText = 'transform:translate(4px, -4px)'
+    
 }
 
 if(x > 800 && y > 700){
-    h1.style.cssText = 'transform:translate(-6px, -2px)'
-    knopka.style.cssText = 'transform:translate(7px, -7px)'
+    h1.style.cssText = 'transform:translate(-3px, -1px)'
+    
 }
 
   }
