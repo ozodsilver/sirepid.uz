@@ -51,13 +51,14 @@ ul li:hover .ss {
   display: block !important;
 }
 
-.home {
+.home{
   width: 100%;
   background-image: url("https://avatars.mds.yandex.net/get-ynews/2371987/295bde68c808b8f4c2df2cd30b7b4cde/orig");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   position: relative;
+  left: 0 !important ;
 }
 .home:before {
   content: "";
@@ -65,7 +66,7 @@ ul li:hover .ss {
   height: 100%;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.6);
-  left: 0;
+  left: 0 !important;
 }
 .home .centerText {
   position: relative;
