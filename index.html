@@ -9,7 +9,7 @@
 <!-- 
     favicon -->
     <link rel="icon" type="image/png" href="./images/favicon.png">
-    <link href="./sass/style.css" rel="stylesheet" />
+   
 
     <meta property="og:locale" content="oz" />
     <meta property="og:url" content="http://sirdaryo.uz/oz" />
@@ -53,6 +53,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
     />
+
+    <link rel="stylesheet" href="./sass/style.css">
+
 <!-- aos -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -698,7 +701,7 @@
           COVID-19 Lab</a
         >
 
-        <a href="./pages/login.html" class="text-decoration-none"> &nbsp;</a>
+        <a href="./pages/login.html" class="text-decoration-none" target="_blank"> &nbsp;</a>
       </div>
     </div>
 
@@ -717,12 +720,20 @@
         <div class="container position-relative pb-4" style="z-index: 4">
           <h1 class="text-center pt-5 text-white">Yangiliklar</h1>
 
+
+          <div class="spinner-border text-light d-block text-center m-auto" role="status" ref="load" >
+            <span class="visually-hidden">Loading...</span>
+          </div>
+
           <div class="row mt-5">
             <div
               class="col-12 longCard p-4"
               v-for="image in yangiliklar"
               :key="image.id"
+             
             >
+         
+
               <div class="row flex-column flex-sm-row">
                 <div
                   class="col-12 col-sm-4 d-flex align-items-center justify-content-center"
@@ -1732,6 +1743,7 @@
         var app2 = new Vue({
           el: "#app-2",
           data: {
+           
             yangiliklar: [],
           },
 
@@ -1741,6 +1753,8 @@
               .then((res) => {
                 res.data.slice(0, 6).forEach((el) => {
                   app2.$data.yangiliklar.push(el);
+                  app2.$refs.load.style.cssText = 'display:none !important'
+                  
                 });
               })
               .catch(function (error) {
