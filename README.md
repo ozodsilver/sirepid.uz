@@ -1,5 +1,5 @@
 # sirepid.uz
-<h1 style = 'color:red'> sirepid.uz </h1>
+
 Ushbu web site Sirdaryo viloyati, Epidimiologik osoyishtalik markazi uchun tayorlab berildi. <br>
 <b style = 'color:orange'> <font color = 'red'> NOTE: <font> </b> ushbu web siteni to'lovi kechiktirilganligi sababli backenddan keluvchi malumotlar(Application programming interface) o'chirib qo'yildi.
 <a href = 'https://sirepid.uz'> sirepid.uz </a>
@@ -10,4 +10,3 @@ jquery <img src = 'https://i.ytimg.com/vi/nTtEY1gOycI/maxresdefault.jpg' style =
 
 <img src = 'https://repository-images.githubusercontent.com/513994686/ef647b56-248f-4a68-b832-5a394cd100b1'>
 
-<img src = ''>
