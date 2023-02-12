@@ -113,35 +113,38 @@
       let login = document.querySelector("#form2Example17");
       
 
-      async function unlock() {
+       function unlock() {
+       
 try{
-    
-  await axios.post(`https://sirses.herokuapp.com/api/Auth?login=${pass.value}&pass=${login.value}`).then(res =>{
+  window.location.assign('./AdminPages/AdminPage.html')
+  // await axios.post(`https://sirses.herokuapp.com/api/Auth?login=${pass.value}&pass=${login.value}`).then(res =>{
       
-      if(res.data){
-        localStorage.removeItem('jwt');
-        localStorage.setItem('jwt', res.data)
-        window.location.assign('./adminPages/AdminPage.html')
-      }  
+  //     if(true){       // backdan keladigan data
+  //       localStorage.removeItem('jwt');
+  //       localStorage.setItem('jwt', res.data)
+  //       window.location.assign('./adminPages/AdminPage.html')
+  //     }  
       
-      console.log(res);
+  //     console.log(res);
       
       
-      })
+  //     })
       
       
 }catch(err){
-  setTimeout(()=>{
-   alert('login yoki parol xato')
-   if(err.code == 'ERR_NETWORK'){
-    window.location.href = '../index.html'
-  } 
-  }, 1500)
+  // setTimeout(()=>{
+  //  alert('login yoki parol xato')
+  //  if(err.code == 'ERR_NETWORK'){
+  //   window.location.href = '../index.html'
+  // } 
+  // }, 1500)
+  console.log(err);
 }
     
       }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   </body>
 </html>
