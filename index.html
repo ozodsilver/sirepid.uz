@@ -78,7 +78,7 @@
 
 
     <a id="section1"></a>
-    <div class="container-fluid bg-light p-1 border-bottom" id="navigation">
+    <div class="container-fluid bg-light p-1 " id="navigation">
       <nav class="navbar bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"
@@ -126,6 +126,14 @@
               <i class="fa fa-youtube-play fs-5 text-danger"> </i>&nbsp;
               <span>youtube</span></a
             >
+            
+            <label class="label">
+              <div class="toggle">
+                  <input class="toggle-state" type="checkbox" name="check" value="check"  onchange = 'DarkMode()'>
+                  <div class="indicator"></div>
+              </div>
+          </label>
+
           </div>
         </div>
       </nav>
@@ -706,11 +714,6 @@
     </div>
 
     <!-- home boshlandi -->
-
-
-
-    
-
     <div
       class="container-fluid home  justify-content-center align-items-center position-relative l-0"
       onmousemove="showCoords(event)"
@@ -721,9 +724,9 @@
           <h1 class="text-center pt-5 text-white">Yangiliklar</h1>
 
 
-          <div class="spinner-border text-light d-block text-center m-auto" role="status" ref="load" >
+          <!-- <div class="spinner-border text-light d-block text-center m-auto" role="status" ref="load" >
             <span class="visually-hidden">Loading...</span>
-          </div>
+          </div> -->
 
           <div class="row mt-5">
             <div
@@ -783,8 +786,9 @@
           Batafsil
         </a>
         <div
-          class="w-100 d-flex justify-content-center"
-          style="margin: 50px 0"
+          class="w-100 d-flex justify-content-center pt-4"
+          style="margin: 0"
+          
         >
           <lord-icon
             src="https://cdn.lordicon.com/ihygurec.json"
@@ -797,7 +801,7 @@
       </div>
     </div>
     <!-- counter qism -->
-    <div class="container-fluid  pb-5" >
+    <div class="container-fluid  pb-5"  id = 'coun'>
       <div class="mx-auto w-100 text-center p-5 p-sm-0 p-md-5">
         <h2 class="pt-5">SIRDARYO VILOYATI MIQYOSIDA JAMI EMLANGANLAR SONI</h2>
         <h4 class="date"></h4>
@@ -805,25 +809,25 @@
       </div>
 
       <div class="container bg-light shadow-lg rounded position-relative">
-        <div class="row text-center p-5">
+        <div class="row text-center p-5" id = 'inside'>
           <div class="col-6 col-sm-3 p-3">
             <h1 class="display-1 fw-bold text-muted birinchi counter" id="num1" data-aos="fade-up"></h1>
-            <p class="text-muted" >birinchi doza</p>
+            <p  >birinchi doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
             <h1 class="display-1 fw-bold text-muted ikkinchi counter2" id="num2" data-aos="fade-up"></h1>
-            <p class="text-muted" >ikkinchi doza</p>
+            <p  >ikkinchi doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
             <h1 class="display-1 fw-bold text-muted uchinchi counter3" id="num3" data-aos="fade-up"></h1>
-            <p class="text-muted" >uchunchi va booster doza</p>
+            <p  >uchunchi va booster doza</p>
           </div>
 
           <div class="col-6 col-sm-3 p-3">
             <h1 class="display-1 fw-bold text-muted jami counter4" id="num4" data-aos="fade-up"></h1>
-            <p class="text-muted" >jami emlanganlar</p>
+            <p  >jami emlanganlar</p>
           </div>
         </div>
         <a
@@ -840,7 +844,7 @@
    
 
     <!-- fotolavhalar -->
-    <div class="container-fluid pt-5 owl">
+    <div class="container-fluid pt-5 bg-dark owl">
       <div class="container" style="border-top: 1px solid rgb(184, 173, 173)">
         <h1 class="text-center p-3" data-aos="zoom-in">Fotolavhalar</h1>
 
@@ -922,21 +926,21 @@
                   <div class="carousel-inner" id="picture">
                     <div class="carousel-item active">
                       <img
-                        src="..."
+                        src="./images/Hududiy/SirdaryoVilBosh.jpg"
                         class="d-block w-100 h-50 rounded shadow"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        src="..."
+                        src="./images/Hududiy/SirdaryoVilBosh.jpg"
                         class="d-block w-100 h-50 rounded shadow"
                         alt="..."
                       />
                     </div>
                     <div class="carousel-item">
                       <img
-                        src="..."
+                        src="./images/Hududiy/SirdaryoVilBosh.jpg"
                         class="d-block w-100 h-50 rounded shadow"
                         alt="..."
                       />
@@ -944,7 +948,7 @@
 
                     <div class="carousel-item">
                       <img
-                        src="..."
+                        src="./images/Hududiy/SirdaryoVilBosh.jpg"
                         class="d-block w-100 h-50 rounded shadow"
                         alt="..."
                       />
@@ -992,7 +996,7 @@
 
         <br /><br />
         <hr />
-        <h1 class="text-center p-3" data-aos="fade-down">Videolavhalar</h1>
+        <h1 class="text-center text-white p-3" data-aos="fade-down">Videolavhalar</h1>
 
         <div class="container-fluid">
           <div class="row gap-lg-0 gap-3 flex-wrap justify-content-around">
@@ -1044,13 +1048,13 @@
 
       <div class="container-fluid my-5">
 
-        <h2 class="text-secondary p-3">Foydali havolalar</h2>
+        <h2 class="text-white p-3">Foydali havolalar</h2>
         <div class="owl-carousel">
        
           <div class="car">
             <a href="http://huquqiyportal.uz/" class="text-decoration-none">
               <div
-                class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+                class="w-100 bg-white p-4 border border-dark d-flex justify-content-around rounded align-items-center"
                 style="height: 120px"
               >
                 <img
@@ -1070,7 +1074,7 @@
 
           <div class="car">   <a href="https://lex.uz/" class="text-decoration-none">
             <div
-              class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+              class="w-100 bg-white border border-dark p-4 d-flex justify-content-around rounded align-items-center"
               style="height: 120px"
             >
               <img
@@ -1089,7 +1093,7 @@
 
           <div class="car"> <a href="http://www.my.gov.uz/" class="text-decoration-none">
             <div
-              class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+              class="w-100 bg-white border border-dark p-4 d-flex justify-content-around rounded align-items-center"
               style="height: 120px"
             >
               <img
@@ -1105,7 +1109,7 @@
           </a></div>
           <div class="car"><a href="http://press-service.uz/" class="text-decoration-none">
             <div
-              class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+              class="w-100 bg-white border border-dark p-4 d-flex justify-content-around rounded align-items-center"
               style="height: 120px"
             >
               <img
@@ -1122,7 +1126,7 @@
       <div class="car">
           <a href="http://press-service.uz/" class="text-decoration-none">
             <div
-              class="w-100 bg-white p-4 d-flex justify-content-around rounded align-items-center"
+              class="w-100 bg-white border border-dark p-4 d-flex justify-content-around rounded align-items-center"
               style="height: 120px"
             >
               <img
@@ -1658,6 +1662,48 @@
       ></a>
 
 
+
+      <script>
+let navbar = document.querySelector('.navbar')
+let nav = document.querySelector('#navigation')
+let Dark = document.querySelector('.toggle-state')
+let toggle = document.querySelector('.links')
+let icons = document.querySelector('a')
+let brand = document.querySelector('.navbar-brand')
+let home = document.querySelector('.home')
+let inside = document.querySelector('#inside')
+let insideP = document.querySelectorAll('#inside p')
+let coun = document.querySelector('#coun')
+let owlStage = document.querySelector('.car')
+
+
+
+Dark.addEventListener('change', ()=>{
+toggle.classList.toggle('bg-dark')
+toggle.classList.toggle('text-white')
+nav.classList.toggle('bg-dark')
+nav.classList.toggle('text-white')
+navbar.classList.toggle('text-white')
+navbar.classList.toggle('bg-dark')
+icons.classList.toggle('text-white')
+brand.classList.toggle('shadowHandle')
+home.classList.toggle('bg-dark')
+coun.classList.toggle('bg-dark')
+coun.classList.toggle('text-white')
+inside.classList.toggle('text-white')
+inside.classList.toggle('bg-dark')
+insideP.forEach((el)=>{
+  el.classList.toggle('text-white')
+})
+
+owlStage.forEach((el)=>{
+  el.classList.toggle('bg-dark')
+})
+
+
+
+})
+      </script>
       
 
       <!-- lordicon -->
@@ -1829,6 +1875,12 @@
 
           console.log(res.data);
         });
+
+function DarkMode(){
+ document.body.classList.toggle = 'activeDarkMode'
+
+}
+
       </script>
 
       <script>
@@ -1874,8 +1926,6 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     
-   
-   
     </div>
   </body>
 </html>

@@ -400,14 +400,15 @@ var app = new Vue({
   items:[],
   },
 
-async mounted() {
+async mounted() {   
   
 let loader = document.querySelector('#loaderr');
 
 
 
-await axios.get('https://sirses.herokuapp.com/api/News')
+await axios.get('https://192.68.3.234:8000/api/v1/news/all/')
 .then(function (response) {
+    console.log(response);
 // handle success
 response.data.forEach(res => {
     loader.style.cssText = 'display:none !important'

@@ -179,6 +179,10 @@ document.body.classList.add('loaded')
 
   let preloader = document.getElementById('preloader')
 
-window.addEventListener('load', ()=>{
+  window.addEventListener('load', ()=>{
     preloader.style.cssText = 'display:none !important'
 })
+
+
+
+
