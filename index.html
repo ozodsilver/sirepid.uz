@@ -54,25 +54,6 @@
 }
 
 
-.home{
-  width: 100%;
-  background-image: url("https://avatars.mds.yandex.net/get-ynews/2371987/295bde68c808b8f4c2df2cd30b7b4cde/orig");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
-
-  left: 0 !important ;
-  animation: animateBg 14s linear infinite;
-  background-image: linear-gradient(90deg,#707070,#3f4040,#99a4a8,#707070,#3f4040);
-  background-size: 400% 100%;
-}
-
-
-@keyframes animateBg {
-  0% { background-position: 100% 0%; }
-  100% { background-position: 0% 0%; }
-}
     </style>
 
 
@@ -148,13 +129,22 @@
 
 
     <a id="section1"></a>
-    <div class="container-fluid bg-light p-1 " id="navigation">
-      <nav class="navbar bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"
-            ><img class="img img-fluid" src="images/Sticker.png" alt
+    <div class="container-fluid bg-light justify-content-center p-1 " id="navigation">
+      <nav class="navbar bg-light justify-content-center">
+        <div class="container-fluid ">
+          <a class="navbar-brand mx-0" href="#"
+            ><img class="img img-fluid bg-light rounded p-3 pl-4 d-block ml-3" src="images/Sticker.png" alt
           /></a>
           <div class="d-flex border-3 justify-content-between w-50 icons">
+
+              
+            <label class="label">
+              <div class="toggle">
+                  <input class="toggle-state" type="checkbox" name="check" value="check"  >
+                  <div class="indicator"></div>
+              </div>
+          </label>
+
             <a
               class="nav-link d-flex justify-content-center align-items-center text-primary"
               href
@@ -196,13 +186,9 @@
               <i class="fa fa-youtube-play fs-5 text-danger"> </i>&nbsp;
               <span>youtube</span></a
             >
+
             
-            <label class="label">
-              <div class="toggle">
-                  <input class="toggle-state" type="checkbox" name="check" value="check"  onchange = 'DarkMode()'>
-                  <div class="indicator"></div>
-              </div>
-          </label>
+          
 
           </div>
         </div>
@@ -211,12 +197,14 @@
 
     <!-- mob menu -->
 
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg bg-light d-md-none">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Menu</a>
+    <div class="container-fluid darked" >
+      <nav class="navbar navbar-expand-lg bg-light d-md-none darked">
+        <div class="container-fluid darked">
+        
+          <input type="checkbox" class="l">
+        
           <button
-            class="navbar-toggler"
+            class="navbar-toggler bg-white"
             data-bs-target="#navbarNavDropdown"
             data-bs-toggle="collapse"
             type="button"
@@ -230,7 +218,7 @@
             <ul class="navbar-nav d-lg-none">
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle   border-dark text-dark"
                   id="navbarDropdownMenuLink"
                   data-bs-toggle="dropdown"
                   href="./umumiy.html"
@@ -263,6 +251,8 @@
                       >Tashkiliy tuzilma</a
                     >
                   </li>
+
+                 
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -785,13 +775,13 @@
 
     <!-- home boshlandi -->
     <div
-      class="container-fluid home  justify-content-center align-items-center position-relative l-0"
+      class="container-fluid home bg-light  home2 justify-content-center align-items-center position-relative l-0"
       onmousemove="showCoords(event)"
     >
         <div id="app-2">
       <div class="container-fluid news">
         <div class="container position-relative pb-4" style="z-index: 4">
-          <h1 class="text-center pt-5 text-white">Yangiliklar</h1>
+          <h1 class="text-center pt-5 " id = 'yangiliklar'>Yangiliklar</h1>
 
 
           <!-- <div class="spinner-border text-light d-block text-center m-auto" role="status" ref="load" >
@@ -842,10 +832,10 @@
     </div>
     
       <div class="m-auto centerText">
-        <h4 class="text-center text-light" style="margin-top: 60px">
+        <h4 class="text-center " >
           Xush kelibsiz!
         </h4>
-        <h1 class="display-1 text-light text-center h1 fw-bold " >
+        <h1 class="display-1  text-center h1 fw-bold " style = 'color:grey' >
         UMUMIY MA'LUMOT
         </h1>
 
@@ -1731,24 +1721,78 @@
         "
       ></a>
 
+    
 
 
       <script>
 let navbar = document.querySelector('.navbar')
 let nav = document.querySelector('#navigation')
-let Dark = document.querySelector('.toggle-state')
+let Dark = document.querySelector('.toggle')
 let toggle = document.querySelector('.links')
 let icons = document.querySelector('a')
 let brand = document.querySelector('.navbar-brand')
 let home = document.querySelector('.home')
+let home2 = document.querySelector('.home2')
 let inside = document.querySelector('#inside')
 let insideP = document.querySelectorAll('#inside p')
 let coun = document.querySelector('#coun')
-let owlStage = document.querySelector('.car')
+let owlStage = document.querySelectorAll('.car')
+let links = document.querySelectorAll('.links button')
+let darked = document.querySelectorAll('.darked')
+// mob
+let l = document.querySelector('.l')
+let navLink = document.querySelectorAll('.nav-link')
+
+
+l.addEventListener('change', ()=>{
+  home.classList.toggle('bg-dark')
+  home.classList.toggle('text-white')
+  console.log('dsds');
+toggle.classList.toggle('bg-dark')
+toggle.classList.toggle('text-white')
+nav.classList.toggle('bg-dark')
+nav.classList.toggle('text-white')
+navbar.classList.toggle('text-white')
+navbar.classList.toggle('bg-dark')
+icons.classList.toggle('text-white')
+brand.classList.toggle('shadowHandle')
+darked.forEach((el)=>{
+  el.classList.toggle('bg-dark')
+  el.classList.toggle('text-white')
+})
+
+navLink.forEach((el)=>{
+  el.classList.toggle('text-white')
+})
+
+
+coun.classList.toggle('bg-dark')
+coun.classList.toggle('text-white')
+inside.classList.toggle('text-white')
+inside.classList.toggle('bg-dark')
+insideP.forEach((el)=>{
+  el.classList.toggle('text-white')
+})
+
+console.log(owlStage);
+owlStage.forEach((el)=>{
+  el.classList.toggle('bg-dark')
+})
+
+
+home2.classList.toggle('home2')
+links.forEach((el)=>{
+ el.classList.toggle('btn-light')
+ el.classList.toggle('text-light')
+})
+yangiliklar.classList.toggle('text-light')
+    })
+
 
 
 
 Dark.addEventListener('change', ()=>{
+  console.log('dsds');
 toggle.classList.toggle('bg-dark')
 toggle.classList.toggle('text-white')
 nav.classList.toggle('bg-dark')
@@ -1758,6 +1802,8 @@ navbar.classList.toggle('bg-dark')
 icons.classList.toggle('text-white')
 brand.classList.toggle('shadowHandle')
 home.classList.toggle('bg-dark')
+let yangiliklar = document.querySelector('#yangiliklar')
+
 coun.classList.toggle('bg-dark')
 coun.classList.toggle('text-white')
 inside.classList.toggle('text-white')
@@ -1766,13 +1812,21 @@ insideP.forEach((el)=>{
   el.classList.toggle('text-white')
 })
 
+console.log(owlStage);
 owlStage.forEach((el)=>{
   el.classList.toggle('bg-dark')
 })
 
 
-
+home2.classList.toggle('home2')
+links.forEach((el)=>{
+ el.classList.toggle('btn-light')
+ el.classList.toggle('text-light')
 })
+yangiliklar.classList.toggle('text-light')
+})
+
+
       </script>
       
 
@@ -1863,21 +1917,21 @@ owlStage.forEach((el)=>{
             yangiliklar: [],
           },
 
-          async mounted() {
-            await axios
-              .get("https://sirses.herokuapp.com/api/News")
-              .then((res) => {
-                res.data.slice(0, 6).forEach((el) => {
-                  app2.$data.yangiliklar.push(el);
-                  app2.$refs.load.style.cssText = 'display:none !important'
+          // async mounted() {
+          //   await axios
+          //     .get("https://sirses.herokuapp.com/api/News")
+          //     .then((res) => {
+          //       res.data.slice(0, 6).forEach((el) => {
+          //         app2.$data.yangiliklar.push(el);
+          //         app2.$refs.load.style.cssText = 'display:none !important'
                   
-                });
-              })
-              .catch(function (error) {
-                // handle error
-                console.log(error);
-              });
-          },
+          //       });
+          //     })
+          //     .catch(function (error) {
+          //       // handle error
+          //       console.log(error);
+          //     });
+          // },
         });
       </script>
 
@@ -1889,34 +1943,34 @@ owlStage.forEach((el)=>{
             rasmlar: [],
           },
 
-          async mounted() {
-            await axios
-              .get("https://sirses.herokuapp.com/api/News")
-              .then(function (response) {
-                // handle success
-                response.data.slice(0, 5).forEach((res) => {
-                  console.log(res);
-                  app.$data.items.push(res);
-                });
-              })
-              .catch(function (error) {
-                // handle error
-                console.log(error);
-              })
-              .then(function () {
-                // always executed
-              });
-          },
+          // async mounted() {
+          //   await axios
+          //     .get("https://sirses.herokuapp.com/api/News")
+          //     .then(function (response) {
+          //       // handle success
+          //       response.data.slice(0, 5).forEach((res) => {
+          //         console.log(res);
+          //         app.$data.items.push(res);
+          //       });
+          //     })
+          //     .catch(function (error) {
+          //       // handle error
+          //       console.log(error);
+          //     })
+          //     .then(function () {
+          //       // always executed
+          //     });
+          // },
 
-          async created() {
-            await axios
-              .get("https://sirses.herokuapp.com/api/Photos")
-              .then((res) => {
-                res.data.forEach((el) => {
-                  app.$data.rasmlar.push(el);
-                });
-              });
-          },
+          // async created() {
+          //   await axios
+          //     .get("https://sirses.herokuapp.com/api/Photos")
+          //     .then((res) => {
+          //       res.data.forEach((el) => {
+          //         app.$data.rasmlar.push(el);
+          //       });
+          //     });
+          // },
         });
       </script>
 
@@ -1925,31 +1979,28 @@ owlStage.forEach((el)=>{
 
         let picture = document.querySelectorAll("#picture img");
 
-        axios.get("https://sirses.herokuapp.com/api/Photos").then((res) => {
-          images.forEach((el, index) => {
-            el.src = res.data[index].image;
-          });
+        // axios.get("https://sirses.herokuapp.com/api/Photos").then((res) => {
+        //   images.forEach((el, index) => {
+        //     el.src = res.data[index].image;
+        //   });
 
-          picture.forEach((item, index) => {
-            item.src = res.data[index + 2].image;
-          });
-        });
+        //   picture.forEach((item, index) => {
+        //     item.src = res.data[index + 2].image;
+        //   });
+        // });
 
-        let images2 = document.querySelectorAll("#images2 .frame");
-        console.log(images2);
+        // let images2 = document.querySelectorAll("#images2 .frame");
+        // console.log(images2);
 
-        axios.get("https://sirses.herokuapp.com/api/Videos").then((res) => {
-          images2.forEach((el, index) => {
-            el.innerHTML = res.data[index].link;
-          });
+        // axios.get("https://sirses.herokuapp.com/api/Videos").then((res) => {
+        //   images2.forEach((el, index) => {
+        //     el.innerHTML = res.data[index].link;
+        //   });
 
-          console.log(res.data);
-        });
+        //   console.log(res.data);
+        // });
 
-function DarkMode(){
- document.body.classList.toggle = 'activeDarkMode'
 
-}
 
       </script>
 
