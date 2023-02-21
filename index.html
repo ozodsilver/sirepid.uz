@@ -71,15 +71,15 @@
   </head>
 
   <body>
-    <!-- loader -->
+   <!-- loader -->
 
-    <!-- <div id="preloader" >
+ <div id="preloader" >
       <div id="loader">
        
       </div>
    
     </div>
-  -->
+
 
 
 
@@ -741,7 +741,7 @@
 
           <div class="row mt-5">
             <div
-              class="col-12 shadow text-primary  mt-3 text-muted   longCard p-4"
+              class="col-12 shadow text-primary bg-light  mt-3 text-muted   longCard p-4"
              
               v-for="image in yangiliklar"
               :key="image.id"
@@ -1985,9 +1985,9 @@ jam.classList.toggle('oq')
                 "Content-Type": " application/json",
               }
             }).then((res) => {
-              console.log(res);
-          images2.forEach((el, index) => {
-            console.log(el);
+            ;
+            images2.forEach((el, index) => {
+            // console.log(res.data.videos[index].iframe);
             el.innerHTML = res.data.videos[index].iframe;
           });
 
