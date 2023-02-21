@@ -200,21 +200,18 @@
       let formData = new FormData();
       formData.append("file", file.files[0]);
     await axios
-        .post("https://kwutge.pythonanywhere.com/api/v1/image/", 
+        .post("https://9b04-92-246-79-198.ap.ngrok.io/api/v1/test/", 
         formData,
           {
             headers: {
               "Content-Disposition": "form-data, name='file', filename='pic.jpg' ",
-              "Content-Type":  "image/jpeg", 
+              "Content-Type":"image/jpeg", 
 
             }
 
           },
 
-          
-   
-          
-    
+
           )
         .then((res) => {
 

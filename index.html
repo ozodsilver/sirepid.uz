@@ -10,12 +10,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     rel="stylesheet"
   />
-    <style>
-      
-
-
-
-    </style>
+  
 
 
 <!-- 
@@ -99,7 +94,7 @@
           <div class="d-flex border-3 justify-content-between w-50 icons">
 
               
-            <i class="fas fa-eye toggle fa-2x" style = 'cursor:pointer'></i>
+            <i class="fas fa-eye toggle " style = 'cursor:pointer'></i>
 
             <a
               class="nav-link d-flex justify-content-center align-items-center text-primary"
@@ -732,12 +727,12 @@
     <!-- home boshlandi -->
     <div
       class="container-fluid home bg-light  home2 justify-content-center align-items-center position-relative l-0"
-      onmousemove="showCoords(event)"
+    
     >
         <div id="app-2">
       <div class="container-fluid news">
         <div class="container position-relative pb-4" style="z-index: 4">
-          <h1 class="text-center pt-5 " id = 'yangiliklar'>Yangiliklar</h1>
+          <h1 class="text-center  text-dark pt-5 " id = 'yangiliklar'>Yangiliklar</h1>
 
 
           <div class="spinner-border text-danger d-block text-center m-auto" role="status" ref="load" >
@@ -746,16 +741,16 @@
 
           <div class="row mt-5">
             <div
-              class="col-12 shadow  mt-3 text-muted bg-light bg-gradient longCard p-4"
+              class="col-12 shadow text-primary  mt-3 text-muted   longCard p-4"
+             
               v-for="image in yangiliklar"
               :key="image.id"
-             
-            >
+           >
          
 
               <div class="row gap-3 flex-sm-row">
                 <div
-                  class="col-12 shadow p-3 rounded-3  col-sm-3 d-flex align-items-center justify-content-center position-relative"
+                  class="col-12 border-0 shadow p-3 rounded-3  col-sm-3 d-flex align-items-center justify-content-center position-relative"
                 id = 'carta'>
                   <img
                     :src=`http://kwutge.pythonanywhere.com/api/v1/image?id=${image.image_id}`
@@ -765,9 +760,9 @@
                 </div>
 
                 <div class="col-sm-8  col-12 mt-2 mt-sm-0 " >
-                  <h5 class="text-muted">{{image.title}}</h5>
-                  <p class="text-muted " style = 'text-transform:lowercase' >{{image.content}}</p>
-                  <a href = "./pages/yangiliklar.html"  class=" btn-primary  position-absolute" style = 'bottom:20px; right:20px'>batafsil..</button>
+                  <h5 class=" imgText" style = 'color:#20B2AA'>{{image.title}}</h5>
+                  <p class=" text-shadow imgText "  style = 'text-transform:lowercase;color:#20B2AA' >{{image.content}}</p>
+                  <a href = "./pages/yangiliklar.html"  class="  position-absolute" style = 'bottom:20px; right:20px;color:#20B2AA'>batafsil..</button>
                 </div>
               </div>
               
@@ -1701,7 +1696,12 @@ let coun = document.querySelector('#coun')
 let owlStage = document.querySelectorAll('.car')
 let links = document.querySelectorAll('.links button')
 let darked = document.querySelectorAll('.darked')
-let cartalar = document.querySelectorAll('.longCard')
+let imgText = document.querySelector('.imgText')
+let insided = document.querySelectorAll('#inside h1')
+let bir = document.querySelector('.birinchi')
+let ikki = document.querySelector('.ikkinchi')
+let uch = document.querySelector('.uchinchi')
+let jam = document.querySelector('.jami')
 // mob
 let l = document.querySelector('.l')
 let navLink = document.querySelectorAll('.nav-link')
@@ -1748,7 +1748,7 @@ links.forEach((el)=>{
  el.classList.toggle('btn-light')
  el.classList.toggle('text-light')
 })
-yangiliklar.classList.toggle('text-light')
+yangiliklar.classList.toggle('text-white')
     })
 
 
@@ -1767,6 +1767,11 @@ brand.classList.toggle('shadowHandle')
 home.classList.toggle('bg-dark')
 let yangiliklar = document.querySelector('#yangiliklar')
 
+
+
+yangiliklar.classList.toggle('text-white')
+
+
 coun.classList.toggle('bg-dark')
 coun.classList.toggle('text-white')
 inside.classList.toggle('text-white')
@@ -1775,23 +1780,28 @@ insideP.forEach((el)=>{
   el.classList.toggle('text-white')
 })
 
-console.log(owlStage);
+// console.log(owlStage);
 owlStage.forEach((el)=>{
   el.classList.toggle('bg-dark')
-})
-
-cartalar.forEach((el)=>{
-  el.classList.toggle('bg-Handle')
-  el.classList.toggle('text-white')
 })
 
 
 home2.classList.toggle('home2')
 links.forEach((el)=>{
  el.classList.toggle('btn-light')
- el.classList.toggle('text-light')
+ el.classList.toggle('text-white')
 })
-yangiliklar.classList.toggle('text-light')
+
+imgText.classList.toggle('text-white')
+
+
+
+bir.classList.toggle('oq')
+ikki.classList.toggle('oq')
+uch.classList.toggle('oq')
+jam.classList.toggle('oq')
+
+
 })
 
 
