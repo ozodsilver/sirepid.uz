@@ -247,7 +247,7 @@ if(app.$data.link !== ''){
               await axios({
               method: "delete",
 
-              url: `http://kwutge.pythonanywhere.com/api/v1/video/`,
+              url: `https://kwutge.pythonanywhere.com/api/v1/video/`,
 
               data: {
                 id:app.$data.delLink
@@ -272,7 +272,7 @@ if(app.$data.link !== ''){
 
         async mounted() {
           await axios
-            .get("http://kwutge.pythonanywhere.com/api/v1/video/all/", {
+            .get("https://kwutge.pythonanywhere.com/api/v1/video/all/", {
               headers:{
                 "Content-Type": " application/json",
               }

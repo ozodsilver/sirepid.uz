@@ -1897,7 +1897,7 @@ yangiliklar.classList.toggle('text-light')
         let date = document.querySelector(".date");
 
         axios
-          .get("http://kwutge.pythonanywhere.com/api/v1/inject/")
+          .get("https://kwutge.pythonanywhere.com/api/v1/inject/")
 
           .then((el) => {
 
@@ -1930,7 +1930,7 @@ yangiliklar.classList.toggle('text-light')
 
           async mounted() {
             await axios
-              .get("http://kwutge.pythonanywhere.com/api/v1/news/all/")
+              .get("https://kwutge.pythonanywhere.com/api/v1/news/all/")
               .then((res) => {
 
 
@@ -2011,7 +2011,7 @@ yangiliklar.classList.toggle('text-light')
         let images2 = document.querySelectorAll("#images2 .frame");
         console.log(images2);
 
-        axios.get("http://kwutge.pythonanywhere.com/api/v1/video/all/", {
+        axios.get("https://kwutge.pythonanywhere.com/api/v1/video/all/", {
               headers:{
                 "Content-Type": " application/json",
               }

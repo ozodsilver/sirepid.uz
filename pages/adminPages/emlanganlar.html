@@ -172,7 +172,7 @@
 
         if(app.$data.birinchi !== '' && app.$data.ikkinchi !=='' &&  app.$data.uchinchi !=='' && app.$data.date !== ''){
           btn.setAttribute('disabled', '')
-          await axios.post('http://kwutge.pythonanywhere.com/api/v1/inject/', {
+          await axios.post('https://kwutge.pythonanywhere.com/api/v1/inject/', {
   first_dose:app.$data.birinchi,
   second_dose:app.$data.ikkinchi,
       third_dose:app.$data.uchinchi,

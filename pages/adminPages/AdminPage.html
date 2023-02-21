@@ -200,7 +200,7 @@
       let formData = new FormData();
       formData.append("files", file.files[0]);
       axios
-        .post("http://kwutge.pythonanywhere.com/api/v1/image/", formData,
+        .post("https://kwutge.pythonanywhere.com/api/v1/image/", formData,
           {
             headers: {
               'Content-Disposition': "form-data, name='files', filename='pic.jpg' ",
