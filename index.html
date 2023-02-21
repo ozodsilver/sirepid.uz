@@ -12,49 +12,7 @@
   />
     <style>
       
-.label {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  color: #394a56;
-}
 
-.label-text {
-  margin-left: 16px;
-}
-
-.toggle {
-  isolation: isolate;
-  position: relative;
-  height: 30px;
-  width: 60px;
-  border-radius: 15px;
-  overflow: hidden;
-  /* box-shadow: -8px -4px 8px 0px #ffffff,
-    8px 4px 12px 0px #d1d9e6,
-    4px 4px 4px 0px #d1d9e6 inset,
-    -4px -4px 4px 0px #ffffff inset; */
-    box-shadow:0 0 3px #f1d5f1;
-}
-
-.toggle-state {
-  display: none;
-}
-
-.indicator {
-  height: 100%;
-  width: 200%;
-  background: #ecf0f3;
-  border-radius: 15px;
-  transform: translate3d(-75%, 0, 0);
-  transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
-  /* box-shadow: -8px -4px 8px 0px #ffffff,
-    8px 4px 12px 0px #d1d9e6; */
-}
-
-.toggle-state:checked ~ .indicator {
-  transform: translate3d(25%, 0, 0);
-}
 
 
     </style>
@@ -141,12 +99,7 @@
           <div class="d-flex border-3 justify-content-between w-50 icons">
 
               
-            <label class="label">
-              <div class="toggle">
-                  <input class="toggle-state" type="checkbox" name="check" value="check"  >
-                  <div class="indicator"></div>
-              </div>
-          </label>
+            <i class="fas fa-eye toggle fa-2x" style = 'cursor:pointer'></i>
 
             <a
               class="nav-link d-flex justify-content-center align-items-center text-primary"
@@ -793,17 +746,17 @@
 
           <div class="row mt-5">
             <div
-              class="col-12 mt-3 text-white longCard p-4"
+              class="col-12 shadow  mt-3 text-muted bg-light bg-gradient longCard p-4"
               v-for="image in yangiliklar"
               :key="image.id"
              
             >
          
 
-              <div class="row  flex-sm-row">
+              <div class="row gap-3 flex-sm-row">
                 <div
-                  class="col-12  col-sm-4 d-flex align-items-center justify-content-center position-relative"
-                >
+                  class="col-12 shadow p-3 rounded-3  col-sm-3 d-flex align-items-center justify-content-center position-relative"
+                id = 'carta'>
                   <img
                     :src=`http://kwutge.pythonanywhere.com/api/v1/image?id=${image.image_id}`
                     alt=""
@@ -812,8 +765,8 @@
                 </div>
 
                 <div class="col-sm-8  col-12 mt-2 mt-sm-0 " >
-                  <h5 class="text-light">{{image.title}}</h5>
-                  <p class="text-light">{{image.content}}</p>
+                  <h5 class="text-muted">{{image.title}}</h5>
+                  <p class="text-muted " style = 'text-transform:lowercase' >{{image.content}}</p>
                   <a href = "./pages/yangiliklar.html"  class=" btn-primary  position-absolute" style = 'bottom:20px; right:20px'>batafsil..</button>
                 </div>
               </div>
@@ -1748,6 +1701,7 @@ let coun = document.querySelector('#coun')
 let owlStage = document.querySelectorAll('.car')
 let links = document.querySelectorAll('.links button')
 let darked = document.querySelectorAll('.darked')
+let cartalar = document.querySelectorAll('.longCard')
 // mob
 let l = document.querySelector('.l')
 let navLink = document.querySelectorAll('.nav-link')
@@ -1800,7 +1754,7 @@ yangiliklar.classList.toggle('text-light')
 
 
 
-Dark.addEventListener('change', ()=>{
+Dark.addEventListener('click', ()=>{
   console.log('dsds');
 toggle.classList.toggle('bg-dark')
 toggle.classList.toggle('text-white')
@@ -1824,6 +1778,11 @@ insideP.forEach((el)=>{
 console.log(owlStage);
 owlStage.forEach((el)=>{
   el.classList.toggle('bg-dark')
+})
+
+cartalar.forEach((el)=>{
+  el.classList.toggle('bg-Handle')
+  el.classList.toggle('text-white')
 })
 
 

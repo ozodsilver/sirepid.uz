@@ -194,21 +194,28 @@
     let file = document.getElementById("fileItem");
     let add = document.querySelector('#add')
     console.log(file.files);
-    function addNews() {
+  async  function addNews() {
       console.log(file.files);
       add.setAttribute('disabled', '')
       let formData = new FormData();
-      formData.append("files", file.files[0]);
-      axios
-        .post("https://kwutge.pythonanywhere.com/api/v1/image/", formData,
+      formData.append("file", file.files[0]);
+    await axios
+        .post("https://kwutge.pythonanywhere.com/api/v1/image/", 
+        formData,
           {
             headers: {
-              'Content-Disposition': "form-data, name='files', filename='pic.jpg' ",
+              "Content-Disposition": "form-data, name='file', filename='pic.jpg' ",
               "Content-Type":  "image/jpeg", 
 
             }
 
-          })
+          },
+
+          
+   
+          
+    
+          )
         .then((res) => {
 
           console.log(res);
