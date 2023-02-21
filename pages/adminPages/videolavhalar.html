@@ -168,7 +168,7 @@
           <tr v-for="item in items" :key="item.id">
             <td>
               <div class="">
-                <div v-html="item.link" > {{ item.link }}</div>
+                <div v-html="item.iframe" > {{ item.link }}</div>
                 <div class="ms-3">
                  
                 </div>
@@ -203,6 +203,7 @@
         data: {
           link: "",
           delLink: "",
+        
           items: [],
           
         },
@@ -213,18 +214,16 @@
 if(app.$data.link !== ''){
   axios
               .post(
-                "https://sirses.herokuapp.com/api/Videos",
+                "http://kwutge.pythonanywhere.com/api/v1/video/",
                 {
-                  link: app.$data.link,
+                  iframe: app.$data.link,
                 },
                 {
-                  headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                  },
+                 
                 }
               )
               .then((el) => {
+                console.log(el);
                 if (el.status == "200") {
                   alert("Muvaffaqiyatli qo'shildi");
                   app.$data.link = "";
@@ -241,18 +240,27 @@ if(app.$data.link !== ''){
           },
 
           async dellLink() {
+
+            console.log(app.$data.delLink );
             if(app.$data.delLink !== ''){
+              console.log(app.$data.delLink);
               await axios({
               method: "delete",
 
-              url: `https://sirses.herokuapp.com/api/Videos?id=${app.$data.delLink}`,
+              url: `http://kwutge.pythonanywhere.com/api/v1/video/`,
+
+              data: {
+                id:app.$data.delLink
+    
+  },
+
               headers: {
-                Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                "Content-Type": " application/json",
+               
+                "Content-Type": "application/json",
               },
             }).then((el) => {
               if (el.status == "200") {
-                alert("Muvaffaqiyatli uchirildi");
+                alert("Muvaffaqiyatli o'chirildi");
               }
             });
             }else{
@@ -264,11 +272,15 @@ if(app.$data.link !== ''){
 
         async mounted() {
           await axios
-            .get("https://sirses.herokuapp.com/api/Videos")
+            .get("http://kwutge.pythonanywhere.com/api/v1/video/all/", {
+              headers:{
+                "Content-Type": " application/json",
+              }
+            })
             .then(function (response) {
               // handle success
               console.log(response);
-              response.data.forEach((res) => {
+              response.data.videos.forEach((res) => {
                 app.$data.items.push(res);
               });
             })
@@ -276,9 +288,7 @@ if(app.$data.link !== ''){
               // handle error
               console.log(error);
             })
-            .then(function () {
-              // always executed
-            });
+          
         },
       });
     </script>

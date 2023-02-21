@@ -123,11 +123,7 @@
                   <label class="form-label" for="typeText">uchinchi doza</label>
                 </div>
 
-                <div class="form-outline mt-4">
-                  <input type="text" id="typeText" class="form-control p-2"  v-model="jami"/>
-                  <label class="form-label" for="typeText">jami doza</label>
-                </div>
-
+          
                 <div class="form-outline mt-4">
                   <input
                     type="text"
@@ -164,7 +160,6 @@
           birinchi: "",
           ikkinchi:"",
           uchinchi:"",
-          jami:"",
           date:""
         },
 
@@ -175,13 +170,13 @@
         let btn = document.querySelector('.btn')
         e.preventDefault();
 
-        if(app.$data.birinchi !== '' && app.$data.ikkinchi !=='' &&  app.$data.uchinchi !=='' && app.$data.jami !=='' && app.$data.date !== ''){
+        if(app.$data.birinchi !== '' && app.$data.ikkinchi !=='' &&  app.$data.uchinchi !=='' && app.$data.date !== ''){
           btn.setAttribute('disabled', '')
-          await axios.post('https://sirses.herokuapp.com/api/Vaccinations', {
-  vaccination1:app.$data.birinchi,
-      vaccination2:app.$data.ikkinchi,
-      vaccination3:app.$data.uchinchi,
-       all:app.$data.jami,
+          await axios.post('http://kwutge.pythonanywhere.com/api/v1/inject/', {
+  first_dose:app.$data.birinchi,
+  second_dose:app.$data.ikkinchi,
+      third_dose:app.$data.uchinchi,
+      
        date:app.$data.date
 }, 
 
@@ -201,7 +196,6 @@
   app.$data.birinchi = ''
   app.$data.ikkinchi = ''
   app.$data.uchinchi = ''
-  app.$data.jami = ''
   app.$data.date = ''
  }
 })

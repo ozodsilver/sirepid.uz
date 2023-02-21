@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sirepid.uz</title>
 
-
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
     <style>
       
 .label {
@@ -117,13 +120,13 @@
   <body>
     <!-- loader -->
 
-    <div id="preloader" >
+    <!-- <div id="preloader" >
       <div id="loader">
        
       </div>
    
     </div>
- 
+  -->
 
 
 
@@ -201,7 +204,7 @@
       <nav class="navbar navbar-expand-lg bg-light d-md-none darked">
         <div class="container-fluid darked">
         
-          <input type="checkbox" class="l">
+          <i class="fas fa-eye l" ></i>
         
           <button
             class="navbar-toggler bg-white"
@@ -784,36 +787,39 @@
           <h1 class="text-center pt-5 " id = 'yangiliklar'>Yangiliklar</h1>
 
 
-          <!-- <div class="spinner-border text-light d-block text-center m-auto" role="status" ref="load" >
+          <div class="spinner-border text-danger d-block text-center m-auto" role="status" ref="load" >
             <span class="visually-hidden">Loading...</span>
-          </div> -->
+          </div>
 
           <div class="row mt-5">
             <div
-              class="col-12 longCard p-4"
+              class="col-12 mt-3 text-white longCard p-4"
               v-for="image in yangiliklar"
               :key="image.id"
              
             >
          
 
-              <div class="row flex-column flex-sm-row">
+              <div class="row  flex-sm-row">
                 <div
-                  class="col-12 col-sm-4 d-flex align-items-center justify-content-center"
+                  class="col-12  col-sm-4 d-flex align-items-center justify-content-center position-relative"
                 >
                   <img
-                    :src="image.image"
+                    :src=`http://kwutge.pythonanywhere.com/api/v1/image?id=${image.image_id}`
                     alt=""
-                    class="img img-fluid w-75 rounded img-thumbnail mt-2"
+                    class="img img-fluid w-50 rounded img-thumbnail mt-2"
                   />
                 </div>
 
-                <div class="col-sm-8 col-12 mt-2 mt-sm-0" >
+                <div class="col-sm-8  col-12 mt-2 mt-sm-0 " >
                   <h5 class="text-light">{{image.title}}</h5>
-                  <p class="text-light">{{image.description}}</p>
+                  <p class="text-light">{{image.content}}</p>
+                  <a href = "./pages/yangiliklar.html"  class=" btn-primary  position-absolute" style = 'bottom:20px; right:20px'>batafsil..</button>
                 </div>
               </div>
+              
             </div>
+          
           </div>
 
           <a
@@ -834,7 +840,10 @@
       <div class="m-auto centerText">
         <h4 class="text-center " >
           Xush kelibsiz!
+
+          
         </h4>
+
         <h1 class="display-1  text-center h1 fw-bold " style = 'color:grey' >
         UMUMIY MA'LUMOT
         </h1>
@@ -1744,7 +1753,7 @@ let l = document.querySelector('.l')
 let navLink = document.querySelectorAll('.nav-link')
 
 
-l.addEventListener('change', ()=>{
+l.addEventListener('click', ()=>{
   home.classList.toggle('bg-dark')
   home.classList.toggle('text-white')
   console.log('dsds');
@@ -1888,15 +1897,17 @@ yangiliklar.classList.toggle('text-light')
         let date = document.querySelector(".date");
 
         axios
-          .get("https://sirses.herokuapp.com/api/Vaccinations", {
-            headers: { Authorization: `Bearer ${localStorage.getItem("jwt")}` },
-          })
+          .get("http://kwutge.pythonanywhere.com/api/v1/inject/")
+
           .then((el) => {
-            birinchi.innerHTML = el.data[el.data.length - 1].vaccination1;
-            ikkinchi.innerHTML = el.data[el.data.length - 1].vaccination2;
-            uchinchi.innerHTML = el.data[el.data.length - 1].vaccination3;
-            jami.innerHTML = el.data[el.data.length - 1].all;
-            date.innerHTML = el.data[el.data.length - 1].date;
+
+            console.log(el);
+
+            birinchi.innerHTML = el.data.first_dose;
+            ikkinchi.innerHTML = el.data.second_dose;
+            uchinchi.innerHTML = el.data.third_dose;
+            jami.innerHTML = el.data.third_dose + el.data.second_dose +el.data.first_dose ;
+            date.innerHTML = el.data.date;
           });
       </script>
 
@@ -1917,21 +1928,29 @@ yangiliklar.classList.toggle('text-light')
             yangiliklar: [],
           },
 
-          // async mounted() {
-          //   await axios
-          //     .get("https://sirses.herokuapp.com/api/News")
-          //     .then((res) => {
-          //       res.data.slice(0, 6).forEach((el) => {
-          //         app2.$data.yangiliklar.push(el);
-          //         app2.$refs.load.style.cssText = 'display:none !important'
-                  
-          //       });
-          //     })
-          //     .catch(function (error) {
-          //       // handle error
-          //       console.log(error);
-          //     });
-          // },
+          async mounted() {
+            await axios
+              .get("http://kwutge.pythonanywhere.com/api/v1/news/all/")
+              .then((res) => {
+
+
+                console.log(res);
+            
+               
+                res.data.news.slice(0, 2).forEach((el) => {
+                  app2.$data.yangiliklar.push(el);
+                  app2.$refs.load.style.cssText = 'display:none !important'
+
+           
+
+                
+                });
+              })
+              .catch(function (error) {
+                // handle error
+                console.log(error);
+              });
+          },
         });
       </script>
 
@@ -1989,22 +2008,28 @@ yangiliklar.classList.toggle('text-light')
         //   });
         // });
 
-        // let images2 = document.querySelectorAll("#images2 .frame");
-        // console.log(images2);
+        let images2 = document.querySelectorAll("#images2 .frame");
+        console.log(images2);
 
-        // axios.get("https://sirses.herokuapp.com/api/Videos").then((res) => {
-        //   images2.forEach((el, index) => {
-        //     el.innerHTML = res.data[index].link;
-        //   });
+        axios.get("http://kwutge.pythonanywhere.com/api/v1/video/all/", {
+              headers:{
+                "Content-Type": " application/json",
+              }
+            }).then((res) => {
+              console.log(res);
+          images2.forEach((el, index) => {
+            console.log(el);
+            el.innerHTML = res.data.videos[index].iframe;
+          });
 
-        //   console.log(res.data);
-        // });
+          // console.log(res.data);
+        });
 
 
 
       </script>
 
-      <script>
+      <!-- <script>
         $(document).ready(function () {
           $(".carousel").slick({
             slidesToShow: 4,
@@ -2038,7 +2063,7 @@ yangiliklar.classList.toggle('text-light')
         });
 
         // Slick version 1.5.8
-      </script>
+      </script> -->
 
 <script>
   AOS.init();
