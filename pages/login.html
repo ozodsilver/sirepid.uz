@@ -116,7 +116,7 @@
        function unlock() {
        
 try{
-  window.location.assign('./AdminPages/AdminPage.html')
+
   // await axios.post(`https://sirses.herokuapp.com/api/Auth?login=${pass.value}&pass=${login.value}`).then(res =>{
       
   //     if(true){       // backdan keladigan data
@@ -129,6 +129,12 @@ try{
       
       
   //     })
+
+  if(login.value == 'sirepid' && pass.value == 'sirepid123'){
+    window.location.assign('./AdminPages/AdminPage.html')
+  }else{
+    alert('xato login yoki parol')
+  }
       
       
 }catch(err){
