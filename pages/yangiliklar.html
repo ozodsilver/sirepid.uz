@@ -313,7 +313,7 @@
                   <div v-for = 'item in items' :key = 'item.id' class="d-flex justify-content-around gap-3 bg-white p-3 align-items-start flex-wrap  flex-md-nowrap my-2">
                     <div class="col-md-5 mb-4 col-12 ">
                         <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5 d-flex justify-content-center" data-mdb-ripple-color="light">
-                          <img :src="item.image" class="img-fluid w-75" />
+                          <img :src="item.image_id" src = '../images/news/sirepid News.png' class="img-fluid w-75" />
                           <a href="#!">
                             <div class="mask" style="background-color: rgba(228, 220, 220, 0.15);"></div>
                           </a>
@@ -324,7 +324,7 @@
                         <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">yangiliklar</span>
                         <h4><strong>{{item.title}}</strong></h4>
                         <p class="text-muted">
-                          {{item.description}}
+                          {{item.content}}
                         </p>
                       
                       </div>
@@ -406,11 +406,11 @@ let loader = document.querySelector('#loaderr');
 
 
 
-await axios.get('https://192.68.3.234:8000/api/v1/news/all/')
+await axios.get('https://kwutge.pythonanywhere.com/api/v1/news/all/')
 .then(function (response) {
     console.log(response);
 // handle success
-response.data.forEach(res => {
+response.data.news.forEach(res => {
     loader.style.cssText = 'display:none !important'
     console.log(res);
 app.$data.items.push(res)

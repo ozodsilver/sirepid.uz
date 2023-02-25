@@ -86,14 +86,25 @@
           <p></p>
         </div>
 
+
+
+
+        
         <div class="mt-3">
           <h1>Rasm yuklash</h1>
           <div class="form-outline">
-            <input type="file" class="form-control" id="fileItem" />
+           <form id="formElem">
+            <input type="file" class="form-control" id="fileItem"  name="picture" accept="image/*" >
+           </form>
           </div>
         </div>
 
-        <button type="button" class="btn btn-primary w-25 mt-3" data-mdb-toggle="button" autocomplete="off"
+
+
+
+
+
+        <button type="submit" class="btn btn-primary w-25 mt-3" data-mdb-toggle="button" 
           onclick="addNews()" id="add">
           yangilik qo'shish
         </button>
@@ -116,16 +127,12 @@
         <tbody>
           <tr v-for="item in items" :key="item.id">
             <td class="w-50">
-              <img :src="item.image" alt="" class="img img-fluid w-25">
+              <img :src=`http://kwutge.pythonanywhere.com/api/v1/image?id=${item.image_id}` alt="" class="img img-fluid w-25">
             </td>
             <td class="w-100">
               {{item.title}}
             </td>
-
-
             <td>{{item.id}}</td>
-
-
             <td>
               <span class="badge badge-success rounded-pill d-inline">Active</span>
             </td>
@@ -133,7 +140,6 @@
         </tbody>
       </table>
       <hr>
-
       <div class="container-fluid bg-danger mt-5 p-4 rounded-1">
         <h2 class="text-white">yangilikni o'chirish</h2>
         <input type="text" class="form-control mt-3"
@@ -141,10 +147,6 @@
         <button class="btn btn-warning mt-4" v-on:click='deleteNews' id="del">o'chirish</button>
       </div>
       <hr>
-
-
-
-
 
       <div class="mt-5">
         <h1>Tahrirlash</h1>
@@ -193,66 +195,60 @@
     let sarlavha = document.querySelector("#sarlavha");
     let file = document.getElementById("fileItem");
     let add = document.querySelector('#add')
-    console.log(file.files);
-  async  function addNews() {
+ 
+async  function addNews() {
       console.log(file.files);
       add.setAttribute('disabled', '')
       let formData = new FormData();
       formData.append("file", file.files[0]);
-    await axios
-        .post("https://9b04-92-246-79-198.ap.ngrok.io/api/v1/test/", 
+  await axios
+        .post("https://kwutge.pythonanywhere.com/api/v1/image/", 
         formData,
           {
             headers: {
-              "Content-Disposition": "form-data, name='file', filename='pic.jpg' ",
-              "Content-Type":"image/jpeg", 
+              "Content-Disposition": `form-data; name="file"; filename="upload.jpg"`,
+              "Content-Type":"application/multipart/form-data/image",
+              
 
             }
 
-          },
-
-
+          }
           )
         .then((res) => {
 
           console.log(res);
 
-          // let id = res.data;
-          // let url = `https://sirses.herokuapp.com/api/Files/${id}`;
+          let id = res.data;
+         
 
-          // axios
-          //   .post(
-          //     "https://sirses.herokuapp.com/api/News",
-          //     {
-          //       title: sarlavha.value,
-          //       description: editor.children[0].children[0].innerHTML,
-          //       image: url,
-          //     },
-          //     {
-          //       headers: {
-          //         "Content-Type": "application/json",
-          //         Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-          //       },
-          //     }
-          //   )
-          // .then((res) => {
-          //   add.removeAttribute('disabled')
-          //   alert("yangilik qo'shildi")
-          //   console.log(res);
-          //   sarlavha.value =''
-          //   editor.children[0].children[0].innerHTML = ''
-          //     file.value = ''
-          // });
+setTimeout(()=>{
+  axios
+            .post(
+              "https://kwutge.pythonanywhere.com/api/v1/news/",
+              {
+                title: sarlavha.value,
+                content: editor.children[0].children[0].innerHTML,
+                image_id: id,
+              },
+              {
+                headers: {
+                  "Content-Type": "application/json"
+                },
+              }
+            )
+          .then((res) => {
+            add.removeAttribute('disabled')
+            alert("yangilik qo'shildi")
+            console.log(res);
+            // sarlavha.value =''
+            // editor.children[0].children[0].innerHTML = ''
+            //   file.value = ''
+          });
+},2000)
+          
         });
     }
   </script>
-
-
-
-
-
-
-
 
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -360,21 +356,25 @@
         }
       },
 
-      //   mounted() {
-      //        axios.get('https://sirses.herokuapp.com/api/News')
-      //   .then(res => {
-      //  res.data.forEach(el => {
-      //   app.$data.items.push(el)
-      //  })
+        mounted() {
+             axios.get('https://kwutge.pythonanywhere.com/api/v1/news/all', {
+              headers:{
+                "Content-Type":'application/json'
+              }
+             })
+        .then(res => {
+       res.data.news.forEach(el => {
+        app.$data.items.push(el)
+       })
 
-      //   }
-      // ).catch(function (error) {
-      //   // handle error
-      //   console.log(error);
-      //   })
+        }
+      ).catch(function (error) {
+        // handle error
+        console.log(error);
+        })
 
 
-      //     },
+          },
     })
   </script>
 

@@ -73,20 +73,20 @@
   <body>
    <!-- loader -->
 
- <div id="preloader" >
+ <!-- <div id="preloader" >
       <div id="loader">
        
       </div>
    
     </div>
-
+ -->
 
 
 
 
     <a id="section1"></a>
-    <div class="container-fluid bg-light justify-content-center p-1 " id="navigation">
-      <nav class="navbar bg-light justify-content-center">
+    <div class="container-fluid  justify-content-center p-1 " id="navigation">
+      <nav class="navbar  justify-content-center">
         <div class="container-fluid ">
           <a class="navbar-brand mx-0" href="#"
             ><img class="img img-fluid bg-light rounded p-3 pl-4 d-block ml-3" src="images/Sticker.png" alt
@@ -440,14 +440,14 @@
       </nav>
     </div>
 
-    <div class="container-fluid p-3 bg-light position-relative links">
+    <div class="container-fluid p-3  position-relative links">
       <div
         class="container d-flex justify-content-around"
         style="position: relative; z-index: 23"
       >
         <div class="dropdown">
           <button
-            class="btn btn-light dropdown-toggle"
+            class="btn btn-primary  bg-gradient dropdown-toggle  border-muted "
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
             type="button"
@@ -457,7 +457,7 @@
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>
-              <a class="dropdown-item" href="./pages/yangiliklar.html"
+              <a class="dropdown-item " href="./pages/yangiliklar.html"
                 >Yangiliklar
               </a>
             </li>
@@ -480,7 +480,7 @@
 
         <div class="dropdown">
           <button
-            class="btn btn-light dropdown-toggle"
+            class="btn btn-primary bg-gradient  border-muted  dropdown-toggle"
             data-bs-toggle="dropdown"
             type="button"
           >
@@ -636,7 +636,7 @@
 
         <div class="dropdown">
           <button
-            class="btn btn-light dropdown-toggle"
+            class="btn btn-primary bg-gradient dropdown-toggle"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
             type="button"
@@ -671,7 +671,7 @@
 
         <div class="dropdown">
           <button
-            class="btn btn-light dropdown-toggle"
+            class="btn btn-primary bg-gradient dropdown-toggle"
             id="dropdownMenuButton1"
             data-bs-toggle="dropdown"
             type="button"
@@ -692,46 +692,48 @@
             </li>
           </ul>
         </div>
-        <a
-          class="nav-link d-flex justify-content-center align-items-center"
-          href
-        >
-          Loyihalar</a
-        >
+      <button type="button" class="btn btn-primary bg-gradient">  <a
+        class="nav-link    d-flex justify-content-center align-items-center"
+        href
+      >
+        Loyihalar</a
+      >
+</button>
+       <button type="button" class="btn btn-primary bg-gradient"> <a
+        class="nav-link d-flex justify-content-center align-items-center"
+        href = './pages/interaktive.html'
+      >
+        Interaktive Xizmatlar</a
+      ></button>
 
-        <a
-          class="nav-link d-flex justify-content-center align-items-center"
-          href = './pages/interaktive.html'
-        >
-          Interaktive Xizmatlar</a
-        >
-
-        <a
+        <button type="button" class="btn btn-primary bg-gradient">
+          <a
           class="nav-link d-flex justify-content-center align-items-center"
           href="pages/Vaksinatsiya.html"
         >
           Vaksinatsiya</a
         >
+        </button>
 
-        <a
-          class="nav-link d-flex justify-content-center align-items-center"
-          href="pages/covidLab.html"
-        >
-          COVID-19 Lab</a
-        >
-
+      <button type="button" class="btn btn-primary bg-gradient">  <a
+        class="nav-link d-flex justify-content-center align-items-center"
+        href="pages/covidLab.html"
+      >
+        COVID-19 Lab</a
+      >
+</button>
         <a href="./pages/login.html" class="text-decoration-none" target="_blank"> &nbsp;</a>
       </div>
     </div>
 
     <!-- home boshlandi -->
     <div
-      class="container-fluid home bg-light  home2 justify-content-center align-items-center position-relative l-0"
-    
+      class="container-fluid home  home2 justify-content-center align-items-center position-relative l-0"
+   
     >
         <div id="app-2">
       <div class="container-fluid news">
-        <div class="container position-relative pb-4" style="z-index: 4">
+        <div class="container position-relative  pb-4" style="z-index: 4" >
           <h1 class="text-center  text-dark pt-5 " id = 'yangiliklar'>Yangiliklar</h1>
 
 
@@ -753,9 +755,10 @@
                   class="col-12 border-0 shadow p-3 rounded-3  col-sm-3 d-flex align-items-center justify-content-center position-relative"
                 id = 'carta'>
                   <img
-                    :src=`http://kwutge.pythonanywhere.com/api/v1/image?id=${image.image_id}`
+                    :src=`https://kwutge.pythonanywhere.com/api/v1/image?id=${image.image_id}`
                     alt=""
-                    class="img img-fluid w-50 rounded img-thumbnail mt-2"
+                    src = './images/news/sirepid News.png'
+                    class="img img-fluid  rounded img-thumbnail mt-2"
                   />
                 </div>
 
@@ -825,7 +828,7 @@
         holatiga ko'ra
       </div>
 
-      <div class="container bg-light shadow-lg rounded position-relative">
+      <div class="container  shadow-lg rounded position-relative">
         <div class="row text-center p-5" id = 'inside'>
           <div class="col-6 col-sm-3 p-3">
             <h1 class="display-1 fw-bold text-muted birinchi counter" id="num1" data-aos="fade-up"></h1>
@@ -1686,7 +1689,7 @@ let navbar = document.querySelector('.navbar')
 let nav = document.querySelector('#navigation')
 let Dark = document.querySelector('.toggle')
 let toggle = document.querySelector('.links')
-let icons = document.querySelector('a')
+let icons = document.querySelectorAll('a')
 let brand = document.querySelector('.navbar-brand')
 let home = document.querySelector('.home')
 let home2 = document.querySelector('.home2')
@@ -1705,19 +1708,29 @@ let jam = document.querySelector('.jami')
 // mob
 let l = document.querySelector('.l')
 let navLink = document.querySelectorAll('.nav-link')
+let dropdown = document.querySelectorAll('.dropdown button')
+
+
 
 
 l.addEventListener('click', ()=>{
+  
+dropdown.forEach(el =>{
+  el.classList.add('bg-primary')
+})
+
   home.classList.toggle('bg-dark')
   home.classList.toggle('text-white')
   console.log('dsds');
-toggle.classList.toggle('bg-dark')
-toggle.classList.toggle('text-white')
+  toggle.classList.toggle('bg-dark')
+  toggle.classList.toggle('text-white')
 nav.classList.toggle('bg-dark')
 nav.classList.toggle('text-white')
 navbar.classList.toggle('text-white')
 navbar.classList.toggle('bg-dark')
-icons.classList.toggle('text-white')
+icons.forEach(el =>{
+  el.classList.toggle('text-dark')
+})
 brand.classList.toggle('shadowHandle')
 darked.forEach((el)=>{
   el.classList.toggle('bg-dark')
@@ -1762,7 +1775,7 @@ nav.classList.toggle('bg-dark')
 nav.classList.toggle('text-white')
 navbar.classList.toggle('text-white')
 navbar.classList.toggle('bg-dark')
-icons.classList.toggle('text-white')
+
 brand.classList.toggle('shadowHandle')
 home.classList.toggle('bg-dark')
 let yangiliklar = document.querySelector('#yangiliklar')
@@ -1788,7 +1801,7 @@ owlStage.forEach((el)=>{
 
 home2.classList.toggle('home2')
 links.forEach((el)=>{
- el.classList.toggle('btn-light')
+ el.classList.toggle('btn-dark')
  el.classList.toggle('text-white')
 })
 

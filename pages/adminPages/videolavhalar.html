@@ -216,7 +216,7 @@ if(app.$data.link !== ''){
               .post(
                 "https://kwutge.pythonanywhere.com/api/v1/video/",
                 {
-                  iframe: app.$data.link,
+                  iframe: 'app.$data.link',
                 },
                 {
                  headers:{
