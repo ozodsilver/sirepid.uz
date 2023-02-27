@@ -160,9 +160,9 @@
           <textarea class="form-control" id="updateDescription" rows="16"></textarea>
           <label class="form-label" for="textAreaExample">Yangilik kiritish maydoni</label>
         </div>
-        <div class="form-outline">
+        <!-- <div class="form-outline">
           <input type="file" id="updateFile" class="form-control mt-3" />
-        </div>
+        </div> -->
 
         <button type="button" class="btn btn-primary mt-3 w-25" id="updateDel" v-on:click='updateNews'>
           Tahrirlash
@@ -275,11 +275,10 @@ setTimeout(()=>{
           if (deleteNews.value !== '') {
             await axios({
               method: "delete",
-              url: `https://sirses.herokuapp.com/api/News?id=${deleteNews}`,
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                "Content-Type": " application/json",
-              },
+              url: `https://kwutge.pythonanywhere.com/api/v1/news/`,
+              data:{
+                id:deleteNews
+              }
             }).then(el => {
               del.removeAttribute('disabled')
               if (el.status == 200) {
@@ -298,41 +297,26 @@ setTimeout(()=>{
           let delId = document.querySelector('#delId');
           let updateTitle = document.querySelector('#updateTitle');
           let updateDescription = document.querySelector('#updateDescription');
-          let updateFile = document.querySelector('#updateFile');
+          // let updateFile = document.querySelector('#updateFile');
 
-          console.log(updateFile.files[0]);
+          // console.log(updateFile.files[0]);
           let updateDel = document.querySelector('#updateDel');
           updateDel.setAttribute('disabled', '')
-          let formData = new FormData();
-          formData.append("file", updateFile.files[0]);
+          // let formData = new FormData();
+          // formData.append("file", updateFile.files[0]);
 
-          if (delId.value !== '' && updateTitle.value !== '' && updateDescription.value !== '' && updateFile.value !== '') {
+          if (delId.value !== '' && updateTitle.value !== '' && updateDescription.value ) {
+            
             axios
-              .post("https://sirses.herokuapp.com/api/Files", formData, {
-                headers: {
-                  "Content-Type": "multipart/form-data",
-                  Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                },
-              })
-              .then((res) => {
-                let id = res.data;
-                let url = `https://sirses.herokuapp.com/api/Files/${id}`;
-
-                axios
-                  .put(
-                    "https://sirses.herokuapp.com/api/News",
+                  .patch(
+                    "https://kwutge.pythonanywhere.com/api/v1/news/",
                     {
                       id: delId.value,
                       title: updateTitle.value,
-                      description: updateDescription.value,
-                      image: url,
+                      content: updateDescription.value,
+                      
                     },
-                    {
-                      headers: {
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                      },
-                    }
+                  
                   )
                   .then((res) => {
                     updateDel.removeAttribute('disabled')
@@ -341,9 +325,8 @@ setTimeout(()=>{
                     delId.value = ''
                     updateTitle = ''
                     updateDescription = ''
-                    updateFile.value = ''
+                    // updateFile.value = ''
                   });
-              });
           } else {
             alert("bo'sh maydon mavjud to'ldiring ")
           }
